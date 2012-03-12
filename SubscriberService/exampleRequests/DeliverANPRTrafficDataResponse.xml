@@ -1,0 +1,11 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header />
+  <SOAP-ENV:Body>
+    <ns3:DeliverANPRTrafficDataResponse
+      xmlns:ns2="http://datex2.eu/schema/2/2_0" xmlns:ns3="http://www.thalesgroup.com/NTIS/SubscriberService"
+      xmlns:ns4="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1">
+      <ns3:status>DeliverANPRTrafficDataRequest: Successful Delivery
+      </ns3:status>
+    </ns3:DeliverANPRTrafficDataResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" elementFormDefault="unqualified" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd" namespace="http://datex2.eu/schema/2/2_0" />
+  <xs:simpleType name="Guid">
+    <xs:annotation>
+      <xs:documentation>A GUID represented as a character string of length 40.
+		This should be in the standard form for string representation of a GUID (a.k.a UUID),
+		as specified by www.ieft.org/rfc/rfc4122.txt, prefixed by "GUID",
+		e.g. GUIDff4740a5-0690-451a-ac83-04950306d95a
+		Upper or lower case digits are allowed.
+    </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="40" />
+      <xs:maxLength value="40" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="JourneyTime">
+    <xs:sequence>
+      <xs:element name="camera1" type="Guid">
+        <xs:annotation>
+          <xs:documentation>GUID of ANPR camera at upstream site</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="camera2" type="Guid">
+        <xs:annotation>
+          <xs:documentation>GUID of ANPR camera at downstream site</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="timeStamp" type="D2LogicalModel:DateTime">
+        <xs:annotation>
+          <xs:documentation>The time of the downstream sighting (i.e. at camera 2).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="travelTime" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation>Travel time in seconds between the points defined by the 2 cameras</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isSuspect" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>When true, indicates that the data is suspect and may be erroneous (e.g. one of the ANPR stations may be out of time sync.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JourneyTimes">
+    <xs:annotation>
+      <xs:documentation>A sequence of zero or more JourneyTime elements.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="journeyTime" type="JourneyTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JourneyTimePublication">
+    <xs:annotation>
+      <xs:documentation>A publication containing one or more journey times</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="D2LogicalModel:PayloadPublication">
+        <xs:sequence minOccurs="1">
+          <xs:element name="journeyTimes" type="JourneyTimes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

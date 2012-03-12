@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?wsdl" docRef="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx" xmlns:q1="http://www.thalesgroup.com/NTIS/SubscriberService" binding="q1:subscriberSoap11" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx" xmlns:q2="http://www.thalesgroup.com/NTIS/SubscriberService" binding="q2:subscriberSoap111" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" elementFormDefault="qualified" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0">
+
+    <xs:import namespace="http://datex2.eu/schema/2/2_0" schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd" />
+
+    <xs:complexType name="FusedDataPublication">
+        <xs:annotation>
+            <xs:documentation>A collection of FusedData</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+            <xs:extension base="D2LogicalModel:PayloadPublication">
+                <xs:sequence minOccurs="1">
+                    <xs:element name="fusedData" type="FusedData" minOccurs="1" maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="FusedData">
+        <xs:annotation>
+            <xs:documentation>A publication containing fused traffic data from MIDAS Loops, ANPR cameras and Floating vehicle data</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="markets" type="FusedDataMarket" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="createdUtc" type="D2LogicalModel:DateTime">
+                <xs:annotation>
+                    <xs:documentation>UTC date/time the data was made available</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="maxArrivalUtc" type="D2LogicalModel:DateTime">
+                <xs:annotation>
+                    <xs:documentation>UTC date/time of the last data point was collected for this fused data</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="latencySec" type="D2LogicalModel:Seconds">
+                <xs:annotation>
+                    <xs:documentation>Difference in seconds between the createdUtc and maxArrivalUtc</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FusedDataMarket">
+        <xs:sequence>
+            <xs:element name="createdLocal" type="D2LogicalModel:DateTime">
+                <xs:annotation>
+                    <xs:documentation>Time the record was created</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tmcs" type="FusedDataTMC" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>List of TMCs in this Market</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FusedDataTMC">
+        <xs:annotation>
+            <xs:documentation>Fused data record for one TMC</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="journeyTimeSec" type="D2LogicalModel:Seconds" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Average journey time across the TMC in seconds</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="direction" type="TMCDirectionEnum" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The ALERT-C direction code of this TMC</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="code" type="xs:string" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The ALERT-C location code of this TMC</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="region" type="xs:string" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The ALERT-C region code of the TMC</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="speedSensorOnlyKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The speed on the TMC in kph, based on fusing only the available sensor data</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="country" type="xs:string" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>ALERT-C country code of the TMC</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="headwayDeciseconds" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The average headway along the TMC.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="speedKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The speed on the TMC in kph, based on fusing all sensor and FVD data</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="volumeVehiclesPerMin" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The average volume along the TMC in vehicles per minute.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="speedFvdOnlyKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The speed on the TMC in kph, based on fusing only the available FVD data.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="occupancyPercent" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The average occupancy along the TMC as a percentage</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="TMCDirectionEnum">
+       <xs:restriction base="xs:string">
+          <xs:enumeration value="+">
+            <xs:annotation>
+              <xs:documentation>External path in the positive direction</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="-">
+            <xs:annotation>
+              <xs:documentation>External path in the negative direction</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="P">
+            <xs:annotation>
+              <xs:documentation>Internal path in the positive direction</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="N">
+            <xs:annotation>
+              <xs:documentation>Internal path in the negative direction</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

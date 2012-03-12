@@ -1,0 +1,45 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:ns2="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1"
+  xmlns:ns3="http://datex2.eu/schema/2/2_0" xmlns:sub="http://www.thalesgroup.com/NTIS/SubscriberService"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header />
+  <soapenv:Body>
+    <sub:DeliverANPRTrafficDataRequest>
+      <sub:D2LogicalModel modelBaseVersion="2">
+        <ns3:exchange>
+          <ns3:supplierIdentification>
+            <ns3:country>gb</ns3:country>
+            <ns3:nationalIdentifier>AnprTest1</ns3:nationalIdentifier>
+          </ns3:supplierIdentification>
+        </ns3:exchange>
+        <ns3:payloadPublication
+          xmlns:ns5="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0"
+          lang="en" xsi:type="ns5:JourneyTimePublication">
+          <ns3:feedDescription>
+            <ns3:values>
+              <ns3:value>1</ns3:value>
+            </ns3:values>
+          </ns3:feedDescription>
+          <ns3:publicationTime>
+            2012-02-08T10:54:18.378Z
+     </ns3:publicationTime>
+          <ns3:publicationCreator>
+            <ns3:country>gb</ns3:country>
+            <ns3:nationalIdentifier>AnprTest1</ns3:nationalIdentifier>
+          </ns3:publicationCreator>
+          <journeyTimes>
+            <journeyTime>
+              <camera1>ThisIsATestCamera1FieldThatMustBe40Chars
+              </camera1>
+              <camera2>ThisIsATestCamera2FieldThatMustBe40Chars
+              </camera2>
+              <timeStamp>2012-02-08T10:54:15.672Z</timeStamp>
+              <travelTime>1000</travelTime>
+              <isSuspect>true</isSuspect>
+            </journeyTime>
+          </journeyTimes>
+        </ns3:payloadPublication>
+      </sub:D2LogicalModel>
+    </sub:DeliverANPRTrafficDataRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

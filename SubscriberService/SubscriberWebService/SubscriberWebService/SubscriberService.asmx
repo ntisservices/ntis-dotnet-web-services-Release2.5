@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="SubscriberService.asmx.cs" Class="SubscriberWebService.SubscriberService" %>
