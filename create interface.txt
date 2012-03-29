@@ -1,1 +1,0 @@
-wsdl /serverInterface /namespace:Subscriber /out:ISubscriber.cs subscriber.wsdl subscriber.xsd Datex2_JourneyTimeExtensions_2.xsd DATEXIIProcessedTrafficDataSchemaV0.01.xsd DATEXIISchema_2_2_0withdefinitions.xsd

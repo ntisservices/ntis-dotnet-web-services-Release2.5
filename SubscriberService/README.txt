@@ -15,7 +15,7 @@ With these files to hand, the wsdl.exe tool, which comes bundled with Visual Stu
 
 The following shows how I generated the "ISubscriber.cs", ASMX service interface file:
 
-	wsdl /serverInterface /namespace:Subscriber /out:ISubscriber.cs subscriber.wsdl DATEXIIProcessedTrafficDataSchemaV0.01.xsd DATEXIISchema_2_2_0withdefinitions.xsd subscriber.xsd
+	wsdl /serverInterface /namespace:Subscriber /out:ISubscriber.cs subscriber.wsdl subscriber.xsd Datex2_JourneyTimeExtensions_2.xsd DATEXIIProcessedTrafficDataSchemaV0.01.xsd DATEXIISchema_2_2_0withdefinitions.xsd
 
 
 Note that the "ISubscriber.cs" file contains the web service interface which needs to be implemented, and .NET classes derived from the XSD and WSDL data types.
