@@ -742,71 +742,342 @@ namespace Subscriber {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0")]
-    public partial class JourneyTime {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
+    public partial class FusedDataTMC {
         
-        private string camera1Field;
+        private float journeyTimeSecField;
         
-        private string camera2Field;
+        private bool journeyTimeSecFieldSpecified;
         
-        private System.DateTime timeStampField;
+        private TMCDirectionEnum directionField;
         
-        private uint travelTimeField;
+        private string codeField;
         
-        private bool isSuspectField;
+        private string regionField;
+        
+        private float speedSensorOnlyKphField;
+        
+        private bool speedSensorOnlyKphFieldSpecified;
+        
+        private string countryField;
+        
+        private float headwayDecisecondsField;
+        
+        private bool headwayDecisecondsFieldSpecified;
+        
+        private float speedKphField;
+        
+        private bool speedKphFieldSpecified;
+        
+        private float volumeVehiclesPerMinField;
+        
+        private bool volumeVehiclesPerMinFieldSpecified;
+        
+        private float speedFvdOnlyKphField;
+        
+        private bool speedFvdOnlyKphFieldSpecified;
+        
+        private float occupancyPercentField;
+        
+        private bool occupancyPercentFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string camera1 {
+        public float journeyTimeSec {
             get {
-                return this.camera1Field;
+                return this.journeyTimeSecField;
             }
             set {
-                this.camera1Field = value;
+                this.journeyTimeSecField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string camera2 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool journeyTimeSecSpecified {
             get {
-                return this.camera2Field;
+                return this.journeyTimeSecFieldSpecified;
             }
             set {
-                this.camera2Field = value;
+                this.journeyTimeSecFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime timeStamp {
+        public TMCDirectionEnum direction {
             get {
-                return this.timeStampField;
+                return this.directionField;
             }
             set {
-                this.timeStampField = value;
+                this.directionField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public uint travelTime {
+        public string code {
             get {
-                return this.travelTimeField;
+                return this.codeField;
             }
             set {
-                this.travelTimeField = value;
+                this.codeField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool isSuspect {
+        public string region {
             get {
-                return this.isSuspectField;
+                return this.regionField;
             }
             set {
-                this.isSuspectField = value;
+                this.regionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float speedSensorOnlyKph {
+            get {
+                return this.speedSensorOnlyKphField;
+            }
+            set {
+                this.speedSensorOnlyKphField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool speedSensorOnlyKphSpecified {
+            get {
+                return this.speedSensorOnlyKphFieldSpecified;
+            }
+            set {
+                this.speedSensorOnlyKphFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string country {
+            get {
+                return this.countryField;
+            }
+            set {
+                this.countryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float headwayDeciseconds {
+            get {
+                return this.headwayDecisecondsField;
+            }
+            set {
+                this.headwayDecisecondsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool headwayDecisecondsSpecified {
+            get {
+                return this.headwayDecisecondsFieldSpecified;
+            }
+            set {
+                this.headwayDecisecondsFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float speedKph {
+            get {
+                return this.speedKphField;
+            }
+            set {
+                this.speedKphField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool speedKphSpecified {
+            get {
+                return this.speedKphFieldSpecified;
+            }
+            set {
+                this.speedKphFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float volumeVehiclesPerMin {
+            get {
+                return this.volumeVehiclesPerMinField;
+            }
+            set {
+                this.volumeVehiclesPerMinField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool volumeVehiclesPerMinSpecified {
+            get {
+                return this.volumeVehiclesPerMinFieldSpecified;
+            }
+            set {
+                this.volumeVehiclesPerMinFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float speedFvdOnlyKph {
+            get {
+                return this.speedFvdOnlyKphField;
+            }
+            set {
+                this.speedFvdOnlyKphField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool speedFvdOnlyKphSpecified {
+            get {
+                return this.speedFvdOnlyKphFieldSpecified;
+            }
+            set {
+                this.speedFvdOnlyKphFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float occupancyPercent {
+            get {
+                return this.occupancyPercentField;
+            }
+            set {
+                this.occupancyPercentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool occupancyPercentSpecified {
+            get {
+                return this.occupancyPercentFieldSpecified;
+            }
+            set {
+                this.occupancyPercentFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
+    public enum TMCDirectionEnum {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("+")]
+        Item,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("-")]
+        Item1,
+        
+        /// <remarks/>
+        P,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
+    public partial class FusedDataMarket {
+        
+        private System.DateTime createdLocalField;
+        
+        private FusedDataTMC[] tmcsField;
+        
+        /// <remarks/>
+        public System.DateTime createdLocal {
+            get {
+                return this.createdLocalField;
+            }
+            set {
+                this.createdLocalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("tmcs")]
+        public FusedDataTMC[] tmcs {
+            get {
+                return this.tmcsField;
+            }
+            set {
+                this.tmcsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
+    public partial class FusedData {
+        
+        private FusedDataMarket[] marketsField;
+        
+        private System.DateTime createdUtcField;
+        
+        private System.DateTime maxArrivalUtcField;
+        
+        private float latencySecField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("markets")]
+        public FusedDataMarket[] markets {
+            get {
+                return this.marketsField;
+            }
+            set {
+                this.marketsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime createdUtc {
+            get {
+                return this.createdUtcField;
+            }
+            set {
+                this.createdUtcField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime maxArrivalUtc {
+            get {
+                return this.maxArrivalUtcField;
+            }
+            set {
+                this.maxArrivalUtcField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float latencySec {
+            get {
+                return this.latencySecField;
+            }
+            set {
+                this.latencySecField = value;
             }
         }
     }
@@ -21815,347 +22086,76 @@ namespace Subscriber {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
-    public partial class FusedDataTMC {
+    public partial class JourneyTime {
         
-        private float journeyTimeSecField;
+        private string camera1Field;
         
-        private bool journeyTimeSecFieldSpecified;
+        private string camera2Field;
         
-        private TMCDirectionEnum directionField;
+        private System.DateTime timeStampField;
         
-        private string codeField;
+        private uint travelTimeField;
         
-        private string regionField;
-        
-        private float speedSensorOnlyKphField;
-        
-        private bool speedSensorOnlyKphFieldSpecified;
-        
-        private string countryField;
-        
-        private float headwayDecisecondsField;
-        
-        private bool headwayDecisecondsFieldSpecified;
-        
-        private float speedKphField;
-        
-        private bool speedKphFieldSpecified;
-        
-        private float volumeVehiclesPerMinField;
-        
-        private bool volumeVehiclesPerMinFieldSpecified;
-        
-        private float speedFvdOnlyKphField;
-        
-        private bool speedFvdOnlyKphFieldSpecified;
-        
-        private float occupancyPercentField;
-        
-        private bool occupancyPercentFieldSpecified;
+        private bool isSuspectField;
         
         /// <remarks/>
-        public float journeyTimeSec {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string camera1 {
             get {
-                return this.journeyTimeSecField;
+                return this.camera1Field;
             }
             set {
-                this.journeyTimeSecField = value;
+                this.camera1Field = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool journeyTimeSecSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string camera2 {
             get {
-                return this.journeyTimeSecFieldSpecified;
+                return this.camera2Field;
             }
             set {
-                this.journeyTimeSecFieldSpecified = value;
+                this.camera2Field = value;
             }
         }
         
         /// <remarks/>
-        public TMCDirectionEnum direction {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime timeStamp {
             get {
-                return this.directionField;
+                return this.timeStampField;
             }
             set {
-                this.directionField = value;
+                this.timeStampField = value;
             }
         }
         
         /// <remarks/>
-        public string code {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public uint travelTime {
             get {
-                return this.codeField;
+                return this.travelTimeField;
             }
             set {
-                this.codeField = value;
+                this.travelTimeField = value;
             }
         }
         
         /// <remarks/>
-        public string region {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool isSuspect {
             get {
-                return this.regionField;
+                return this.isSuspectField;
             }
             set {
-                this.regionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public float speedSensorOnlyKph {
-            get {
-                return this.speedSensorOnlyKphField;
-            }
-            set {
-                this.speedSensorOnlyKphField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool speedSensorOnlyKphSpecified {
-            get {
-                return this.speedSensorOnlyKphFieldSpecified;
-            }
-            set {
-                this.speedSensorOnlyKphFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string country {
-            get {
-                return this.countryField;
-            }
-            set {
-                this.countryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public float headwayDeciseconds {
-            get {
-                return this.headwayDecisecondsField;
-            }
-            set {
-                this.headwayDecisecondsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool headwayDecisecondsSpecified {
-            get {
-                return this.headwayDecisecondsFieldSpecified;
-            }
-            set {
-                this.headwayDecisecondsFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public float speedKph {
-            get {
-                return this.speedKphField;
-            }
-            set {
-                this.speedKphField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool speedKphSpecified {
-            get {
-                return this.speedKphFieldSpecified;
-            }
-            set {
-                this.speedKphFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public float volumeVehiclesPerMin {
-            get {
-                return this.volumeVehiclesPerMinField;
-            }
-            set {
-                this.volumeVehiclesPerMinField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool volumeVehiclesPerMinSpecified {
-            get {
-                return this.volumeVehiclesPerMinFieldSpecified;
-            }
-            set {
-                this.volumeVehiclesPerMinFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public float speedFvdOnlyKph {
-            get {
-                return this.speedFvdOnlyKphField;
-            }
-            set {
-                this.speedFvdOnlyKphField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool speedFvdOnlyKphSpecified {
-            get {
-                return this.speedFvdOnlyKphFieldSpecified;
-            }
-            set {
-                this.speedFvdOnlyKphFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public float occupancyPercent {
-            get {
-                return this.occupancyPercentField;
-            }
-            set {
-                this.occupancyPercentField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool occupancyPercentSpecified {
-            get {
-                return this.occupancyPercentFieldSpecified;
-            }
-            set {
-                this.occupancyPercentFieldSpecified = value;
+                this.isSuspectField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
-    public enum TMCDirectionEnum {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("+")]
-        Item,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("-")]
-        Item1,
-        
-        /// <remarks/>
-        P,
-        
-        /// <remarks/>
-        N,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
-    public partial class FusedDataMarket {
-        
-        private System.DateTime createdLocalField;
-        
-        private FusedDataTMC[] tmcsField;
-        
-        /// <remarks/>
-        public System.DateTime createdLocal {
-            get {
-                return this.createdLocalField;
-            }
-            set {
-                this.createdLocalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("tmcs")]
-        public FusedDataTMC[] tmcs {
-            get {
-                return this.tmcsField;
-            }
-            set {
-                this.tmcsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
-    public partial class FusedData {
-        
-        private FusedDataMarket[] marketsField;
-        
-        private System.DateTime createdUtcField;
-        
-        private System.DateTime maxArrivalUtcField;
-        
-        private float latencySecField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("markets")]
-        public FusedDataMarket[] markets {
-            get {
-                return this.marketsField;
-            }
-            set {
-                this.marketsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime createdUtc {
-            get {
-                return this.createdUtcField;
-            }
-            set {
-                this.createdUtcField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime maxArrivalUtc {
-            get {
-                return this.maxArrivalUtcField;
-            }
-            set {
-                this.maxArrivalUtcField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public float latencySec {
-            get {
-                return this.latencySecField;
-            }
-            set {
-                this.latencySecField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JourneyTimePublication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FusedDataPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsTablePublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficViewPublication))]
@@ -22165,7 +22165,7 @@ namespace Subscriber {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasuredDataPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElaboratedDataPublication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FusedDataPublication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JourneyTimePublication))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -22252,20 +22252,19 @@ namespace Subscriber {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0")]
-    public partial class JourneyTimePublication : PayloadPublication {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
+    public partial class FusedDataPublication : PayloadPublication {
         
-        private JourneyTime[] journeyTimesField;
+        private FusedData[] fusedDataField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("journeyTime", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public JourneyTime[] journeyTimes {
+        [System.Xml.Serialization.XmlElementAttribute("fusedData")]
+        public FusedData[] fusedData {
             get {
-                return this.journeyTimesField;
+                return this.fusedDataField;
             }
             set {
-                this.journeyTimesField = value;
+                this.fusedDataField = value;
             }
         }
     }
@@ -22764,18 +22763,19 @@ namespace Subscriber {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
-    public partial class FusedDataPublication : PayloadPublication {
+    public partial class JourneyTimePublication : PayloadPublication {
         
-        private FusedData[] fusedDataField;
+        private JourneyTime[] journeyTimesField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("fusedData")]
-        public FusedData[] fusedData {
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("journeyTime", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public JourneyTime[] journeyTimes {
             get {
-                return this.fusedDataField;
+                return this.journeyTimesField;
             }
             set {
-                this.fusedDataField = value;
+                this.journeyTimesField = value;
             }
         }
     }

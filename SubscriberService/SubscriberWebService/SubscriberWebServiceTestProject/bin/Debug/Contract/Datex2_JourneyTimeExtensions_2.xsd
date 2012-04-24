@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<xs:schema xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" elementFormDefault="unqualified" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd" namespace="http://datex2.eu/schema/2/2_0" />
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1">
+  <xs:import schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd" namespace="http://datex2.eu/schema/2/2_0"/>
   <xs:simpleType name="Guid">
     <xs:annotation>
       <xs:documentation>A GUID represented as a character string of length 40.
@@ -11,8 +11,8 @@
     </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:minLength value="40" />
-      <xs:maxLength value="40" />
+      <xs:minLength value="40"/>
+      <xs:maxLength value="40"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="JourneyTime">
@@ -49,7 +49,7 @@
       <xs:documentation>A sequence of zero or more JourneyTime elements.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="journeyTime" type="JourneyTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="journeyTime" type="JourneyTime"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="JourneyTimePublication">
@@ -59,7 +59,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="D2LogicalModel:PayloadPublication">
         <xs:sequence minOccurs="1">
-          <xs:element name="journeyTimes" type="JourneyTimes" />
+          <xs:element name="journeyTimes" type="JourneyTimes"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

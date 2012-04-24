@@ -1334,551 +1334,103 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class Situation : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TrafficViewRecord : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private SeverityEnum overallSeverityField;
+        private string recordSequenceNumberField;
         
-        private bool overallSeverityFieldSpecified;
+        private TrafficElement trafficElementField;
         
-        private _SituationVersionedReference[] relatedSituationField;
+        private OperatorAction operatorActionField;
         
-        private System.DateTime situationVersionTimeField;
+        private ElaboratedData elaboratedDataField;
         
-        private bool situationVersionTimeFieldSpecified;
+        private UrlLink[] urlLinkField;
         
-        private HeaderInformation headerInformationField;
-        
-        private SituationRecord[] situationRecordField;
-        
-        private _ExtensionType situationExtensionField;
+        private _ExtensionType trafficViewRecordExtensionField;
         
         private string idField;
         
-        private string versionField;
-        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public SeverityEnum overallSeverity {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string recordSequenceNumber {
             get {
-                return this.overallSeverityField;
+                return this.recordSequenceNumberField;
             }
             set {
-                this.overallSeverityField = value;
-                this.RaisePropertyChanged("overallSeverity");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool overallSeveritySpecified {
-            get {
-                return this.overallSeverityFieldSpecified;
-            }
-            set {
-                this.overallSeverityFieldSpecified = value;
-                this.RaisePropertyChanged("overallSeveritySpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("relatedSituation", Order=1)]
-        public _SituationVersionedReference[] relatedSituation {
-            get {
-                return this.relatedSituationField;
-            }
-            set {
-                this.relatedSituationField = value;
-                this.RaisePropertyChanged("relatedSituation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public System.DateTime situationVersionTime {
-            get {
-                return this.situationVersionTimeField;
-            }
-            set {
-                this.situationVersionTimeField = value;
-                this.RaisePropertyChanged("situationVersionTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool situationVersionTimeSpecified {
-            get {
-                return this.situationVersionTimeFieldSpecified;
-            }
-            set {
-                this.situationVersionTimeFieldSpecified = value;
-                this.RaisePropertyChanged("situationVersionTimeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public HeaderInformation headerInformation {
-            get {
-                return this.headerInformationField;
-            }
-            set {
-                this.headerInformationField = value;
-                this.RaisePropertyChanged("headerInformation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("situationRecord", Order=4)]
-        public SituationRecord[] situationRecord {
-            get {
-                return this.situationRecordField;
-            }
-            set {
-                this.situationRecordField = value;
-                this.RaisePropertyChanged("situationRecord");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public _ExtensionType situationExtension {
-            get {
-                return this.situationExtensionField;
-            }
-            set {
-                this.situationExtensionField = value;
-                this.RaisePropertyChanged("situationExtension");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string version {
-            get {
-                return this.versionField;
-            }
-            set {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum SeverityEnum {
-        
-        /// <remarks/>
-        highest,
-        
-        /// <remarks/>
-        high,
-        
-        /// <remarks/>
-        medium,
-        
-        /// <remarks/>
-        low,
-        
-        /// <remarks/>
-        lowest,
-        
-        /// <remarks/>
-        none,
-        
-        /// <remarks/>
-        unknown,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _SituationVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_VmsUnitRecordVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_SituationRecordVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_PredefinedLocationVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_PredefinedItineraryVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_MeasurementSiteTableVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_MeasurementSiteRecordVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_VmsUnitTableVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_SituationVersionedReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_PredefinedNonOrderedLocationGroupVersionedReference))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class VersionedReference : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string idField;
-        
-        private string versionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string version {
-            get {
-                return this.versionField;
-            }
-            set {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _VmsUnitRecordVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _SituationRecordVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _PredefinedLocationVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _PredefinedItineraryVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _MeasurementSiteTableVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _MeasurementSiteRecordVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _VmsUnitTableVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _PredefinedNonOrderedLocationGroupVersionedReference : VersionedReference {
-        
-        private string targetClassField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string targetClass {
-            get {
-                return this.targetClassField;
-            }
-            set {
-                this.targetClassField = value;
-                this.RaisePropertyChanged("targetClass");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class HeaderInformation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private AreaOfInterestEnum areaOfInterestField;
-        
-        private bool areaOfInterestFieldSpecified;
-        
-        private ConfidentialityValueEnum confidentialityField;
-        
-        private InformationStatusEnum informationStatusField;
-        
-        private UrgencyEnum urgencyField;
-        
-        private bool urgencyFieldSpecified;
-        
-        private _ExtensionType headerInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AreaOfInterestEnum areaOfInterest {
-            get {
-                return this.areaOfInterestField;
-            }
-            set {
-                this.areaOfInterestField = value;
-                this.RaisePropertyChanged("areaOfInterest");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool areaOfInterestSpecified {
-            get {
-                return this.areaOfInterestFieldSpecified;
-            }
-            set {
-                this.areaOfInterestFieldSpecified = value;
-                this.RaisePropertyChanged("areaOfInterestSpecified");
+                this.recordSequenceNumberField = value;
+                this.RaisePropertyChanged("recordSequenceNumber");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public ConfidentialityValueEnum confidentiality {
+        public TrafficElement trafficElement {
             get {
-                return this.confidentialityField;
+                return this.trafficElementField;
             }
             set {
-                this.confidentialityField = value;
-                this.RaisePropertyChanged("confidentiality");
+                this.trafficElementField = value;
+                this.RaisePropertyChanged("trafficElement");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public InformationStatusEnum informationStatus {
+        public OperatorAction operatorAction {
             get {
-                return this.informationStatusField;
+                return this.operatorActionField;
             }
             set {
-                this.informationStatusField = value;
-                this.RaisePropertyChanged("informationStatus");
+                this.operatorActionField = value;
+                this.RaisePropertyChanged("operatorAction");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public UrgencyEnum urgency {
+        public ElaboratedData elaboratedData {
             get {
-                return this.urgencyField;
+                return this.elaboratedDataField;
             }
             set {
-                this.urgencyField = value;
-                this.RaisePropertyChanged("urgency");
+                this.elaboratedDataField = value;
+                this.RaisePropertyChanged("elaboratedData");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool urgencySpecified {
+        [System.Xml.Serialization.XmlElementAttribute("urlLink", Order=4)]
+        public UrlLink[] urlLink {
             get {
-                return this.urgencyFieldSpecified;
+                return this.urlLinkField;
             }
             set {
-                this.urgencyFieldSpecified = value;
-                this.RaisePropertyChanged("urgencySpecified");
+                this.urlLinkField = value;
+                this.RaisePropertyChanged("urlLink");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public _ExtensionType headerInformationExtension {
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public _ExtensionType trafficViewRecordExtension {
             get {
-                return this.headerInformationExtensionField;
+                return this.trafficViewRecordExtensionField;
             }
             set {
-                this.headerInformationExtensionField = value;
-                this.RaisePropertyChanged("headerInformationExtension");
+                this.trafficViewRecordExtensionField = value;
+                this.RaisePropertyChanged("trafficViewRecordExtension");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
             }
         }
         
@@ -1893,126 +1445,85 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EquipmentOrSystemFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Conditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonWeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PoorEnvironmentConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Activity))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublicEvent))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisturbanceActivity))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthorityOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Accident))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbnormalTraffic))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Obstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InfrastructureDamageObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnvironmentalObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AnimalPresenceObstruction))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum AreaOfInterestEnum {
+    public abstract partial class TrafficElement : SituationRecord {
+        
+        private _ExtensionType trafficElementExtensionField;
         
         /// <remarks/>
-        continentWide,
-        
-        /// <remarks/>
-        national,
-        
-        /// <remarks/>
-        neighbouringCountries,
-        
-        /// <remarks/>
-        notSpecified,
-        
-        /// <remarks/>
-        regional,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum ConfidentialityValueEnum {
-        
-        /// <remarks/>
-        internalUse,
-        
-        /// <remarks/>
-        noRestriction,
-        
-        /// <remarks/>
-        restrictedToAuthorities,
-        
-        /// <remarks/>
-        restrictedToAuthoritiesAndTrafficOperators,
-        
-        /// <remarks/>
-        restrictedToAuthoritiesTrafficOperatorsAndPublishers,
-        
-        /// <remarks/>
-        restrictedToAuthoritiesTrafficOperatorsAndVms,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum InformationStatusEnum {
-        
-        /// <remarks/>
-        real,
-        
-        /// <remarks/>
-        securityExercise,
-        
-        /// <remarks/>
-        technicalExercise,
-        
-        /// <remarks/>
-        test,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum UrgencyEnum {
-        
-        /// <remarks/>
-        extremelyUrgent,
-        
-        /// <remarks/>
-        urgent,
-        
-        /// <remarks/>
-        normalUrgency,
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _ExtensionType trafficElementExtension {
+            get {
+                return this.trafficElementExtensionField;
+            }
+            set {
+                this.trafficElementExtensionField = value;
+                this.RaisePropertyChanged("trafficElementExtension");
+            }
+        }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperatorAction))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkManagement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOrCarriagewayOrLaneManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinterDrivingManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralInstructionOrMessageToRoadUsers))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReroutingManagement))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralNetworkManagement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralInstructionOrMessageToRoadUsers))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinterDrivingManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOrCarriagewayOrLaneManagement))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpeedManagement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignSetting))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Roadworks))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstructionWorks))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MaintenanceWorks))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstructionWorks))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadsideAssistance))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignSetting))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonRoadEventInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CarParks))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TransitInformation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOperatorServiceDisruption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TransitInformation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadsideServiceDisruption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CarParks))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericSituationRecord))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficElement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Conditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PoorEnvironmentConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonWeatherRelatedRoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Accident))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Obstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InfrastructureDamageObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AnimalPresenceObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnvironmentalObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleObstruction))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EquipmentOrSystemFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Conditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonWeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PoorEnvironmentConditions))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Activity))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublicEvent))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisturbanceActivity))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthorityOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Accident))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbnormalTraffic))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Obstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InfrastructureDamageObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnvironmentalObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AnimalPresenceObstruction))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2370,6 +1881,31 @@ namespace TestClient.SubscriberServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum ConfidentialityValueEnum {
+        
+        /// <remarks/>
+        internalUse,
+        
+        /// <remarks/>
+        noRestriction,
+        
+        /// <remarks/>
+        restrictedToAuthorities,
+        
+        /// <remarks/>
+        restrictedToAuthoritiesAndTrafficOperators,
+        
+        /// <remarks/>
+        restrictedToAuthoritiesTrafficOperatorsAndPublishers,
+        
+        /// <remarks/>
+        restrictedToAuthoritiesTrafficOperatorsAndVms,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
     public enum ProbabilityOfOccurrenceEnum {
         
         /// <remarks/>
@@ -2380,6 +1916,34 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         riskOf,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum SeverityEnum {
+        
+        /// <remarks/>
+        highest,
+        
+        /// <remarks/>
+        high,
+        
+        /// <remarks/>
+        medium,
+        
+        /// <remarks/>
+        low,
+        
+        /// <remarks/>
+        lowest,
+        
+        /// <remarks/>
+        none,
+        
+        /// <remarks/>
+        unknown,
     }
     
     /// <remarks/>
@@ -3626,8 +3190,8 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedCause))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonManagedCause))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedCause))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3655,43 +3219,6 @@ namespace TestClient.SubscriberServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class ManagedCause : Cause {
-        
-        private _SituationRecordVersionedReference managedCauseField;
-        
-        private _ExtensionType managedCauseExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _SituationRecordVersionedReference managedCause {
-            get {
-                return this.managedCauseField;
-            }
-            set {
-                this.managedCauseField = value;
-                this.RaisePropertyChanged("managedCause");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType managedCauseExtension {
-            get {
-                return this.managedCauseExtensionField;
-            }
-            set {
-                this.managedCauseExtensionField = value;
-                this.RaisePropertyChanged("managedCauseExtension");
             }
         }
     }
@@ -3847,6 +3374,305 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class ManagedCause : Cause {
+        
+        private _SituationRecordVersionedReference managedCauseField;
+        
+        private _ExtensionType managedCauseExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _SituationRecordVersionedReference managedCause {
+            get {
+                return this.managedCauseField;
+            }
+            set {
+                this.managedCauseField = value;
+                this.RaisePropertyChanged("managedCause");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType managedCauseExtension {
+            get {
+                return this.managedCauseExtensionField;
+            }
+            set {
+                this.managedCauseExtensionField = value;
+                this.RaisePropertyChanged("managedCauseExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _SituationRecordVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_SituationVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_SituationRecordVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_MeasurementSiteRecordVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_VmsUnitRecordVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_MeasurementSiteTableVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_PredefinedLocationVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_PredefinedItineraryVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_PredefinedNonOrderedLocationGroupVersionedReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(_VmsUnitTableVersionedReference))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class VersionedReference : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string versionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
+                this.RaisePropertyChanged("version");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _SituationVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _MeasurementSiteRecordVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _VmsUnitRecordVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _MeasurementSiteTableVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _PredefinedLocationVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _PredefinedItineraryVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _PredefinedNonOrderedLocationGroupVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _VmsUnitTableVersionedReference : VersionedReference {
+        
+        private string targetClassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string targetClass {
+            get {
+                return this.targetClassField;
+            }
+            set {
+                this.targetClassField = value;
+                this.RaisePropertyChanged("targetClass");
+            }
+        }
     }
     
     /// <remarks/>
@@ -4100,14 +3926,14 @@ namespace TestClient.SubscriberServiceReference {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItineraryByIndexedLocations))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItineraryByReference))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonOrderedLocations))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonOrderedLocationGroupByReference))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonOrderedLocationGroupByList))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonOrderedLocationGroupByReference))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Location))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationByReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Area))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkLocation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Linear))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Point))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Area))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4179,8 +4005,8 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaDestination))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PointDestination))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaDestination))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4218,33 +4044,33 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AreaDestination : Destination {
+    public partial class PointDestination : Destination {
         
-        private Area areaField;
+        private Point pointField;
         
-        private _ExtensionType areaDestinationExtensionField;
+        private _ExtensionType pointDestinationExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Area area {
+        public Point point {
             get {
-                return this.areaField;
+                return this.pointField;
             }
             set {
-                this.areaField = value;
-                this.RaisePropertyChanged("area");
+                this.pointField = value;
+                this.RaisePropertyChanged("point");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType areaDestinationExtension {
+        public _ExtensionType pointDestinationExtension {
             get {
-                return this.areaDestinationExtensionField;
+                return this.pointDestinationExtensionField;
             }
             set {
-                this.areaDestinationExtensionField = value;
-                this.RaisePropertyChanged("areaDestinationExtension");
+                this.pointDestinationExtensionField = value;
+                this.RaisePropertyChanged("pointDestinationExtension");
             }
         }
     }
@@ -4255,248 +4081,114 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class Area : Location {
+    public partial class Point : NetworkLocation {
         
-        private AlertCArea alertCAreaField;
+        private TpegPointLocation tpegPointLocationField;
         
-        private TpegAreaLocation tpegAreaLocationField;
+        private AlertCPoint alertCPointField;
         
-        private _ExtensionType areaExtensionField;
+        private PointAlongLinearElement pointAlongLinearElementField;
+        
+        private PointByCoordinates pointByCoordinatesField;
+        
+        private _ExtensionType pointExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCArea alertCArea {
+        public TpegPointLocation tpegPointLocation {
             get {
-                return this.alertCAreaField;
+                return this.tpegPointLocationField;
             }
             set {
-                this.alertCAreaField = value;
-                this.RaisePropertyChanged("alertCArea");
+                this.tpegPointLocationField = value;
+                this.RaisePropertyChanged("tpegPointLocation");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TpegAreaLocation tpegAreaLocation {
+        public AlertCPoint alertCPoint {
             get {
-                return this.tpegAreaLocationField;
+                return this.alertCPointField;
             }
             set {
-                this.tpegAreaLocationField = value;
-                this.RaisePropertyChanged("tpegAreaLocation");
+                this.alertCPointField = value;
+                this.RaisePropertyChanged("alertCPoint");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType areaExtension {
+        public PointAlongLinearElement pointAlongLinearElement {
             get {
-                return this.areaExtensionField;
+                return this.pointAlongLinearElementField;
             }
             set {
-                this.areaExtensionField = value;
-                this.RaisePropertyChanged("areaExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCArea : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string alertCLocationCountryCodeField;
-        
-        private string alertCLocationTableNumberField;
-        
-        private string alertCLocationTableVersionField;
-        
-        private AlertCLocation areaLocationField;
-        
-        private _ExtensionType alertCAreaExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string alertCLocationCountryCode {
-            get {
-                return this.alertCLocationCountryCodeField;
-            }
-            set {
-                this.alertCLocationCountryCodeField = value;
-                this.RaisePropertyChanged("alertCLocationCountryCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string alertCLocationTableNumber {
-            get {
-                return this.alertCLocationTableNumberField;
-            }
-            set {
-                this.alertCLocationTableNumberField = value;
-                this.RaisePropertyChanged("alertCLocationTableNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string alertCLocationTableVersion {
-            get {
-                return this.alertCLocationTableVersionField;
-            }
-            set {
-                this.alertCLocationTableVersionField = value;
-                this.RaisePropertyChanged("alertCLocationTableVersion");
+                this.pointAlongLinearElementField = value;
+                this.RaisePropertyChanged("pointAlongLinearElement");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public AlertCLocation areaLocation {
+        public PointByCoordinates pointByCoordinates {
             get {
-                return this.areaLocationField;
+                return this.pointByCoordinatesField;
             }
             set {
-                this.areaLocationField = value;
-                this.RaisePropertyChanged("areaLocation");
+                this.pointByCoordinatesField = value;
+                this.RaisePropertyChanged("pointByCoordinates");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public _ExtensionType alertCAreaExtension {
+        public _ExtensionType pointExtension {
             get {
-                return this.alertCAreaExtensionField;
+                return this.pointExtensionField;
             }
             set {
-                this.alertCAreaExtensionField = value;
-                this.RaisePropertyChanged("alertCAreaExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                this.pointExtensionField = value;
+                this.RaisePropertyChanged("pointExtension");
             }
         }
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegSimplePoint))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegFramedPoint))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCLocation : object, System.ComponentModel.INotifyPropertyChanged {
+    public abstract partial class TpegPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private MultilingualString alertCLocationNameField;
+        private DirectionEnum tpegDirectionField;
         
-        private string specificLocationField;
-        
-        private _ExtensionType alertCLocationExtensionField;
+        private _ExtensionType tpegPointLocationExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MultilingualString alertCLocationName {
+        public DirectionEnum tpegDirection {
             get {
-                return this.alertCLocationNameField;
+                return this.tpegDirectionField;
             }
             set {
-                this.alertCLocationNameField = value;
-                this.RaisePropertyChanged("alertCLocationName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
-        public string specificLocation {
-            get {
-                return this.specificLocationField;
-            }
-            set {
-                this.specificLocationField = value;
-                this.RaisePropertyChanged("specificLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType alertCLocationExtension {
-            get {
-                return this.alertCLocationExtensionField;
-            }
-            set {
-                this.alertCLocationExtensionField = value;
-                this.RaisePropertyChanged("alertCLocationExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegGeometricArea))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegNamedOnlyArea))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class TpegAreaLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private TpegLoc01AreaLocationSubtypeEnum tpegAreaLocationTypeField;
-        
-        private TpegHeight tpegHeightField;
-        
-        private _ExtensionType tpegAreaLocationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TpegLoc01AreaLocationSubtypeEnum tpegAreaLocationType {
-            get {
-                return this.tpegAreaLocationTypeField;
-            }
-            set {
-                this.tpegAreaLocationTypeField = value;
-                this.RaisePropertyChanged("tpegAreaLocationType");
+                this.tpegDirectionField = value;
+                this.RaisePropertyChanged("tpegDirection");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TpegHeight tpegHeight {
+        public _ExtensionType tpegPointLocationExtension {
             get {
-                return this.tpegHeightField;
+                return this.tpegPointLocationExtensionField;
             }
             set {
-                this.tpegHeightField = value;
-                this.RaisePropertyChanged("tpegHeight");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType tpegAreaLocationExtension {
-            get {
-                return this.tpegAreaLocationExtensionField;
-            }
-            set {
-                this.tpegAreaLocationExtensionField = value;
-                this.RaisePropertyChanged("tpegAreaLocationExtension");
+                this.tpegPointLocationExtensionField = value;
+                this.RaisePropertyChanged("tpegPointLocationExtension");
             }
         }
         
@@ -4514,129 +4206,63 @@ namespace TestClient.SubscriberServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TpegLoc01AreaLocationSubtypeEnum {
+    public enum DirectionEnum {
         
         /// <remarks/>
-        largeArea,
+        allDirections,
         
         /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegHeight : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private float heightField;
-        
-        private bool heightFieldSpecified;
-        
-        private TpegLoc04HeightTypeEnum heightTypeField;
-        
-        private _ExtensionType tpegHeightExtensionField;
+        bothWays,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float height {
-            get {
-                return this.heightField;
-            }
-            set {
-                this.heightField = value;
-                this.RaisePropertyChanged("height");
-            }
-        }
+        clockwise,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool heightSpecified {
-            get {
-                return this.heightFieldSpecified;
-            }
-            set {
-                this.heightFieldSpecified = value;
-                this.RaisePropertyChanged("heightSpecified");
-            }
-        }
+        anticlockwise,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TpegLoc04HeightTypeEnum heightType {
-            get {
-                return this.heightTypeField;
-            }
-            set {
-                this.heightTypeField = value;
-                this.RaisePropertyChanged("heightType");
-            }
-        }
+        innerRing,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType tpegHeightExtension {
-            get {
-                return this.tpegHeightExtensionField;
-            }
-            set {
-                this.tpegHeightExtensionField = value;
-                this.RaisePropertyChanged("tpegHeightExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TpegLoc04HeightTypeEnum {
+        outerRing,
         
         /// <remarks/>
-        above,
+        northBound,
         
         /// <remarks/>
-        aboveSeaLevel,
+        northEastBound,
         
         /// <remarks/>
-        aboveStreetLevel,
+        eastBound,
         
         /// <remarks/>
-        at,
+        southEastBound,
         
         /// <remarks/>
-        atSeaLevel,
+        southBound,
         
         /// <remarks/>
-        atStreetLevel,
+        southWestBound,
         
         /// <remarks/>
-        below,
+        westBound,
         
         /// <remarks/>
-        belowSeaLevel,
+        northWestBound,
         
         /// <remarks/>
-        belowStreetLevel,
+        inboundTowardsTown,
         
         /// <remarks/>
-        undefined,
+        outboundFromTown,
         
         /// <remarks/>
         unknown,
         
         /// <remarks/>
+        opposite,
+        
+        /// <remarks/>
         other,
     }
     
@@ -4646,43 +4272,131 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegGeometricArea : TpegAreaLocation {
+    public partial class TpegSimplePoint : TpegPointLocation {
         
-        private string radiusField;
+        private TpegLoc01SimplePointLocationSubtypeEnum tpegSimplePointLocationTypeField;
         
-        private PointCoordinates centrePointField;
+        private TpegPoint pointField;
         
-        private TpegAreaDescriptor nameField;
-        
-        private _ExtensionType tpegGeometricAreaExtensionField;
+        private _ExtensionType tpegSimplePointExtensionField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string radius {
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TpegLoc01SimplePointLocationSubtypeEnum tpegSimplePointLocationType {
             get {
-                return this.radiusField;
+                return this.tpegSimplePointLocationTypeField;
             }
             set {
-                this.radiusField = value;
-                this.RaisePropertyChanged("radius");
+                this.tpegSimplePointLocationTypeField = value;
+                this.RaisePropertyChanged("tpegSimplePointLocationType");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public PointCoordinates centrePoint {
+        public TpegPoint point {
             get {
-                return this.centrePointField;
+                return this.pointField;
             }
             set {
-                this.centrePointField = value;
-                this.RaisePropertyChanged("centrePoint");
+                this.pointField = value;
+                this.RaisePropertyChanged("point");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public TpegAreaDescriptor name {
+        public _ExtensionType tpegSimplePointExtension {
+            get {
+                return this.tpegSimplePointExtensionField;
+            }
+            set {
+                this.tpegSimplePointExtensionField = value;
+                this.RaisePropertyChanged("tpegSimplePointExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TpegLoc01SimplePointLocationSubtypeEnum {
+        
+        /// <remarks/>
+        intersection,
+        
+        /// <remarks/>
+        nonLinkedPoint,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegJunction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegNonJunctionPoint))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class TpegPoint : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private _ExtensionType tpegPointExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _ExtensionType tpegPointExtension {
+            get {
+                return this.tpegPointExtensionField;
+            }
+            set {
+                this.tpegPointExtensionField = value;
+                this.RaisePropertyChanged("tpegPointExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TpegJunction : TpegPoint {
+        
+        private PointCoordinates pointCoordinatesField;
+        
+        private TpegJunctionPointDescriptor nameField;
+        
+        private TpegIlcPointDescriptor[] ilcField;
+        
+        private TpegOtherPointDescriptor[] otherNameField;
+        
+        private _ExtensionType tpegJunctionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PointCoordinates pointCoordinates {
+            get {
+                return this.pointCoordinatesField;
+            }
+            set {
+                this.pointCoordinatesField = value;
+                this.RaisePropertyChanged("pointCoordinates");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TpegJunctionPointDescriptor name {
             get {
                 return this.nameField;
             }
@@ -4693,14 +4407,38 @@ namespace TestClient.SubscriberServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public _ExtensionType tpegGeometricAreaExtension {
+        [System.Xml.Serialization.XmlElementAttribute("ilc", Order=2)]
+        public TpegIlcPointDescriptor[] ilc {
             get {
-                return this.tpegGeometricAreaExtensionField;
+                return this.ilcField;
             }
             set {
-                this.tpegGeometricAreaExtensionField = value;
-                this.RaisePropertyChanged("tpegGeometricAreaExtension");
+                this.ilcField = value;
+                this.RaisePropertyChanged("ilc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("otherName", Order=3)]
+        public TpegOtherPointDescriptor[] otherName {
+            get {
+                return this.otherNameField;
+            }
+            set {
+                this.otherNameField = value;
+                this.RaisePropertyChanged("otherName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public _ExtensionType tpegJunctionExtension {
+            get {
+                return this.tpegJunctionExtensionField;
+            }
+            set {
+                this.tpegJunctionExtensionField = value;
+                this.RaisePropertyChanged("tpegJunctionExtension");
             }
         }
     }
@@ -4752,6 +4490,130 @@ namespace TestClient.SubscriberServiceReference {
             set {
                 this.pointCoordinatesExtensionField = value;
                 this.RaisePropertyChanged("pointCoordinatesExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TpegJunctionPointDescriptor : TpegPointDescriptor {
+        
+        private TpegLoc03JunctionPointDescriptorSubtypeEnum tpegJunctionPointDescriptorTypeField;
+        
+        private _ExtensionType tpegJunctionPointDescriptorExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TpegLoc03JunctionPointDescriptorSubtypeEnum tpegJunctionPointDescriptorType {
+            get {
+                return this.tpegJunctionPointDescriptorTypeField;
+            }
+            set {
+                this.tpegJunctionPointDescriptorTypeField = value;
+                this.RaisePropertyChanged("tpegJunctionPointDescriptorType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType tpegJunctionPointDescriptorExtension {
+            get {
+                return this.tpegJunctionPointDescriptorExtensionField;
+            }
+            set {
+                this.tpegJunctionPointDescriptorExtensionField = value;
+                this.RaisePropertyChanged("tpegJunctionPointDescriptorExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TpegLoc03JunctionPointDescriptorSubtypeEnum {
+        
+        /// <remarks/>
+        junctionName,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegIlcPointDescriptor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegOtherPointDescriptor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegJunctionPointDescriptor))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class TpegPointDescriptor : TpegDescriptor {
+        
+        private _ExtensionType tpegPointDescriptorExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _ExtensionType tpegPointDescriptorExtension {
+            get {
+                return this.tpegPointDescriptorExtensionField;
+            }
+            set {
+                this.tpegPointDescriptorExtensionField = value;
+                this.RaisePropertyChanged("tpegPointDescriptorExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegPointDescriptor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegIlcPointDescriptor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegOtherPointDescriptor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegJunctionPointDescriptor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegAreaDescriptor))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class TpegDescriptor : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private MultilingualString descriptorField;
+        
+        private _ExtensionType tpegDescriptorExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MultilingualString descriptor {
+            get {
+                return this.descriptorField;
+            }
+            set {
+                this.descriptorField = value;
+                this.RaisePropertyChanged("descriptor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType tpegDescriptorExtension {
+            get {
+                return this.tpegDescriptorExtensionField;
+            }
+            set {
+                this.tpegDescriptorExtensionField = value;
+                this.RaisePropertyChanged("tpegDescriptorExtension");
             }
         }
         
@@ -4840,83 +4702,6 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         other,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegAreaDescriptor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegPointDescriptor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegIlcPointDescriptor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegOtherPointDescriptor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegJunctionPointDescriptor))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class TpegDescriptor : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private MultilingualString descriptorField;
-        
-        private _ExtensionType tpegDescriptorExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MultilingualString descriptor {
-            get {
-                return this.descriptorField;
-            }
-            set {
-                this.descriptorField = value;
-                this.RaisePropertyChanged("descriptor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType tpegDescriptorExtension {
-            get {
-                return this.tpegDescriptorExtensionField;
-            }
-            set {
-                this.tpegDescriptorExtensionField = value;
-                this.RaisePropertyChanged("tpegDescriptorExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegIlcPointDescriptor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegOtherPointDescriptor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegJunctionPointDescriptor))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class TpegPointDescriptor : TpegDescriptor {
-        
-        private _ExtensionType tpegPointDescriptorExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _ExtensionType tpegPointDescriptorExtension {
-            get {
-                return this.tpegPointDescriptorExtensionField;
-            }
-            set {
-                this.tpegPointDescriptorExtensionField = value;
-                this.RaisePropertyChanged("tpegPointDescriptorExtension");
-            }
-        }
     }
     
     /// <remarks/>
@@ -5106,62 +4891,29 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegJunctionPointDescriptor : TpegPointDescriptor {
+    public partial class TpegNonJunctionPoint : TpegPoint {
         
-        private TpegLoc03JunctionPointDescriptorSubtypeEnum tpegJunctionPointDescriptorTypeField;
+        private PointCoordinates pointCoordinatesField;
         
-        private _ExtensionType tpegJunctionPointDescriptorExtensionField;
+        private TpegOtherPointDescriptor[] nameField;
+        
+        private _ExtensionType tpegNonJunctionPointExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TpegLoc03JunctionPointDescriptorSubtypeEnum tpegJunctionPointDescriptorType {
+        public PointCoordinates pointCoordinates {
             get {
-                return this.tpegJunctionPointDescriptorTypeField;
+                return this.pointCoordinatesField;
             }
             set {
-                this.tpegJunctionPointDescriptorTypeField = value;
-                this.RaisePropertyChanged("tpegJunctionPointDescriptorType");
+                this.pointCoordinatesField = value;
+                this.RaisePropertyChanged("pointCoordinates");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType tpegJunctionPointDescriptorExtension {
-            get {
-                return this.tpegJunctionPointDescriptorExtensionField;
-            }
-            set {
-                this.tpegJunctionPointDescriptorExtensionField = value;
-                this.RaisePropertyChanged("tpegJunctionPointDescriptorExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TpegLoc03JunctionPointDescriptorSubtypeEnum {
-        
-        /// <remarks/>
-        junctionName,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegNamedOnlyArea : TpegAreaLocation {
-        
-        private TpegAreaDescriptor[] nameField;
-        
-        private _ExtensionType tpegNamedOnlyAreaExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("name", Order=0)]
-        public TpegAreaDescriptor[] name {
+        [System.Xml.Serialization.XmlElementAttribute("name", Order=1)]
+        public TpegOtherPointDescriptor[] name {
             get {
                 return this.nameField;
             }
@@ -5172,70 +4924,14 @@ namespace TestClient.SubscriberServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType tpegNamedOnlyAreaExtension {
-            get {
-                return this.tpegNamedOnlyAreaExtensionField;
-            }
-            set {
-                this.tpegNamedOnlyAreaExtensionField = value;
-                this.RaisePropertyChanged("tpegNamedOnlyAreaExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationByReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Area))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkLocation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Linear))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Point))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class Location : GroupOfLocations {
-        
-        private ExternalReferencing[] externalReferencingField;
-        
-        private PointCoordinates locationForDisplayField;
-        
-        private _ExtensionType locationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("externalReferencing", Order=0)]
-        public ExternalReferencing[] externalReferencing {
-            get {
-                return this.externalReferencingField;
-            }
-            set {
-                this.externalReferencingField = value;
-                this.RaisePropertyChanged("externalReferencing");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public PointCoordinates locationForDisplay {
-            get {
-                return this.locationForDisplayField;
-            }
-            set {
-                this.locationForDisplayField = value;
-                this.RaisePropertyChanged("locationForDisplay");
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType locationExtension {
+        public _ExtensionType tpegNonJunctionPointExtension {
             get {
-                return this.locationExtensionField;
+                return this.tpegNonJunctionPointExtensionField;
             }
             set {
-                this.locationExtensionField = value;
-                this.RaisePropertyChanged("locationExtension");
+                this.tpegNonJunctionPointExtensionField = value;
+                this.RaisePropertyChanged("tpegNonJunctionPointExtension");
             }
         }
     }
@@ -5246,47 +4942,152 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class ExternalReferencing : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TpegFramedPoint : TpegPointLocation {
         
-        private string externalLocationCodeField;
+        private TpegLoc01FramedPointLocationSubtypeEnum tpegFramedPointLocationTypeField;
         
-        private string externalReferencingSystemField;
+        private TpegNonJunctionPoint framedPointField;
         
-        private _ExtensionType externalReferencingExtensionField;
+        private TpegPoint toField;
+        
+        private TpegPoint fromField;
+        
+        private _ExtensionType tpegFramedPointExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string externalLocationCode {
+        public TpegLoc01FramedPointLocationSubtypeEnum tpegFramedPointLocationType {
             get {
-                return this.externalLocationCodeField;
+                return this.tpegFramedPointLocationTypeField;
             }
             set {
-                this.externalLocationCodeField = value;
-                this.RaisePropertyChanged("externalLocationCode");
+                this.tpegFramedPointLocationTypeField = value;
+                this.RaisePropertyChanged("tpegFramedPointLocationType");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string externalReferencingSystem {
+        public TpegNonJunctionPoint framedPoint {
             get {
-                return this.externalReferencingSystemField;
+                return this.framedPointField;
             }
             set {
-                this.externalReferencingSystemField = value;
-                this.RaisePropertyChanged("externalReferencingSystem");
+                this.framedPointField = value;
+                this.RaisePropertyChanged("framedPoint");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType externalReferencingExtension {
+        public TpegPoint to {
             get {
-                return this.externalReferencingExtensionField;
+                return this.toField;
             }
             set {
-                this.externalReferencingExtensionField = value;
-                this.RaisePropertyChanged("externalReferencingExtension");
+                this.toField = value;
+                this.RaisePropertyChanged("to");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public TpegPoint from {
+            get {
+                return this.fromField;
+            }
+            set {
+                this.fromField = value;
+                this.RaisePropertyChanged("from");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public _ExtensionType tpegFramedPointExtension {
+            get {
+                return this.tpegFramedPointExtensionField;
+            }
+            set {
+                this.tpegFramedPointExtensionField = value;
+                this.RaisePropertyChanged("tpegFramedPointExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TpegLoc01FramedPointLocationSubtypeEnum {
+        
+        /// <remarks/>
+        framedPoint,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCMethod2Point))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCMethod4Point))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class AlertCPoint : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string alertCLocationCountryCodeField;
+        
+        private string alertCLocationTableNumberField;
+        
+        private string alertCLocationTableVersionField;
+        
+        private _ExtensionType alertCPointExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string alertCLocationCountryCode {
+            get {
+                return this.alertCLocationCountryCodeField;
+            }
+            set {
+                this.alertCLocationCountryCodeField = value;
+                this.RaisePropertyChanged("alertCLocationCountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string alertCLocationTableNumber {
+            get {
+                return this.alertCLocationTableNumberField;
+            }
+            set {
+                this.alertCLocationTableNumberField = value;
+                this.RaisePropertyChanged("alertCLocationTableNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string alertCLocationTableVersion {
+            get {
+                return this.alertCLocationTableVersionField;
+            }
+            set {
+                this.alertCLocationTableVersionField = value;
+                this.RaisePropertyChanged("alertCLocationTableVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public _ExtensionType alertCPointExtension {
+            get {
+                return this.alertCPointExtensionField;
+            }
+            set {
+                this.alertCPointExtensionField = value;
+                this.RaisePropertyChanged("alertCPointExtension");
             }
         }
         
@@ -5306,33 +5107,1253 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class LocationByReference : Location {
+    public partial class AlertCMethod2Point : AlertCPoint {
         
-        private _PredefinedLocationVersionedReference predefinedLocationReferenceField;
+        private AlertCDirection alertCDirectionField;
         
-        private _ExtensionType locationByReferenceExtensionField;
+        private AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocationField;
+        
+        private _ExtensionType alertCMethod2PointExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _PredefinedLocationVersionedReference predefinedLocationReference {
+        public AlertCDirection alertCDirection {
             get {
-                return this.predefinedLocationReferenceField;
+                return this.alertCDirectionField;
             }
             set {
-                this.predefinedLocationReferenceField = value;
-                this.RaisePropertyChanged("predefinedLocationReference");
+                this.alertCDirectionField = value;
+                this.RaisePropertyChanged("alertCDirection");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType locationByReferenceExtension {
+        public AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocation {
             get {
-                return this.locationByReferenceExtensionField;
+                return this.alertCMethod2PrimaryPointLocationField;
             }
             set {
-                this.locationByReferenceExtensionField = value;
-                this.RaisePropertyChanged("locationByReferenceExtension");
+                this.alertCMethod2PrimaryPointLocationField = value;
+                this.RaisePropertyChanged("alertCMethod2PrimaryPointLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType alertCMethod2PointExtension {
+            get {
+                return this.alertCMethod2PointExtensionField;
+            }
+            set {
+                this.alertCMethod2PointExtensionField = value;
+                this.RaisePropertyChanged("alertCMethod2PointExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AlertCDirection : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AlertCDirectionEnum alertCDirectionCodedField;
+        
+        private MultilingualString alertCDirectionNamedField;
+        
+        private bool alertCDirectionSenseField;
+        
+        private bool alertCDirectionSenseFieldSpecified;
+        
+        private _ExtensionType alertCDirectionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AlertCDirectionEnum alertCDirectionCoded {
+            get {
+                return this.alertCDirectionCodedField;
+            }
+            set {
+                this.alertCDirectionCodedField = value;
+                this.RaisePropertyChanged("alertCDirectionCoded");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public MultilingualString alertCDirectionNamed {
+            get {
+                return this.alertCDirectionNamedField;
+            }
+            set {
+                this.alertCDirectionNamedField = value;
+                this.RaisePropertyChanged("alertCDirectionNamed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool alertCDirectionSense {
+            get {
+                return this.alertCDirectionSenseField;
+            }
+            set {
+                this.alertCDirectionSenseField = value;
+                this.RaisePropertyChanged("alertCDirectionSense");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool alertCDirectionSenseSpecified {
+            get {
+                return this.alertCDirectionSenseFieldSpecified;
+            }
+            set {
+                this.alertCDirectionSenseFieldSpecified = value;
+                this.RaisePropertyChanged("alertCDirectionSenseSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public _ExtensionType alertCDirectionExtension {
+            get {
+                return this.alertCDirectionExtensionField;
+            }
+            set {
+                this.alertCDirectionExtensionField = value;
+                this.RaisePropertyChanged("alertCDirectionExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum AlertCDirectionEnum {
+        
+        /// <remarks/>
+        both,
+        
+        /// <remarks/>
+        negative,
+        
+        /// <remarks/>
+        positive,
+        
+        /// <remarks/>
+        unknown,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AlertCMethod2PrimaryPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AlertCLocation alertCLocationField;
+        
+        private _ExtensionType alertCMethod2PrimaryPointLocationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AlertCLocation alertCLocation {
+            get {
+                return this.alertCLocationField;
+            }
+            set {
+                this.alertCLocationField = value;
+                this.RaisePropertyChanged("alertCLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType alertCMethod2PrimaryPointLocationExtension {
+            get {
+                return this.alertCMethod2PrimaryPointLocationExtensionField;
+            }
+            set {
+                this.alertCMethod2PrimaryPointLocationExtensionField = value;
+                this.RaisePropertyChanged("alertCMethod2PrimaryPointLocationExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AlertCLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private MultilingualString alertCLocationNameField;
+        
+        private string specificLocationField;
+        
+        private _ExtensionType alertCLocationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MultilingualString alertCLocationName {
+            get {
+                return this.alertCLocationNameField;
+            }
+            set {
+                this.alertCLocationNameField = value;
+                this.RaisePropertyChanged("alertCLocationName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
+        public string specificLocation {
+            get {
+                return this.specificLocationField;
+            }
+            set {
+                this.specificLocationField = value;
+                this.RaisePropertyChanged("specificLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType alertCLocationExtension {
+            get {
+                return this.alertCLocationExtensionField;
+            }
+            set {
+                this.alertCLocationExtensionField = value;
+                this.RaisePropertyChanged("alertCLocationExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AlertCMethod4Point : AlertCPoint {
+        
+        private AlertCDirection alertCDirectionField;
+        
+        private AlertCMethod4PrimaryPointLocation alertCMethod4PrimaryPointLocationField;
+        
+        private _ExtensionType alertCMethod4PointExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AlertCDirection alertCDirection {
+            get {
+                return this.alertCDirectionField;
+            }
+            set {
+                this.alertCDirectionField = value;
+                this.RaisePropertyChanged("alertCDirection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public AlertCMethod4PrimaryPointLocation alertCMethod4PrimaryPointLocation {
+            get {
+                return this.alertCMethod4PrimaryPointLocationField;
+            }
+            set {
+                this.alertCMethod4PrimaryPointLocationField = value;
+                this.RaisePropertyChanged("alertCMethod4PrimaryPointLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType alertCMethod4PointExtension {
+            get {
+                return this.alertCMethod4PointExtensionField;
+            }
+            set {
+                this.alertCMethod4PointExtensionField = value;
+                this.RaisePropertyChanged("alertCMethod4PointExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AlertCMethod4PrimaryPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AlertCLocation alertCLocationField;
+        
+        private OffsetDistance offsetDistanceField;
+        
+        private _ExtensionType alertCMethod4PrimaryPointLocationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AlertCLocation alertCLocation {
+            get {
+                return this.alertCLocationField;
+            }
+            set {
+                this.alertCLocationField = value;
+                this.RaisePropertyChanged("alertCLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public OffsetDistance offsetDistance {
+            get {
+                return this.offsetDistanceField;
+            }
+            set {
+                this.offsetDistanceField = value;
+                this.RaisePropertyChanged("offsetDistance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType alertCMethod4PrimaryPointLocationExtension {
+            get {
+                return this.alertCMethod4PrimaryPointLocationExtensionField;
+            }
+            set {
+                this.alertCMethod4PrimaryPointLocationExtensionField = value;
+                this.RaisePropertyChanged("alertCMethod4PrimaryPointLocationExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class OffsetDistance : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string offsetDistanceField;
+        
+        private _ExtensionType offsetDistanceExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string offsetDistance {
+            get {
+                return this.offsetDistanceField;
+            }
+            set {
+                this.offsetDistanceField = value;
+                this.RaisePropertyChanged("offsetDistance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType offsetDistanceExtension {
+            get {
+                return this.offsetDistanceExtensionField;
+            }
+            set {
+                this.offsetDistanceExtensionField = value;
+                this.RaisePropertyChanged("offsetDistanceExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PointAlongLinearElement : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private MultilingualString administrativeAreaOfPointField;
+        
+        private DirectionEnum directionBoundAtPointField;
+        
+        private bool directionBoundAtPointFieldSpecified;
+        
+        private LinearReferencingDirectionEnum directionRelativeAtPointField;
+        
+        private bool directionRelativeAtPointFieldSpecified;
+        
+        private HeightGradeEnum heightGradeOfPointField;
+        
+        private bool heightGradeOfPointFieldSpecified;
+        
+        private LinearElement linearElementField;
+        
+        private DistanceAlongLinearElement distanceAlongLinearElementField;
+        
+        private _ExtensionType pointAlongLinearElementExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MultilingualString administrativeAreaOfPoint {
+            get {
+                return this.administrativeAreaOfPointField;
+            }
+            set {
+                this.administrativeAreaOfPointField = value;
+                this.RaisePropertyChanged("administrativeAreaOfPoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public DirectionEnum directionBoundAtPoint {
+            get {
+                return this.directionBoundAtPointField;
+            }
+            set {
+                this.directionBoundAtPointField = value;
+                this.RaisePropertyChanged("directionBoundAtPoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool directionBoundAtPointSpecified {
+            get {
+                return this.directionBoundAtPointFieldSpecified;
+            }
+            set {
+                this.directionBoundAtPointFieldSpecified = value;
+                this.RaisePropertyChanged("directionBoundAtPointSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public LinearReferencingDirectionEnum directionRelativeAtPoint {
+            get {
+                return this.directionRelativeAtPointField;
+            }
+            set {
+                this.directionRelativeAtPointField = value;
+                this.RaisePropertyChanged("directionRelativeAtPoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool directionRelativeAtPointSpecified {
+            get {
+                return this.directionRelativeAtPointFieldSpecified;
+            }
+            set {
+                this.directionRelativeAtPointFieldSpecified = value;
+                this.RaisePropertyChanged("directionRelativeAtPointSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public HeightGradeEnum heightGradeOfPoint {
+            get {
+                return this.heightGradeOfPointField;
+            }
+            set {
+                this.heightGradeOfPointField = value;
+                this.RaisePropertyChanged("heightGradeOfPoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool heightGradeOfPointSpecified {
+            get {
+                return this.heightGradeOfPointFieldSpecified;
+            }
+            set {
+                this.heightGradeOfPointFieldSpecified = value;
+                this.RaisePropertyChanged("heightGradeOfPointSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public LinearElement linearElement {
+            get {
+                return this.linearElementField;
+            }
+            set {
+                this.linearElementField = value;
+                this.RaisePropertyChanged("linearElement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public DistanceAlongLinearElement distanceAlongLinearElement {
+            get {
+                return this.distanceAlongLinearElementField;
+            }
+            set {
+                this.distanceAlongLinearElementField = value;
+                this.RaisePropertyChanged("distanceAlongLinearElement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public _ExtensionType pointAlongLinearElementExtension {
+            get {
+                return this.pointAlongLinearElementExtensionField;
+            }
+            set {
+                this.pointAlongLinearElementExtensionField = value;
+                this.RaisePropertyChanged("pointAlongLinearElementExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum LinearReferencingDirectionEnum {
+        
+        /// <remarks/>
+        both,
+        
+        /// <remarks/>
+        opposite,
+        
+        /// <remarks/>
+        aligned,
+        
+        /// <remarks/>
+        unknown,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum HeightGradeEnum {
+        
+        /// <remarks/>
+        aboveGrade,
+        
+        /// <remarks/>
+        atGrade,
+        
+        /// <remarks/>
+        belowGrade,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinearElementByCode))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinearElementByPoints))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class LinearElement : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private MultilingualString roadNameField;
+        
+        private string roadNumberField;
+        
+        private string linearElementReferenceModelField;
+        
+        private string linearElementReferenceModelVersionField;
+        
+        private LinearElementNatureEnum linearElementNatureField;
+        
+        private bool linearElementNatureFieldSpecified;
+        
+        private _ExtensionType linearElementExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MultilingualString roadName {
+            get {
+                return this.roadNameField;
+            }
+            set {
+                this.roadNameField = value;
+                this.RaisePropertyChanged("roadName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string roadNumber {
+            get {
+                return this.roadNumberField;
+            }
+            set {
+                this.roadNumberField = value;
+                this.RaisePropertyChanged("roadNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string linearElementReferenceModel {
+            get {
+                return this.linearElementReferenceModelField;
+            }
+            set {
+                this.linearElementReferenceModelField = value;
+                this.RaisePropertyChanged("linearElementReferenceModel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string linearElementReferenceModelVersion {
+            get {
+                return this.linearElementReferenceModelVersionField;
+            }
+            set {
+                this.linearElementReferenceModelVersionField = value;
+                this.RaisePropertyChanged("linearElementReferenceModelVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public LinearElementNatureEnum linearElementNature {
+            get {
+                return this.linearElementNatureField;
+            }
+            set {
+                this.linearElementNatureField = value;
+                this.RaisePropertyChanged("linearElementNature");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool linearElementNatureSpecified {
+            get {
+                return this.linearElementNatureFieldSpecified;
+            }
+            set {
+                this.linearElementNatureFieldSpecified = value;
+                this.RaisePropertyChanged("linearElementNatureSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public _ExtensionType linearElementExtension {
+            get {
+                return this.linearElementExtensionField;
+            }
+            set {
+                this.linearElementExtensionField = value;
+                this.RaisePropertyChanged("linearElementExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum LinearElementNatureEnum {
+        
+        /// <remarks/>
+        road,
+        
+        /// <remarks/>
+        roadSection,
+        
+        /// <remarks/>
+        slipRoad,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class LinearElementByCode : LinearElement {
+        
+        private string linearElementIdentifierField;
+        
+        private _ExtensionType linearElementByCodeExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string linearElementIdentifier {
+            get {
+                return this.linearElementIdentifierField;
+            }
+            set {
+                this.linearElementIdentifierField = value;
+                this.RaisePropertyChanged("linearElementIdentifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType linearElementByCodeExtension {
+            get {
+                return this.linearElementByCodeExtensionField;
+            }
+            set {
+                this.linearElementByCodeExtensionField = value;
+                this.RaisePropertyChanged("linearElementByCodeExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class LinearElementByPoints : LinearElement {
+        
+        private Referent startPointOfLinearElementField;
+        
+        private _IntermediatePointOnLinearElement[] intermediatePointOnLinearElementField;
+        
+        private Referent endPointOfLinearElementField;
+        
+        private _ExtensionType linearElementByPointsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Referent startPointOfLinearElement {
+            get {
+                return this.startPointOfLinearElementField;
+            }
+            set {
+                this.startPointOfLinearElementField = value;
+                this.RaisePropertyChanged("startPointOfLinearElement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("intermediatePointOnLinearElement", Order=1)]
+        public _IntermediatePointOnLinearElement[] intermediatePointOnLinearElement {
+            get {
+                return this.intermediatePointOnLinearElementField;
+            }
+            set {
+                this.intermediatePointOnLinearElementField = value;
+                this.RaisePropertyChanged("intermediatePointOnLinearElement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Referent endPointOfLinearElement {
+            get {
+                return this.endPointOfLinearElementField;
+            }
+            set {
+                this.endPointOfLinearElementField = value;
+                this.RaisePropertyChanged("endPointOfLinearElement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public _ExtensionType linearElementByPointsExtension {
+            get {
+                return this.linearElementByPointsExtensionField;
+            }
+            set {
+                this.linearElementByPointsExtensionField = value;
+                this.RaisePropertyChanged("linearElementByPointsExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class Referent : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string referentIdentifierField;
+        
+        private string referentNameField;
+        
+        private ReferentTypeEnum referentTypeField;
+        
+        private MultilingualString referentDescriptionField;
+        
+        private PointCoordinates pointCoordinatesField;
+        
+        private _ExtensionType referentExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string referentIdentifier {
+            get {
+                return this.referentIdentifierField;
+            }
+            set {
+                this.referentIdentifierField = value;
+                this.RaisePropertyChanged("referentIdentifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string referentName {
+            get {
+                return this.referentNameField;
+            }
+            set {
+                this.referentNameField = value;
+                this.RaisePropertyChanged("referentName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ReferentTypeEnum referentType {
+            get {
+                return this.referentTypeField;
+            }
+            set {
+                this.referentTypeField = value;
+                this.RaisePropertyChanged("referentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public MultilingualString referentDescription {
+            get {
+                return this.referentDescriptionField;
+            }
+            set {
+                this.referentDescriptionField = value;
+                this.RaisePropertyChanged("referentDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public PointCoordinates pointCoordinates {
+            get {
+                return this.pointCoordinatesField;
+            }
+            set {
+                this.pointCoordinatesField = value;
+                this.RaisePropertyChanged("pointCoordinates");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public _ExtensionType referentExtension {
+            get {
+                return this.referentExtensionField;
+            }
+            set {
+                this.referentExtensionField = value;
+                this.RaisePropertyChanged("referentExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum ReferentTypeEnum {
+        
+        /// <remarks/>
+        boundary,
+        
+        /// <remarks/>
+        intersection,
+        
+        /// <remarks/>
+        referenceMarker,
+        
+        /// <remarks/>
+        landmark,
+        
+        /// <remarks/>
+        roadNode,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _IntermediatePointOnLinearElement : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Referent referentField;
+        
+        private int indexField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Referent referent {
+            get {
+                return this.referentField;
+            }
+            set {
+                this.referentField = value;
+                this.RaisePropertyChanged("referent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+                this.RaisePropertyChanged("index");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentageDistanceAlongLinearElement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DistanceFromLinearElementStart))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DistanceFromLinearElementReferent))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class DistanceAlongLinearElement : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private _ExtensionType distanceAlongLinearElementExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _ExtensionType distanceAlongLinearElementExtension {
+            get {
+                return this.distanceAlongLinearElementExtensionField;
+            }
+            set {
+                this.distanceAlongLinearElementExtensionField = value;
+                this.RaisePropertyChanged("distanceAlongLinearElementExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PercentageDistanceAlongLinearElement : DistanceAlongLinearElement {
+        
+        private float percentageDistanceAlongField;
+        
+        private _ExtensionType percentageDistanceAlongLinearElementExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float percentageDistanceAlong {
+            get {
+                return this.percentageDistanceAlongField;
+            }
+            set {
+                this.percentageDistanceAlongField = value;
+                this.RaisePropertyChanged("percentageDistanceAlong");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType percentageDistanceAlongLinearElementExtension {
+            get {
+                return this.percentageDistanceAlongLinearElementExtensionField;
+            }
+            set {
+                this.percentageDistanceAlongLinearElementExtensionField = value;
+                this.RaisePropertyChanged("percentageDistanceAlongLinearElementExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class DistanceFromLinearElementStart : DistanceAlongLinearElement {
+        
+        private float distanceAlongField;
+        
+        private _ExtensionType distanceFromLinearElementStartExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float distanceAlong {
+            get {
+                return this.distanceAlongField;
+            }
+            set {
+                this.distanceAlongField = value;
+                this.RaisePropertyChanged("distanceAlong");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType distanceFromLinearElementStartExtension {
+            get {
+                return this.distanceFromLinearElementStartExtensionField;
+            }
+            set {
+                this.distanceFromLinearElementStartExtensionField = value;
+                this.RaisePropertyChanged("distanceFromLinearElementStartExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class DistanceFromLinearElementReferent : DistanceAlongLinearElement {
+        
+        private float distanceAlongField;
+        
+        private Referent fromReferentField;
+        
+        private Referent towardsReferentField;
+        
+        private _ExtensionType distanceFromLinearElementReferentExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float distanceAlong {
+            get {
+                return this.distanceAlongField;
+            }
+            set {
+                this.distanceAlongField = value;
+                this.RaisePropertyChanged("distanceAlong");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Referent fromReferent {
+            get {
+                return this.fromReferentField;
+            }
+            set {
+                this.fromReferentField = value;
+                this.RaisePropertyChanged("fromReferent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Referent towardsReferent {
+            get {
+                return this.towardsReferentField;
+            }
+            set {
+                this.towardsReferentField = value;
+                this.RaisePropertyChanged("towardsReferent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public _ExtensionType distanceFromLinearElementReferentExtension {
+            get {
+                return this.distanceFromLinearElementReferentExtensionField;
+            }
+            set {
+                this.distanceFromLinearElementReferentExtensionField = value;
+                this.RaisePropertyChanged("distanceFromLinearElementReferentExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PointByCoordinates : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string bearingField;
+        
+        private PointCoordinates pointCoordinatesField;
+        
+        private _ExtensionType pointByCoordinatesExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string bearing {
+            get {
+                return this.bearingField;
+            }
+            set {
+                this.bearingField = value;
+                this.RaisePropertyChanged("bearing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PointCoordinates pointCoordinates {
+            get {
+                return this.pointCoordinatesField;
+            }
+            set {
+                this.pointCoordinatesField = value;
+                this.RaisePropertyChanged("pointCoordinates");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType pointByCoordinatesExtension {
+            get {
+                return this.pointByCoordinatesExtensionField;
+            }
+            set {
+                this.pointByCoordinatesExtensionField = value;
+                this.RaisePropertyChanged("pointByCoordinatesExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5856,6 +6877,592 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationByReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkLocation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Linear))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Point))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Area))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class Location : GroupOfLocations {
+        
+        private ExternalReferencing[] externalReferencingField;
+        
+        private PointCoordinates locationForDisplayField;
+        
+        private _ExtensionType locationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("externalReferencing", Order=0)]
+        public ExternalReferencing[] externalReferencing {
+            get {
+                return this.externalReferencingField;
+            }
+            set {
+                this.externalReferencingField = value;
+                this.RaisePropertyChanged("externalReferencing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PointCoordinates locationForDisplay {
+            get {
+                return this.locationForDisplayField;
+            }
+            set {
+                this.locationForDisplayField = value;
+                this.RaisePropertyChanged("locationForDisplay");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType locationExtension {
+            get {
+                return this.locationExtensionField;
+            }
+            set {
+                this.locationExtensionField = value;
+                this.RaisePropertyChanged("locationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class ExternalReferencing : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string externalLocationCodeField;
+        
+        private string externalReferencingSystemField;
+        
+        private _ExtensionType externalReferencingExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string externalLocationCode {
+            get {
+                return this.externalLocationCodeField;
+            }
+            set {
+                this.externalLocationCodeField = value;
+                this.RaisePropertyChanged("externalLocationCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string externalReferencingSystem {
+            get {
+                return this.externalReferencingSystemField;
+            }
+            set {
+                this.externalReferencingSystemField = value;
+                this.RaisePropertyChanged("externalReferencingSystem");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType externalReferencingExtension {
+            get {
+                return this.externalReferencingExtensionField;
+            }
+            set {
+                this.externalReferencingExtensionField = value;
+                this.RaisePropertyChanged("externalReferencingExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class LocationByReference : Location {
+        
+        private _PredefinedLocationVersionedReference predefinedLocationReferenceField;
+        
+        private _ExtensionType locationByReferenceExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _PredefinedLocationVersionedReference predefinedLocationReference {
+            get {
+                return this.predefinedLocationReferenceField;
+            }
+            set {
+                this.predefinedLocationReferenceField = value;
+                this.RaisePropertyChanged("predefinedLocationReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType locationByReferenceExtension {
+            get {
+                return this.locationByReferenceExtensionField;
+            }
+            set {
+                this.locationByReferenceExtensionField = value;
+                this.RaisePropertyChanged("locationByReferenceExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class Area : Location {
+        
+        private AlertCArea alertCAreaField;
+        
+        private TpegAreaLocation tpegAreaLocationField;
+        
+        private _ExtensionType areaExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AlertCArea alertCArea {
+            get {
+                return this.alertCAreaField;
+            }
+            set {
+                this.alertCAreaField = value;
+                this.RaisePropertyChanged("alertCArea");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TpegAreaLocation tpegAreaLocation {
+            get {
+                return this.tpegAreaLocationField;
+            }
+            set {
+                this.tpegAreaLocationField = value;
+                this.RaisePropertyChanged("tpegAreaLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType areaExtension {
+            get {
+                return this.areaExtensionField;
+            }
+            set {
+                this.areaExtensionField = value;
+                this.RaisePropertyChanged("areaExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AlertCArea : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string alertCLocationCountryCodeField;
+        
+        private string alertCLocationTableNumberField;
+        
+        private string alertCLocationTableVersionField;
+        
+        private AlertCLocation areaLocationField;
+        
+        private _ExtensionType alertCAreaExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string alertCLocationCountryCode {
+            get {
+                return this.alertCLocationCountryCodeField;
+            }
+            set {
+                this.alertCLocationCountryCodeField = value;
+                this.RaisePropertyChanged("alertCLocationCountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string alertCLocationTableNumber {
+            get {
+                return this.alertCLocationTableNumberField;
+            }
+            set {
+                this.alertCLocationTableNumberField = value;
+                this.RaisePropertyChanged("alertCLocationTableNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string alertCLocationTableVersion {
+            get {
+                return this.alertCLocationTableVersionField;
+            }
+            set {
+                this.alertCLocationTableVersionField = value;
+                this.RaisePropertyChanged("alertCLocationTableVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public AlertCLocation areaLocation {
+            get {
+                return this.areaLocationField;
+            }
+            set {
+                this.areaLocationField = value;
+                this.RaisePropertyChanged("areaLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public _ExtensionType alertCAreaExtension {
+            get {
+                return this.alertCAreaExtensionField;
+            }
+            set {
+                this.alertCAreaExtensionField = value;
+                this.RaisePropertyChanged("alertCAreaExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegGeometricArea))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegNamedOnlyArea))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class TpegAreaLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private TpegLoc01AreaLocationSubtypeEnum tpegAreaLocationTypeField;
+        
+        private TpegHeight tpegHeightField;
+        
+        private _ExtensionType tpegAreaLocationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TpegLoc01AreaLocationSubtypeEnum tpegAreaLocationType {
+            get {
+                return this.tpegAreaLocationTypeField;
+            }
+            set {
+                this.tpegAreaLocationTypeField = value;
+                this.RaisePropertyChanged("tpegAreaLocationType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TpegHeight tpegHeight {
+            get {
+                return this.tpegHeightField;
+            }
+            set {
+                this.tpegHeightField = value;
+                this.RaisePropertyChanged("tpegHeight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType tpegAreaLocationExtension {
+            get {
+                return this.tpegAreaLocationExtensionField;
+            }
+            set {
+                this.tpegAreaLocationExtensionField = value;
+                this.RaisePropertyChanged("tpegAreaLocationExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TpegLoc01AreaLocationSubtypeEnum {
+        
+        /// <remarks/>
+        largeArea,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TpegHeight : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private float heightField;
+        
+        private bool heightFieldSpecified;
+        
+        private TpegLoc04HeightTypeEnum heightTypeField;
+        
+        private _ExtensionType tpegHeightExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float height {
+            get {
+                return this.heightField;
+            }
+            set {
+                this.heightField = value;
+                this.RaisePropertyChanged("height");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool heightSpecified {
+            get {
+                return this.heightFieldSpecified;
+            }
+            set {
+                this.heightFieldSpecified = value;
+                this.RaisePropertyChanged("heightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TpegLoc04HeightTypeEnum heightType {
+            get {
+                return this.heightTypeField;
+            }
+            set {
+                this.heightTypeField = value;
+                this.RaisePropertyChanged("heightType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType tpegHeightExtension {
+            get {
+                return this.tpegHeightExtensionField;
+            }
+            set {
+                this.tpegHeightExtensionField = value;
+                this.RaisePropertyChanged("tpegHeightExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TpegLoc04HeightTypeEnum {
+        
+        /// <remarks/>
+        above,
+        
+        /// <remarks/>
+        aboveSeaLevel,
+        
+        /// <remarks/>
+        aboveStreetLevel,
+        
+        /// <remarks/>
+        at,
+        
+        /// <remarks/>
+        atSeaLevel,
+        
+        /// <remarks/>
+        atStreetLevel,
+        
+        /// <remarks/>
+        below,
+        
+        /// <remarks/>
+        belowSeaLevel,
+        
+        /// <remarks/>
+        belowStreetLevel,
+        
+        /// <remarks/>
+        undefined,
+        
+        /// <remarks/>
+        unknown,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TpegGeometricArea : TpegAreaLocation {
+        
+        private string radiusField;
+        
+        private PointCoordinates centrePointField;
+        
+        private TpegAreaDescriptor nameField;
+        
+        private _ExtensionType tpegGeometricAreaExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string radius {
+            get {
+                return this.radiusField;
+            }
+            set {
+                this.radiusField = value;
+                this.RaisePropertyChanged("radius");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PointCoordinates centrePoint {
+            get {
+                return this.centrePointField;
+            }
+            set {
+                this.centrePointField = value;
+                this.RaisePropertyChanged("centrePoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public TpegAreaDescriptor name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public _ExtensionType tpegGeometricAreaExtension {
+            get {
+                return this.tpegGeometricAreaExtensionField;
+            }
+            set {
+                this.tpegGeometricAreaExtensionField = value;
+                this.RaisePropertyChanged("tpegGeometricAreaExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TpegNamedOnlyArea : TpegAreaLocation {
+        
+        private TpegAreaDescriptor[] nameField;
+        
+        private _ExtensionType tpegNamedOnlyAreaExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("name", Order=0)]
+        public TpegAreaDescriptor[] name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType tpegNamedOnlyAreaExtension {
+            get {
+                return this.tpegNamedOnlyAreaExtensionField;
+            }
+            set {
+                this.tpegNamedOnlyAreaExtensionField = value;
+                this.RaisePropertyChanged("tpegNamedOnlyAreaExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6012,70 +7619,6 @@ namespace TestClient.SubscriberServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum DirectionEnum {
-        
-        /// <remarks/>
-        allDirections,
-        
-        /// <remarks/>
-        bothWays,
-        
-        /// <remarks/>
-        clockwise,
-        
-        /// <remarks/>
-        anticlockwise,
-        
-        /// <remarks/>
-        innerRing,
-        
-        /// <remarks/>
-        outerRing,
-        
-        /// <remarks/>
-        northBound,
-        
-        /// <remarks/>
-        northEastBound,
-        
-        /// <remarks/>
-        eastBound,
-        
-        /// <remarks/>
-        southEastBound,
-        
-        /// <remarks/>
-        southBound,
-        
-        /// <remarks/>
-        southWestBound,
-        
-        /// <remarks/>
-        westBound,
-        
-        /// <remarks/>
-        northWestBound,
-        
-        /// <remarks/>
-        inboundTowardsTown,
-        
-        /// <remarks/>
-        outboundFromTown,
-        
-        /// <remarks/>
-        unknown,
-        
-        /// <remarks/>
-        opposite,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
     public enum TpegLoc01LinearLocationSubtypeEnum {
         
         /// <remarks/>
@@ -6083,173 +7626,9 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegNonJunctionPoint))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegJunction))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class TpegPoint : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private _ExtensionType tpegPointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _ExtensionType tpegPointExtension {
-            get {
-                return this.tpegPointExtensionField;
-            }
-            set {
-                this.tpegPointExtensionField = value;
-                this.RaisePropertyChanged("tpegPointExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegNonJunctionPoint : TpegPoint {
-        
-        private PointCoordinates pointCoordinatesField;
-        
-        private TpegOtherPointDescriptor[] nameField;
-        
-        private _ExtensionType tpegNonJunctionPointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PointCoordinates pointCoordinates {
-            get {
-                return this.pointCoordinatesField;
-            }
-            set {
-                this.pointCoordinatesField = value;
-                this.RaisePropertyChanged("pointCoordinates");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("name", Order=1)]
-        public TpegOtherPointDescriptor[] name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType tpegNonJunctionPointExtension {
-            get {
-                return this.tpegNonJunctionPointExtensionField;
-            }
-            set {
-                this.tpegNonJunctionPointExtensionField = value;
-                this.RaisePropertyChanged("tpegNonJunctionPointExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegJunction : TpegPoint {
-        
-        private PointCoordinates pointCoordinatesField;
-        
-        private TpegJunctionPointDescriptor nameField;
-        
-        private TpegIlcPointDescriptor[] ilcField;
-        
-        private TpegOtherPointDescriptor[] otherNameField;
-        
-        private _ExtensionType tpegJunctionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PointCoordinates pointCoordinates {
-            get {
-                return this.pointCoordinatesField;
-            }
-            set {
-                this.pointCoordinatesField = value;
-                this.RaisePropertyChanged("pointCoordinates");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TpegJunctionPointDescriptor name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ilc", Order=2)]
-        public TpegIlcPointDescriptor[] ilc {
-            get {
-                return this.ilcField;
-            }
-            set {
-                this.ilcField = value;
-                this.RaisePropertyChanged("ilc");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("otherName", Order=3)]
-        public TpegOtherPointDescriptor[] otherName {
-            get {
-                return this.otherNameField;
-            }
-            set {
-                this.otherNameField = value;
-                this.RaisePropertyChanged("otherName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public _ExtensionType tpegJunctionExtension {
-            get {
-                return this.tpegJunctionExtensionField;
-            }
-            set {
-                this.tpegJunctionExtensionField = value;
-                this.RaisePropertyChanged("tpegJunctionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCLinearByCode))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCMethod4Linear))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCMethod2Linear))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCMethod4Linear))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6380,75 +7759,98 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCDirection : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class AlertCMethod2Linear : AlertCLinear {
         
-        private AlertCDirectionEnum alertCDirectionCodedField;
+        private AlertCDirection alertCDirectionField;
         
-        private MultilingualString alertCDirectionNamedField;
+        private AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocationField;
         
-        private bool alertCDirectionSenseField;
+        private AlertCMethod2SecondaryPointLocation alertCMethod2SecondaryPointLocationField;
         
-        private bool alertCDirectionSenseFieldSpecified;
-        
-        private _ExtensionType alertCDirectionExtensionField;
+        private _ExtensionType alertCMethod2LinearExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCDirectionEnum alertCDirectionCoded {
+        public AlertCDirection alertCDirection {
             get {
-                return this.alertCDirectionCodedField;
+                return this.alertCDirectionField;
             }
             set {
-                this.alertCDirectionCodedField = value;
-                this.RaisePropertyChanged("alertCDirectionCoded");
+                this.alertCDirectionField = value;
+                this.RaisePropertyChanged("alertCDirection");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public MultilingualString alertCDirectionNamed {
+        public AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocation {
             get {
-                return this.alertCDirectionNamedField;
+                return this.alertCMethod2PrimaryPointLocationField;
             }
             set {
-                this.alertCDirectionNamedField = value;
-                this.RaisePropertyChanged("alertCDirectionNamed");
+                this.alertCMethod2PrimaryPointLocationField = value;
+                this.RaisePropertyChanged("alertCMethod2PrimaryPointLocation");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public bool alertCDirectionSense {
+        public AlertCMethod2SecondaryPointLocation alertCMethod2SecondaryPointLocation {
             get {
-                return this.alertCDirectionSenseField;
+                return this.alertCMethod2SecondaryPointLocationField;
             }
             set {
-                this.alertCDirectionSenseField = value;
-                this.RaisePropertyChanged("alertCDirectionSense");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool alertCDirectionSenseSpecified {
-            get {
-                return this.alertCDirectionSenseFieldSpecified;
-            }
-            set {
-                this.alertCDirectionSenseFieldSpecified = value;
-                this.RaisePropertyChanged("alertCDirectionSenseSpecified");
+                this.alertCMethod2SecondaryPointLocationField = value;
+                this.RaisePropertyChanged("alertCMethod2SecondaryPointLocation");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public _ExtensionType alertCDirectionExtension {
+        public _ExtensionType alertCMethod2LinearExtension {
             get {
-                return this.alertCDirectionExtensionField;
+                return this.alertCMethod2LinearExtensionField;
             }
             set {
-                this.alertCDirectionExtensionField = value;
-                this.RaisePropertyChanged("alertCDirectionExtension");
+                this.alertCMethod2LinearExtensionField = value;
+                this.RaisePropertyChanged("alertCMethod2LinearExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AlertCMethod2SecondaryPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AlertCLocation alertCLocationField;
+        
+        private _ExtensionType alertCMethod2SecondaryPointLocationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AlertCLocation alertCLocation {
+            get {
+                return this.alertCLocationField;
+            }
+            set {
+                this.alertCLocationField = value;
+                this.RaisePropertyChanged("alertCLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType alertCMethod2SecondaryPointLocationExtension {
+            get {
+                return this.alertCMethod2SecondaryPointLocationExtensionField;
+            }
+            set {
+                this.alertCMethod2SecondaryPointLocationExtensionField = value;
+                this.RaisePropertyChanged("alertCMethod2SecondaryPointLocationExtension");
             }
         }
         
@@ -6460,25 +7862,6 @@ namespace TestClient.SubscriberServiceReference {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum AlertCDirectionEnum {
-        
-        /// <remarks/>
-        both,
-        
-        /// <remarks/>
-        negative,
-        
-        /// <remarks/>
-        positive,
-        
-        /// <remarks/>
-        unknown,
     }
     
     /// <remarks/>
@@ -6552,112 +7935,6 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCMethod4PrimaryPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private AlertCLocation alertCLocationField;
-        
-        private OffsetDistance offsetDistanceField;
-        
-        private _ExtensionType alertCMethod4PrimaryPointLocationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCLocation alertCLocation {
-            get {
-                return this.alertCLocationField;
-            }
-            set {
-                this.alertCLocationField = value;
-                this.RaisePropertyChanged("alertCLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public OffsetDistance offsetDistance {
-            get {
-                return this.offsetDistanceField;
-            }
-            set {
-                this.offsetDistanceField = value;
-                this.RaisePropertyChanged("offsetDistance");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType alertCMethod4PrimaryPointLocationExtension {
-            get {
-                return this.alertCMethod4PrimaryPointLocationExtensionField;
-            }
-            set {
-                this.alertCMethod4PrimaryPointLocationExtensionField = value;
-                this.RaisePropertyChanged("alertCMethod4PrimaryPointLocationExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class OffsetDistance : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string offsetDistanceField;
-        
-        private _ExtensionType offsetDistanceExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string offsetDistance {
-            get {
-                return this.offsetDistanceField;
-            }
-            set {
-                this.offsetDistanceField = value;
-                this.RaisePropertyChanged("offsetDistance");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType offsetDistanceExtension {
-            get {
-                return this.offsetDistanceExtensionField;
-            }
-            set {
-                this.offsetDistanceExtensionField = value;
-                this.RaisePropertyChanged("offsetDistanceExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
     public partial class AlertCMethod4SecondaryPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private AlertCLocation alertCLocationField;
@@ -6699,163 +7976,6 @@ namespace TestClient.SubscriberServiceReference {
             set {
                 this.alertCMethod4SecondaryPointLocationExtensionField = value;
                 this.RaisePropertyChanged("alertCMethod4SecondaryPointLocationExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCMethod2Linear : AlertCLinear {
-        
-        private AlertCDirection alertCDirectionField;
-        
-        private AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocationField;
-        
-        private AlertCMethod2SecondaryPointLocation alertCMethod2SecondaryPointLocationField;
-        
-        private _ExtensionType alertCMethod2LinearExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCDirection alertCDirection {
-            get {
-                return this.alertCDirectionField;
-            }
-            set {
-                this.alertCDirectionField = value;
-                this.RaisePropertyChanged("alertCDirection");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocation {
-            get {
-                return this.alertCMethod2PrimaryPointLocationField;
-            }
-            set {
-                this.alertCMethod2PrimaryPointLocationField = value;
-                this.RaisePropertyChanged("alertCMethod2PrimaryPointLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public AlertCMethod2SecondaryPointLocation alertCMethod2SecondaryPointLocation {
-            get {
-                return this.alertCMethod2SecondaryPointLocationField;
-            }
-            set {
-                this.alertCMethod2SecondaryPointLocationField = value;
-                this.RaisePropertyChanged("alertCMethod2SecondaryPointLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public _ExtensionType alertCMethod2LinearExtension {
-            get {
-                return this.alertCMethod2LinearExtensionField;
-            }
-            set {
-                this.alertCMethod2LinearExtensionField = value;
-                this.RaisePropertyChanged("alertCMethod2LinearExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCMethod2PrimaryPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private AlertCLocation alertCLocationField;
-        
-        private _ExtensionType alertCMethod2PrimaryPointLocationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCLocation alertCLocation {
-            get {
-                return this.alertCLocationField;
-            }
-            set {
-                this.alertCLocationField = value;
-                this.RaisePropertyChanged("alertCLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType alertCMethod2PrimaryPointLocationExtension {
-            get {
-                return this.alertCMethod2PrimaryPointLocationExtensionField;
-            }
-            set {
-                this.alertCMethod2PrimaryPointLocationExtensionField = value;
-                this.RaisePropertyChanged("alertCMethod2PrimaryPointLocationExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCMethod2SecondaryPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private AlertCLocation alertCLocationField;
-        
-        private _ExtensionType alertCMethod2SecondaryPointLocationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCLocation alertCLocation {
-            get {
-                return this.alertCLocationField;
-            }
-            set {
-                this.alertCLocationField = value;
-                this.RaisePropertyChanged("alertCLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType alertCMethod2SecondaryPointLocationExtension {
-            get {
-                return this.alertCMethod2SecondaryPointLocationExtensionField;
-            }
-            set {
-                this.alertCMethod2SecondaryPointLocationExtensionField = value;
-                this.RaisePropertyChanged("alertCMethod2SecondaryPointLocationExtension");
             }
         }
         
@@ -7044,1330 +8164,36 @@ namespace TestClient.SubscriberServiceReference {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum LinearReferencingDirectionEnum {
-        
-        /// <remarks/>
-        both,
-        
-        /// <remarks/>
-        opposite,
-        
-        /// <remarks/>
-        aligned,
-        
-        /// <remarks/>
-        unknown,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum HeightGradeEnum {
-        
-        /// <remarks/>
-        aboveGrade,
-        
-        /// <remarks/>
-        atGrade,
-        
-        /// <remarks/>
-        belowGrade,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinearElementByPoints))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinearElementByCode))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class LinearElement : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class AreaDestination : Destination {
         
-        private MultilingualString roadNameField;
+        private Area areaField;
         
-        private string roadNumberField;
-        
-        private string linearElementReferenceModelField;
-        
-        private string linearElementReferenceModelVersionField;
-        
-        private LinearElementNatureEnum linearElementNatureField;
-        
-        private bool linearElementNatureFieldSpecified;
-        
-        private _ExtensionType linearElementExtensionField;
+        private _ExtensionType areaDestinationExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MultilingualString roadName {
+        public Area area {
             get {
-                return this.roadNameField;
+                return this.areaField;
             }
             set {
-                this.roadNameField = value;
-                this.RaisePropertyChanged("roadName");
+                this.areaField = value;
+                this.RaisePropertyChanged("area");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string roadNumber {
+        public _ExtensionType areaDestinationExtension {
             get {
-                return this.roadNumberField;
+                return this.areaDestinationExtensionField;
             }
             set {
-                this.roadNumberField = value;
-                this.RaisePropertyChanged("roadNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string linearElementReferenceModel {
-            get {
-                return this.linearElementReferenceModelField;
-            }
-            set {
-                this.linearElementReferenceModelField = value;
-                this.RaisePropertyChanged("linearElementReferenceModel");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string linearElementReferenceModelVersion {
-            get {
-                return this.linearElementReferenceModelVersionField;
-            }
-            set {
-                this.linearElementReferenceModelVersionField = value;
-                this.RaisePropertyChanged("linearElementReferenceModelVersion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public LinearElementNatureEnum linearElementNature {
-            get {
-                return this.linearElementNatureField;
-            }
-            set {
-                this.linearElementNatureField = value;
-                this.RaisePropertyChanged("linearElementNature");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linearElementNatureSpecified {
-            get {
-                return this.linearElementNatureFieldSpecified;
-            }
-            set {
-                this.linearElementNatureFieldSpecified = value;
-                this.RaisePropertyChanged("linearElementNatureSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public _ExtensionType linearElementExtension {
-            get {
-                return this.linearElementExtensionField;
-            }
-            set {
-                this.linearElementExtensionField = value;
-                this.RaisePropertyChanged("linearElementExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum LinearElementNatureEnum {
-        
-        /// <remarks/>
-        road,
-        
-        /// <remarks/>
-        roadSection,
-        
-        /// <remarks/>
-        slipRoad,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class LinearElementByPoints : LinearElement {
-        
-        private Referent startPointOfLinearElementField;
-        
-        private _IntermediatePointOnLinearElement[] intermediatePointOnLinearElementField;
-        
-        private Referent endPointOfLinearElementField;
-        
-        private _ExtensionType linearElementByPointsExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Referent startPointOfLinearElement {
-            get {
-                return this.startPointOfLinearElementField;
-            }
-            set {
-                this.startPointOfLinearElementField = value;
-                this.RaisePropertyChanged("startPointOfLinearElement");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("intermediatePointOnLinearElement", Order=1)]
-        public _IntermediatePointOnLinearElement[] intermediatePointOnLinearElement {
-            get {
-                return this.intermediatePointOnLinearElementField;
-            }
-            set {
-                this.intermediatePointOnLinearElementField = value;
-                this.RaisePropertyChanged("intermediatePointOnLinearElement");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public Referent endPointOfLinearElement {
-            get {
-                return this.endPointOfLinearElementField;
-            }
-            set {
-                this.endPointOfLinearElementField = value;
-                this.RaisePropertyChanged("endPointOfLinearElement");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public _ExtensionType linearElementByPointsExtension {
-            get {
-                return this.linearElementByPointsExtensionField;
-            }
-            set {
-                this.linearElementByPointsExtensionField = value;
-                this.RaisePropertyChanged("linearElementByPointsExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class Referent : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string referentIdentifierField;
-        
-        private string referentNameField;
-        
-        private ReferentTypeEnum referentTypeField;
-        
-        private MultilingualString referentDescriptionField;
-        
-        private PointCoordinates pointCoordinatesField;
-        
-        private _ExtensionType referentExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string referentIdentifier {
-            get {
-                return this.referentIdentifierField;
-            }
-            set {
-                this.referentIdentifierField = value;
-                this.RaisePropertyChanged("referentIdentifier");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string referentName {
-            get {
-                return this.referentNameField;
-            }
-            set {
-                this.referentNameField = value;
-                this.RaisePropertyChanged("referentName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public ReferentTypeEnum referentType {
-            get {
-                return this.referentTypeField;
-            }
-            set {
-                this.referentTypeField = value;
-                this.RaisePropertyChanged("referentType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public MultilingualString referentDescription {
-            get {
-                return this.referentDescriptionField;
-            }
-            set {
-                this.referentDescriptionField = value;
-                this.RaisePropertyChanged("referentDescription");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public PointCoordinates pointCoordinates {
-            get {
-                return this.pointCoordinatesField;
-            }
-            set {
-                this.pointCoordinatesField = value;
-                this.RaisePropertyChanged("pointCoordinates");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public _ExtensionType referentExtension {
-            get {
-                return this.referentExtensionField;
-            }
-            set {
-                this.referentExtensionField = value;
-                this.RaisePropertyChanged("referentExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum ReferentTypeEnum {
-        
-        /// <remarks/>
-        boundary,
-        
-        /// <remarks/>
-        intersection,
-        
-        /// <remarks/>
-        referenceMarker,
-        
-        /// <remarks/>
-        landmark,
-        
-        /// <remarks/>
-        roadNode,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _IntermediatePointOnLinearElement : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Referent referentField;
-        
-        private int indexField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Referent referent {
-            get {
-                return this.referentField;
-            }
-            set {
-                this.referentField = value;
-                this.RaisePropertyChanged("referent");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int index {
-            get {
-                return this.indexField;
-            }
-            set {
-                this.indexField = value;
-                this.RaisePropertyChanged("index");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class LinearElementByCode : LinearElement {
-        
-        private string linearElementIdentifierField;
-        
-        private _ExtensionType linearElementByCodeExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string linearElementIdentifier {
-            get {
-                return this.linearElementIdentifierField;
-            }
-            set {
-                this.linearElementIdentifierField = value;
-                this.RaisePropertyChanged("linearElementIdentifier");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType linearElementByCodeExtension {
-            get {
-                return this.linearElementByCodeExtensionField;
-            }
-            set {
-                this.linearElementByCodeExtensionField = value;
-                this.RaisePropertyChanged("linearElementByCodeExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentageDistanceAlongLinearElement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DistanceFromLinearElementReferent))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DistanceFromLinearElementStart))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class DistanceAlongLinearElement : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private _ExtensionType distanceAlongLinearElementExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _ExtensionType distanceAlongLinearElementExtension {
-            get {
-                return this.distanceAlongLinearElementExtensionField;
-            }
-            set {
-                this.distanceAlongLinearElementExtensionField = value;
-                this.RaisePropertyChanged("distanceAlongLinearElementExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PercentageDistanceAlongLinearElement : DistanceAlongLinearElement {
-        
-        private float percentageDistanceAlongField;
-        
-        private _ExtensionType percentageDistanceAlongLinearElementExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float percentageDistanceAlong {
-            get {
-                return this.percentageDistanceAlongField;
-            }
-            set {
-                this.percentageDistanceAlongField = value;
-                this.RaisePropertyChanged("percentageDistanceAlong");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType percentageDistanceAlongLinearElementExtension {
-            get {
-                return this.percentageDistanceAlongLinearElementExtensionField;
-            }
-            set {
-                this.percentageDistanceAlongLinearElementExtensionField = value;
-                this.RaisePropertyChanged("percentageDistanceAlongLinearElementExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class DistanceFromLinearElementReferent : DistanceAlongLinearElement {
-        
-        private float distanceAlongField;
-        
-        private Referent fromReferentField;
-        
-        private Referent towardsReferentField;
-        
-        private _ExtensionType distanceFromLinearElementReferentExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float distanceAlong {
-            get {
-                return this.distanceAlongField;
-            }
-            set {
-                this.distanceAlongField = value;
-                this.RaisePropertyChanged("distanceAlong");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Referent fromReferent {
-            get {
-                return this.fromReferentField;
-            }
-            set {
-                this.fromReferentField = value;
-                this.RaisePropertyChanged("fromReferent");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public Referent towardsReferent {
-            get {
-                return this.towardsReferentField;
-            }
-            set {
-                this.towardsReferentField = value;
-                this.RaisePropertyChanged("towardsReferent");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public _ExtensionType distanceFromLinearElementReferentExtension {
-            get {
-                return this.distanceFromLinearElementReferentExtensionField;
-            }
-            set {
-                this.distanceFromLinearElementReferentExtensionField = value;
-                this.RaisePropertyChanged("distanceFromLinearElementReferentExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class DistanceFromLinearElementStart : DistanceAlongLinearElement {
-        
-        private float distanceAlongField;
-        
-        private _ExtensionType distanceFromLinearElementStartExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float distanceAlong {
-            get {
-                return this.distanceAlongField;
-            }
-            set {
-                this.distanceAlongField = value;
-                this.RaisePropertyChanged("distanceAlong");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType distanceFromLinearElementStartExtension {
-            get {
-                return this.distanceFromLinearElementStartExtensionField;
-            }
-            set {
-                this.distanceFromLinearElementStartExtensionField = value;
-                this.RaisePropertyChanged("distanceFromLinearElementStartExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class Point : NetworkLocation {
-        
-        private TpegPointLocation tpegPointLocationField;
-        
-        private AlertCPoint alertCPointField;
-        
-        private PointAlongLinearElement pointAlongLinearElementField;
-        
-        private PointByCoordinates pointByCoordinatesField;
-        
-        private _ExtensionType pointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TpegPointLocation tpegPointLocation {
-            get {
-                return this.tpegPointLocationField;
-            }
-            set {
-                this.tpegPointLocationField = value;
-                this.RaisePropertyChanged("tpegPointLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public AlertCPoint alertCPoint {
-            get {
-                return this.alertCPointField;
-            }
-            set {
-                this.alertCPointField = value;
-                this.RaisePropertyChanged("alertCPoint");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public PointAlongLinearElement pointAlongLinearElement {
-            get {
-                return this.pointAlongLinearElementField;
-            }
-            set {
-                this.pointAlongLinearElementField = value;
-                this.RaisePropertyChanged("pointAlongLinearElement");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public PointByCoordinates pointByCoordinates {
-            get {
-                return this.pointByCoordinatesField;
-            }
-            set {
-                this.pointByCoordinatesField = value;
-                this.RaisePropertyChanged("pointByCoordinates");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public _ExtensionType pointExtension {
-            get {
-                return this.pointExtensionField;
-            }
-            set {
-                this.pointExtensionField = value;
-                this.RaisePropertyChanged("pointExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegSimplePoint))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TpegFramedPoint))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class TpegPointLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private DirectionEnum tpegDirectionField;
-        
-        private _ExtensionType tpegPointLocationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public DirectionEnum tpegDirection {
-            get {
-                return this.tpegDirectionField;
-            }
-            set {
-                this.tpegDirectionField = value;
-                this.RaisePropertyChanged("tpegDirection");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType tpegPointLocationExtension {
-            get {
-                return this.tpegPointLocationExtensionField;
-            }
-            set {
-                this.tpegPointLocationExtensionField = value;
-                this.RaisePropertyChanged("tpegPointLocationExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegSimplePoint : TpegPointLocation {
-        
-        private TpegLoc01SimplePointLocationSubtypeEnum tpegSimplePointLocationTypeField;
-        
-        private TpegPoint pointField;
-        
-        private _ExtensionType tpegSimplePointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TpegLoc01SimplePointLocationSubtypeEnum tpegSimplePointLocationType {
-            get {
-                return this.tpegSimplePointLocationTypeField;
-            }
-            set {
-                this.tpegSimplePointLocationTypeField = value;
-                this.RaisePropertyChanged("tpegSimplePointLocationType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TpegPoint point {
-            get {
-                return this.pointField;
-            }
-            set {
-                this.pointField = value;
-                this.RaisePropertyChanged("point");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType tpegSimplePointExtension {
-            get {
-                return this.tpegSimplePointExtensionField;
-            }
-            set {
-                this.tpegSimplePointExtensionField = value;
-                this.RaisePropertyChanged("tpegSimplePointExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TpegLoc01SimplePointLocationSubtypeEnum {
-        
-        /// <remarks/>
-        intersection,
-        
-        /// <remarks/>
-        nonLinkedPoint,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TpegFramedPoint : TpegPointLocation {
-        
-        private TpegLoc01FramedPointLocationSubtypeEnum tpegFramedPointLocationTypeField;
-        
-        private TpegNonJunctionPoint framedPointField;
-        
-        private TpegPoint toField;
-        
-        private TpegPoint fromField;
-        
-        private _ExtensionType tpegFramedPointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TpegLoc01FramedPointLocationSubtypeEnum tpegFramedPointLocationType {
-            get {
-                return this.tpegFramedPointLocationTypeField;
-            }
-            set {
-                this.tpegFramedPointLocationTypeField = value;
-                this.RaisePropertyChanged("tpegFramedPointLocationType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TpegNonJunctionPoint framedPoint {
-            get {
-                return this.framedPointField;
-            }
-            set {
-                this.framedPointField = value;
-                this.RaisePropertyChanged("framedPoint");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public TpegPoint to {
-            get {
-                return this.toField;
-            }
-            set {
-                this.toField = value;
-                this.RaisePropertyChanged("to");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public TpegPoint from {
-            get {
-                return this.fromField;
-            }
-            set {
-                this.fromField = value;
-                this.RaisePropertyChanged("from");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public _ExtensionType tpegFramedPointExtension {
-            get {
-                return this.tpegFramedPointExtensionField;
-            }
-            set {
-                this.tpegFramedPointExtensionField = value;
-                this.RaisePropertyChanged("tpegFramedPointExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TpegLoc01FramedPointLocationSubtypeEnum {
-        
-        /// <remarks/>
-        framedPoint,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCMethod4Point))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertCMethod2Point))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class AlertCPoint : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string alertCLocationCountryCodeField;
-        
-        private string alertCLocationTableNumberField;
-        
-        private string alertCLocationTableVersionField;
-        
-        private _ExtensionType alertCPointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string alertCLocationCountryCode {
-            get {
-                return this.alertCLocationCountryCodeField;
-            }
-            set {
-                this.alertCLocationCountryCodeField = value;
-                this.RaisePropertyChanged("alertCLocationCountryCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string alertCLocationTableNumber {
-            get {
-                return this.alertCLocationTableNumberField;
-            }
-            set {
-                this.alertCLocationTableNumberField = value;
-                this.RaisePropertyChanged("alertCLocationTableNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string alertCLocationTableVersion {
-            get {
-                return this.alertCLocationTableVersionField;
-            }
-            set {
-                this.alertCLocationTableVersionField = value;
-                this.RaisePropertyChanged("alertCLocationTableVersion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public _ExtensionType alertCPointExtension {
-            get {
-                return this.alertCPointExtensionField;
-            }
-            set {
-                this.alertCPointExtensionField = value;
-                this.RaisePropertyChanged("alertCPointExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCMethod4Point : AlertCPoint {
-        
-        private AlertCDirection alertCDirectionField;
-        
-        private AlertCMethod4PrimaryPointLocation alertCMethod4PrimaryPointLocationField;
-        
-        private _ExtensionType alertCMethod4PointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCDirection alertCDirection {
-            get {
-                return this.alertCDirectionField;
-            }
-            set {
-                this.alertCDirectionField = value;
-                this.RaisePropertyChanged("alertCDirection");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public AlertCMethod4PrimaryPointLocation alertCMethod4PrimaryPointLocation {
-            get {
-                return this.alertCMethod4PrimaryPointLocationField;
-            }
-            set {
-                this.alertCMethod4PrimaryPointLocationField = value;
-                this.RaisePropertyChanged("alertCMethod4PrimaryPointLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType alertCMethod4PointExtension {
-            get {
-                return this.alertCMethod4PointExtensionField;
-            }
-            set {
-                this.alertCMethod4PointExtensionField = value;
-                this.RaisePropertyChanged("alertCMethod4PointExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AlertCMethod2Point : AlertCPoint {
-        
-        private AlertCDirection alertCDirectionField;
-        
-        private AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocationField;
-        
-        private _ExtensionType alertCMethod2PointExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AlertCDirection alertCDirection {
-            get {
-                return this.alertCDirectionField;
-            }
-            set {
-                this.alertCDirectionField = value;
-                this.RaisePropertyChanged("alertCDirection");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public AlertCMethod2PrimaryPointLocation alertCMethod2PrimaryPointLocation {
-            get {
-                return this.alertCMethod2PrimaryPointLocationField;
-            }
-            set {
-                this.alertCMethod2PrimaryPointLocationField = value;
-                this.RaisePropertyChanged("alertCMethod2PrimaryPointLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType alertCMethod2PointExtension {
-            get {
-                return this.alertCMethod2PointExtensionField;
-            }
-            set {
-                this.alertCMethod2PointExtensionField = value;
-                this.RaisePropertyChanged("alertCMethod2PointExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PointAlongLinearElement : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private MultilingualString administrativeAreaOfPointField;
-        
-        private DirectionEnum directionBoundAtPointField;
-        
-        private bool directionBoundAtPointFieldSpecified;
-        
-        private LinearReferencingDirectionEnum directionRelativeAtPointField;
-        
-        private bool directionRelativeAtPointFieldSpecified;
-        
-        private HeightGradeEnum heightGradeOfPointField;
-        
-        private bool heightGradeOfPointFieldSpecified;
-        
-        private LinearElement linearElementField;
-        
-        private DistanceAlongLinearElement distanceAlongLinearElementField;
-        
-        private _ExtensionType pointAlongLinearElementExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MultilingualString administrativeAreaOfPoint {
-            get {
-                return this.administrativeAreaOfPointField;
-            }
-            set {
-                this.administrativeAreaOfPointField = value;
-                this.RaisePropertyChanged("administrativeAreaOfPoint");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public DirectionEnum directionBoundAtPoint {
-            get {
-                return this.directionBoundAtPointField;
-            }
-            set {
-                this.directionBoundAtPointField = value;
-                this.RaisePropertyChanged("directionBoundAtPoint");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool directionBoundAtPointSpecified {
-            get {
-                return this.directionBoundAtPointFieldSpecified;
-            }
-            set {
-                this.directionBoundAtPointFieldSpecified = value;
-                this.RaisePropertyChanged("directionBoundAtPointSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public LinearReferencingDirectionEnum directionRelativeAtPoint {
-            get {
-                return this.directionRelativeAtPointField;
-            }
-            set {
-                this.directionRelativeAtPointField = value;
-                this.RaisePropertyChanged("directionRelativeAtPoint");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool directionRelativeAtPointSpecified {
-            get {
-                return this.directionRelativeAtPointFieldSpecified;
-            }
-            set {
-                this.directionRelativeAtPointFieldSpecified = value;
-                this.RaisePropertyChanged("directionRelativeAtPointSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public HeightGradeEnum heightGradeOfPoint {
-            get {
-                return this.heightGradeOfPointField;
-            }
-            set {
-                this.heightGradeOfPointField = value;
-                this.RaisePropertyChanged("heightGradeOfPoint");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool heightGradeOfPointSpecified {
-            get {
-                return this.heightGradeOfPointFieldSpecified;
-            }
-            set {
-                this.heightGradeOfPointFieldSpecified = value;
-                this.RaisePropertyChanged("heightGradeOfPointSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public LinearElement linearElement {
-            get {
-                return this.linearElementField;
-            }
-            set {
-                this.linearElementField = value;
-                this.RaisePropertyChanged("linearElement");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public DistanceAlongLinearElement distanceAlongLinearElement {
-            get {
-                return this.distanceAlongLinearElementField;
-            }
-            set {
-                this.distanceAlongLinearElementField = value;
-                this.RaisePropertyChanged("distanceAlongLinearElement");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public _ExtensionType pointAlongLinearElementExtension {
-            get {
-                return this.pointAlongLinearElementExtensionField;
-            }
-            set {
-                this.pointAlongLinearElementExtensionField = value;
-                this.RaisePropertyChanged("pointAlongLinearElementExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PointByCoordinates : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string bearingField;
-        
-        private PointCoordinates pointCoordinatesField;
-        
-        private _ExtensionType pointByCoordinatesExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string bearing {
-            get {
-                return this.bearingField;
-            }
-            set {
-                this.bearingField = value;
-                this.RaisePropertyChanged("bearing");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public PointCoordinates pointCoordinates {
-            get {
-                return this.pointCoordinatesField;
-            }
-            set {
-                this.pointCoordinatesField = value;
-                this.RaisePropertyChanged("pointCoordinates");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType pointByCoordinatesExtension {
-            get {
-                return this.pointByCoordinatesExtensionField;
-            }
-            set {
-                this.pointByCoordinatesExtensionField = value;
-                this.RaisePropertyChanged("pointByCoordinatesExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PointDestination : Destination {
-        
-        private Point pointField;
-        
-        private _ExtensionType pointDestinationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Point point {
-            get {
-                return this.pointField;
-            }
-            set {
-                this.pointField = value;
-                this.RaisePropertyChanged("point");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType pointDestinationExtension {
-            get {
-                return this.pointDestinationExtensionField;
-            }
-            set {
-                this.pointDestinationExtensionField = value;
-                this.RaisePropertyChanged("pointDestinationExtension");
+                this.areaDestinationExtensionField = value;
+                this.RaisePropertyChanged("areaDestinationExtension");
             }
         }
     }
@@ -8493,8 +8319,8 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonOrderedLocationGroupByReference))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonOrderedLocationGroupByList))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonOrderedLocationGroupByReference))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8513,43 +8339,6 @@ namespace TestClient.SubscriberServiceReference {
             set {
                 this.nonOrderedLocationsExtensionField = value;
                 this.RaisePropertyChanged("nonOrderedLocationsExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class NonOrderedLocationGroupByReference : NonOrderedLocations {
-        
-        private _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReferenceField;
-        
-        private _ExtensionType nonOrderedLocationGroupByReferenceExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReference {
-            get {
-                return this.predefinedNonOrderedLocationGroupReferenceField;
-            }
-            set {
-                this.predefinedNonOrderedLocationGroupReferenceField = value;
-                this.RaisePropertyChanged("predefinedNonOrderedLocationGroupReference");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType nonOrderedLocationGroupByReferenceExtension {
-            get {
-                return this.nonOrderedLocationGroupByReferenceExtensionField;
-            }
-            set {
-                this.nonOrderedLocationGroupByReferenceExtensionField = value;
-                this.RaisePropertyChanged("nonOrderedLocationGroupByReferenceExtension");
             }
         }
     }
@@ -8587,6 +8376,43 @@ namespace TestClient.SubscriberServiceReference {
             set {
                 this.nonOrderedLocationGroupByListExtensionField = value;
                 this.RaisePropertyChanged("nonOrderedLocationGroupByListExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class NonOrderedLocationGroupByReference : NonOrderedLocations {
+        
+        private _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReferenceField;
+        
+        private _ExtensionType nonOrderedLocationGroupByReferenceExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReference {
+            get {
+                return this.predefinedNonOrderedLocationGroupReferenceField;
+            }
+            set {
+                this.predefinedNonOrderedLocationGroupReferenceField = value;
+                this.RaisePropertyChanged("predefinedNonOrderedLocationGroupReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType nonOrderedLocationGroupByReferenceExtension {
+            get {
+                return this.nonOrderedLocationGroupByReferenceExtensionField;
+            }
+            set {
+                this.nonOrderedLocationGroupByReferenceExtensionField = value;
+                this.RaisePropertyChanged("nonOrderedLocationGroupByReferenceExtension");
             }
         }
     }
@@ -8801,17 +8627,17 @@ namespace TestClient.SubscriberServiceReference {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkManagement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOrCarriagewayOrLaneManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinterDrivingManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralInstructionOrMessageToRoadUsers))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReroutingManagement))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralNetworkManagement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralInstructionOrMessageToRoadUsers))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinterDrivingManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOrCarriagewayOrLaneManagement))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpeedManagement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignSetting))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Roadworks))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstructionWorks))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MaintenanceWorks))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstructionWorks))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadsideAssistance))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SignSetting))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8946,11 +8772,11 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOrCarriagewayOrLaneManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinterDrivingManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralInstructionOrMessageToRoadUsers))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReroutingManagement))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralNetworkManagement))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralInstructionOrMessageToRoadUsers))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinterDrivingManagement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOrCarriagewayOrLaneManagement))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpeedManagement))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
@@ -10172,47 +9998,33 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class RoadOrCarriagewayOrLaneManagement : NetworkManagement {
+    public partial class WinterDrivingManagement : NetworkManagement {
         
-        private RoadOrCarriagewayOrLaneManagementTypeEnum roadOrCarriagewayOrLaneManagementTypeField;
+        private WinterEquipmentManagementTypeEnum winterEquipmentManagementTypeField;
         
-        private string minimumCarOccupancyField;
-        
-        private _ExtensionType roadOrCarriagewayOrLaneManagementExtensionField;
+        private _ExtensionType winterDrivingManagementExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public RoadOrCarriagewayOrLaneManagementTypeEnum roadOrCarriagewayOrLaneManagementType {
+        public WinterEquipmentManagementTypeEnum winterEquipmentManagementType {
             get {
-                return this.roadOrCarriagewayOrLaneManagementTypeField;
+                return this.winterEquipmentManagementTypeField;
             }
             set {
-                this.roadOrCarriagewayOrLaneManagementTypeField = value;
-                this.RaisePropertyChanged("roadOrCarriagewayOrLaneManagementType");
+                this.winterEquipmentManagementTypeField = value;
+                this.RaisePropertyChanged("winterEquipmentManagementType");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
-        public string minimumCarOccupancy {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType winterDrivingManagementExtension {
             get {
-                return this.minimumCarOccupancyField;
+                return this.winterDrivingManagementExtensionField;
             }
             set {
-                this.minimumCarOccupancyField = value;
-                this.RaisePropertyChanged("minimumCarOccupancy");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType roadOrCarriagewayOrLaneManagementExtension {
-            get {
-                return this.roadOrCarriagewayOrLaneManagementExtensionField;
-            }
-            set {
-                this.roadOrCarriagewayOrLaneManagementExtensionField = value;
-                this.RaisePropertyChanged("roadOrCarriagewayOrLaneManagementExtension");
+                this.winterDrivingManagementExtensionField = value;
+                this.RaisePropertyChanged("winterDrivingManagementExtension");
             }
         }
     }
@@ -10221,91 +10033,220 @@ namespace TestClient.SubscriberServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum RoadOrCarriagewayOrLaneManagementTypeEnum {
+    public enum WinterEquipmentManagementTypeEnum {
         
         /// <remarks/>
-        carPoolLaneInOperation,
+        doNoUseStudTyres,
         
         /// <remarks/>
-        carriagewayClosures,
+        useSnowChains,
         
         /// <remarks/>
-        clearALaneForEmergencyVehicles,
+        useSnowChainsOrTyres,
         
         /// <remarks/>
-        clearALaneForSnowploughsAndGrittingVehicles,
+        useSnowTyres,
         
         /// <remarks/>
-        closedPermanentlyForTheWinter,
+        winterEquipmentOnBoardRequired,
         
         /// <remarks/>
-        contraflow,
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class GeneralInstructionOrMessageToRoadUsers : NetworkManagement {
+        
+        private GeneralInstructionToRoadUsersTypeEnum generalInstructionToRoadUsersTypeField;
+        
+        private bool generalInstructionToRoadUsersTypeFieldSpecified;
+        
+        private MultilingualString generalMessageToRoadUsersField;
+        
+        private _ExtensionType generalInstructionOrMessageToRoadUsersExtensionField;
         
         /// <remarks/>
-        doNotUseSpecifiedLanesOrCarriageways,
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public GeneralInstructionToRoadUsersTypeEnum generalInstructionToRoadUsersType {
+            get {
+                return this.generalInstructionToRoadUsersTypeField;
+            }
+            set {
+                this.generalInstructionToRoadUsersTypeField = value;
+                this.RaisePropertyChanged("generalInstructionToRoadUsersType");
+            }
+        }
         
         /// <remarks/>
-        hardShoulderRunningInOperation,
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool generalInstructionToRoadUsersTypeSpecified {
+            get {
+                return this.generalInstructionToRoadUsersTypeFieldSpecified;
+            }
+            set {
+                this.generalInstructionToRoadUsersTypeFieldSpecified = value;
+                this.RaisePropertyChanged("generalInstructionToRoadUsersTypeSpecified");
+            }
+        }
         
         /// <remarks/>
-        heightRestrictionInOperation,
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public MultilingualString generalMessageToRoadUsers {
+            get {
+                return this.generalMessageToRoadUsersField;
+            }
+            set {
+                this.generalMessageToRoadUsersField = value;
+                this.RaisePropertyChanged("generalMessageToRoadUsers");
+            }
+        }
         
         /// <remarks/>
-        intermittentShortTermClosures,
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType generalInstructionOrMessageToRoadUsersExtension {
+            get {
+                return this.generalInstructionOrMessageToRoadUsersExtensionField;
+            }
+            set {
+                this.generalInstructionOrMessageToRoadUsersExtensionField = value;
+                this.RaisePropertyChanged("generalInstructionOrMessageToRoadUsersExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum GeneralInstructionToRoadUsersTypeEnum {
         
         /// <remarks/>
-        keepToTheLeft,
+        allowEmergencyVehiclesToPass,
         
         /// <remarks/>
-        keepToTheRight,
+        approachWithCare,
         
         /// <remarks/>
-        laneClosures,
+        avoidTheArea,
         
         /// <remarks/>
-        lanesDeviated,
+        closeAllWindowsTurnOffHeaterAndVents,
         
         /// <remarks/>
-        narrowLanes,
+        crossJunctionWithCare,
         
         /// <remarks/>
-        newRoadworksLayout,
+        doNotAllowUnnecessaryGaps,
         
         /// <remarks/>
-        overnightClosures,
+        doNotLeaveYourVehicle,
         
         /// <remarks/>
-        roadCleared,
+        doNotThrowOutAnyBurningObjects,
         
         /// <remarks/>
-        roadClosed,
+        doNotUseNavigationSystems,
         
         /// <remarks/>
-        rollingRoadBlock,
+        driveCarefully,
         
         /// <remarks/>
-        rushHourLaneInOperation,
+        driveWithExtremeCaution,
         
         /// <remarks/>
-        singleAlternateLineTraffic,
+        flashYourLights,
         
         /// <remarks/>
-        tidalFlowLaneInOperation,
+        followTheVehicleInFrontSmoothly,
         
         /// <remarks/>
-        turnAroundInOperation,
+        increaseNormalFollowingDistance,
         
         /// <remarks/>
-        useOfSpecifiedLanesOrCarriagewaysAllowed,
+        inEmergencyWaitForPatrolService,
         
         /// <remarks/>
-        useSpecifiedLanesOrCarriageways,
+        keepYourDistance,
         
         /// <remarks/>
-        vehicleStorageInOperation,
+        leaveYourVehicleProceedToNextSafePlace,
         
         /// <remarks/>
-        weightRestrictionInOperation,
+        noNakedFlames,
+        
+        /// <remarks/>
+        noOvertaking,
+        
+        /// <remarks/>
+        noSmoking,
+        
+        /// <remarks/>
+        noStopping,
+        
+        /// <remarks/>
+        noUturns,
+        
+        /// <remarks/>
+        observeAmberAlert,
+        
+        /// <remarks/>
+        observeSignals,
+        
+        /// <remarks/>
+        observeSigns,
+        
+        /// <remarks/>
+        onlyTravelIfAbsolutelyNecessary,
+        
+        /// <remarks/>
+        overtakeWithCare,
+        
+        /// <remarks/>
+        pullOverToTheEdgeOfTheRoadway,
+        
+        /// <remarks/>
+        stopAtNextSafePlace,
+        
+        /// <remarks/>
+        stopAtNextServiceArea,
+        
+        /// <remarks/>
+        switchOffEngine,
+        
+        /// <remarks/>
+        switchOffMobilePhonesAndTwoWayRadios,
+        
+        /// <remarks/>
+        testYourBrakes,
+        
+        /// <remarks/>
+        useBusService,
+        
+        /// <remarks/>
+        useFogLights,
+        
+        /// <remarks/>
+        useHazardWarningLights,
+        
+        /// <remarks/>
+        useHeadlights,
+        
+        /// <remarks/>
+        useRailService,
+        
+        /// <remarks/>
+        useTramService,
+        
+        /// <remarks/>
+        useUndergroundService,
+        
+        /// <remarks/>
+        waitForEscortVehicle,
         
         /// <remarks/>
         other,
@@ -10637,61 +10578,47 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class GeneralInstructionOrMessageToRoadUsers : NetworkManagement {
+    public partial class RoadOrCarriagewayOrLaneManagement : NetworkManagement {
         
-        private GeneralInstructionToRoadUsersTypeEnum generalInstructionToRoadUsersTypeField;
+        private RoadOrCarriagewayOrLaneManagementTypeEnum roadOrCarriagewayOrLaneManagementTypeField;
         
-        private bool generalInstructionToRoadUsersTypeFieldSpecified;
+        private string minimumCarOccupancyField;
         
-        private MultilingualString generalMessageToRoadUsersField;
-        
-        private _ExtensionType generalInstructionOrMessageToRoadUsersExtensionField;
+        private _ExtensionType roadOrCarriagewayOrLaneManagementExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public GeneralInstructionToRoadUsersTypeEnum generalInstructionToRoadUsersType {
+        public RoadOrCarriagewayOrLaneManagementTypeEnum roadOrCarriagewayOrLaneManagementType {
             get {
-                return this.generalInstructionToRoadUsersTypeField;
+                return this.roadOrCarriagewayOrLaneManagementTypeField;
             }
             set {
-                this.generalInstructionToRoadUsersTypeField = value;
-                this.RaisePropertyChanged("generalInstructionToRoadUsersType");
+                this.roadOrCarriagewayOrLaneManagementTypeField = value;
+                this.RaisePropertyChanged("roadOrCarriagewayOrLaneManagementType");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool generalInstructionToRoadUsersTypeSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
+        public string minimumCarOccupancy {
             get {
-                return this.generalInstructionToRoadUsersTypeFieldSpecified;
+                return this.minimumCarOccupancyField;
             }
             set {
-                this.generalInstructionToRoadUsersTypeFieldSpecified = value;
-                this.RaisePropertyChanged("generalInstructionToRoadUsersTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public MultilingualString generalMessageToRoadUsers {
-            get {
-                return this.generalMessageToRoadUsersField;
-            }
-            set {
-                this.generalMessageToRoadUsersField = value;
-                this.RaisePropertyChanged("generalMessageToRoadUsers");
+                this.minimumCarOccupancyField = value;
+                this.RaisePropertyChanged("minimumCarOccupancy");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType generalInstructionOrMessageToRoadUsersExtension {
+        public _ExtensionType roadOrCarriagewayOrLaneManagementExtension {
             get {
-                return this.generalInstructionOrMessageToRoadUsersExtensionField;
+                return this.roadOrCarriagewayOrLaneManagementExtensionField;
             }
             set {
-                this.generalInstructionOrMessageToRoadUsersExtensionField = value;
-                this.RaisePropertyChanged("generalInstructionOrMessageToRoadUsersExtension");
+                this.roadOrCarriagewayOrLaneManagementExtensionField = value;
+                this.RaisePropertyChanged("roadOrCarriagewayOrLaneManagementExtension");
             }
         }
     }
@@ -10700,192 +10627,91 @@ namespace TestClient.SubscriberServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum GeneralInstructionToRoadUsersTypeEnum {
+    public enum RoadOrCarriagewayOrLaneManagementTypeEnum {
         
         /// <remarks/>
-        allowEmergencyVehiclesToPass,
+        carPoolLaneInOperation,
         
         /// <remarks/>
-        approachWithCare,
+        carriagewayClosures,
         
         /// <remarks/>
-        avoidTheArea,
+        clearALaneForEmergencyVehicles,
         
         /// <remarks/>
-        closeAllWindowsTurnOffHeaterAndVents,
+        clearALaneForSnowploughsAndGrittingVehicles,
         
         /// <remarks/>
-        crossJunctionWithCare,
+        closedPermanentlyForTheWinter,
         
         /// <remarks/>
-        doNotAllowUnnecessaryGaps,
+        contraflow,
         
         /// <remarks/>
-        doNotLeaveYourVehicle,
+        doNotUseSpecifiedLanesOrCarriageways,
         
         /// <remarks/>
-        doNotThrowOutAnyBurningObjects,
+        hardShoulderRunningInOperation,
         
         /// <remarks/>
-        doNotUseNavigationSystems,
+        heightRestrictionInOperation,
         
         /// <remarks/>
-        driveCarefully,
+        intermittentShortTermClosures,
         
         /// <remarks/>
-        driveWithExtremeCaution,
+        keepToTheLeft,
         
         /// <remarks/>
-        flashYourLights,
+        keepToTheRight,
         
         /// <remarks/>
-        followTheVehicleInFrontSmoothly,
+        laneClosures,
         
         /// <remarks/>
-        increaseNormalFollowingDistance,
+        lanesDeviated,
         
         /// <remarks/>
-        inEmergencyWaitForPatrolService,
+        narrowLanes,
         
         /// <remarks/>
-        keepYourDistance,
+        newRoadworksLayout,
         
         /// <remarks/>
-        leaveYourVehicleProceedToNextSafePlace,
+        overnightClosures,
         
         /// <remarks/>
-        noNakedFlames,
+        roadCleared,
         
         /// <remarks/>
-        noOvertaking,
+        roadClosed,
         
         /// <remarks/>
-        noSmoking,
+        rollingRoadBlock,
         
         /// <remarks/>
-        noStopping,
+        rushHourLaneInOperation,
         
         /// <remarks/>
-        noUturns,
+        singleAlternateLineTraffic,
         
         /// <remarks/>
-        observeAmberAlert,
+        tidalFlowLaneInOperation,
         
         /// <remarks/>
-        observeSignals,
+        turnAroundInOperation,
         
         /// <remarks/>
-        observeSigns,
+        useOfSpecifiedLanesOrCarriagewaysAllowed,
         
         /// <remarks/>
-        onlyTravelIfAbsolutelyNecessary,
+        useSpecifiedLanesOrCarriageways,
         
         /// <remarks/>
-        overtakeWithCare,
+        vehicleStorageInOperation,
         
         /// <remarks/>
-        pullOverToTheEdgeOfTheRoadway,
-        
-        /// <remarks/>
-        stopAtNextSafePlace,
-        
-        /// <remarks/>
-        stopAtNextServiceArea,
-        
-        /// <remarks/>
-        switchOffEngine,
-        
-        /// <remarks/>
-        switchOffMobilePhonesAndTwoWayRadios,
-        
-        /// <remarks/>
-        testYourBrakes,
-        
-        /// <remarks/>
-        useBusService,
-        
-        /// <remarks/>
-        useFogLights,
-        
-        /// <remarks/>
-        useHazardWarningLights,
-        
-        /// <remarks/>
-        useHeadlights,
-        
-        /// <remarks/>
-        useRailService,
-        
-        /// <remarks/>
-        useTramService,
-        
-        /// <remarks/>
-        useUndergroundService,
-        
-        /// <remarks/>
-        waitForEscortVehicle,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class WinterDrivingManagement : NetworkManagement {
-        
-        private WinterEquipmentManagementTypeEnum winterEquipmentManagementTypeField;
-        
-        private _ExtensionType winterDrivingManagementExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public WinterEquipmentManagementTypeEnum winterEquipmentManagementType {
-            get {
-                return this.winterEquipmentManagementTypeField;
-            }
-            set {
-                this.winterEquipmentManagementTypeField = value;
-                this.RaisePropertyChanged("winterEquipmentManagementType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType winterDrivingManagementExtension {
-            get {
-                return this.winterDrivingManagementExtensionField;
-            }
-            set {
-                this.winterDrivingManagementExtensionField = value;
-                this.RaisePropertyChanged("winterDrivingManagementExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum WinterEquipmentManagementTypeEnum {
-        
-        /// <remarks/>
-        doNoUseStudTyres,
-        
-        /// <remarks/>
-        useSnowChains,
-        
-        /// <remarks/>
-        useSnowChainsOrTyres,
-        
-        /// <remarks/>
-        useSnowTyres,
-        
-        /// <remarks/>
-        winterEquipmentOnBoardRequired,
+        weightRestrictionInOperation,
         
         /// <remarks/>
         other,
@@ -10993,6 +10819,742 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         speedRestrictionInOperation,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MaintenanceWorks))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstructionWorks))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class Roadworks : OperatorAction {
+        
+        private RoadworksDurationEnum roadworksDurationField;
+        
+        private bool roadworksDurationFieldSpecified;
+        
+        private RoadworksScaleEnum roadworksScaleField;
+        
+        private bool roadworksScaleFieldSpecified;
+        
+        private bool underTrafficField;
+        
+        private bool underTrafficFieldSpecified;
+        
+        private bool urgentRoadworksField;
+        
+        private bool urgentRoadworksFieldSpecified;
+        
+        private Mobility mobilityField;
+        
+        private Subjects subjectsField;
+        
+        private MaintenanceVehicles maintenanceVehiclesField;
+        
+        private _ExtensionType roadworksExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public RoadworksDurationEnum roadworksDuration {
+            get {
+                return this.roadworksDurationField;
+            }
+            set {
+                this.roadworksDurationField = value;
+                this.RaisePropertyChanged("roadworksDuration");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool roadworksDurationSpecified {
+            get {
+                return this.roadworksDurationFieldSpecified;
+            }
+            set {
+                this.roadworksDurationFieldSpecified = value;
+                this.RaisePropertyChanged("roadworksDurationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public RoadworksScaleEnum roadworksScale {
+            get {
+                return this.roadworksScaleField;
+            }
+            set {
+                this.roadworksScaleField = value;
+                this.RaisePropertyChanged("roadworksScale");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool roadworksScaleSpecified {
+            get {
+                return this.roadworksScaleFieldSpecified;
+            }
+            set {
+                this.roadworksScaleFieldSpecified = value;
+                this.RaisePropertyChanged("roadworksScaleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool underTraffic {
+            get {
+                return this.underTrafficField;
+            }
+            set {
+                this.underTrafficField = value;
+                this.RaisePropertyChanged("underTraffic");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool underTrafficSpecified {
+            get {
+                return this.underTrafficFieldSpecified;
+            }
+            set {
+                this.underTrafficFieldSpecified = value;
+                this.RaisePropertyChanged("underTrafficSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool urgentRoadworks {
+            get {
+                return this.urgentRoadworksField;
+            }
+            set {
+                this.urgentRoadworksField = value;
+                this.RaisePropertyChanged("urgentRoadworks");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool urgentRoadworksSpecified {
+            get {
+                return this.urgentRoadworksFieldSpecified;
+            }
+            set {
+                this.urgentRoadworksFieldSpecified = value;
+                this.RaisePropertyChanged("urgentRoadworksSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public Mobility mobility {
+            get {
+                return this.mobilityField;
+            }
+            set {
+                this.mobilityField = value;
+                this.RaisePropertyChanged("mobility");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public Subjects subjects {
+            get {
+                return this.subjectsField;
+            }
+            set {
+                this.subjectsField = value;
+                this.RaisePropertyChanged("subjects");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public MaintenanceVehicles maintenanceVehicles {
+            get {
+                return this.maintenanceVehiclesField;
+            }
+            set {
+                this.maintenanceVehiclesField = value;
+                this.RaisePropertyChanged("maintenanceVehicles");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public _ExtensionType roadworksExtension {
+            get {
+                return this.roadworksExtensionField;
+            }
+            set {
+                this.roadworksExtensionField = value;
+                this.RaisePropertyChanged("roadworksExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum RoadworksDurationEnum {
+        
+        /// <remarks/>
+        longTerm,
+        
+        /// <remarks/>
+        mediumTerm,
+        
+        /// <remarks/>
+        shortTerm,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum RoadworksScaleEnum {
+        
+        /// <remarks/>
+        major,
+        
+        /// <remarks/>
+        medium,
+        
+        /// <remarks/>
+        minor,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class Mobility : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private MobilityEnum mobilityTypeField;
+        
+        private _ExtensionType mobilityExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MobilityEnum mobilityType {
+            get {
+                return this.mobilityTypeField;
+            }
+            set {
+                this.mobilityTypeField = value;
+                this.RaisePropertyChanged("mobilityType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType mobilityExtension {
+            get {
+                return this.mobilityExtensionField;
+            }
+            set {
+                this.mobilityExtensionField = value;
+                this.RaisePropertyChanged("mobilityExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum MobilityEnum {
+        
+        /// <remarks/>
+        mobile,
+        
+        /// <remarks/>
+        stationary,
+        
+        /// <remarks/>
+        unknown,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class Subjects : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private SubjectTypeOfWorksEnum subjectTypeOfWorksField;
+        
+        private string numberOfSubjectsField;
+        
+        private _ExtensionType subjectsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public SubjectTypeOfWorksEnum subjectTypeOfWorks {
+            get {
+                return this.subjectTypeOfWorksField;
+            }
+            set {
+                this.subjectTypeOfWorksField = value;
+                this.RaisePropertyChanged("subjectTypeOfWorks");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
+        public string numberOfSubjects {
+            get {
+                return this.numberOfSubjectsField;
+            }
+            set {
+                this.numberOfSubjectsField = value;
+                this.RaisePropertyChanged("numberOfSubjects");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType subjectsExtension {
+            get {
+                return this.subjectsExtensionField;
+            }
+            set {
+                this.subjectsExtensionField = value;
+                this.RaisePropertyChanged("subjectsExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum SubjectTypeOfWorksEnum {
+        
+        /// <remarks/>
+        bridge,
+        
+        /// <remarks/>
+        buriedCables,
+        
+        /// <remarks/>
+        buriedServices,
+        
+        /// <remarks/>
+        crashBarrier,
+        
+        /// <remarks/>
+        gallery,
+        
+        /// <remarks/>
+        gantry,
+        
+        /// <remarks/>
+        gasMainWork,
+        
+        /// <remarks/>
+        interchange,
+        
+        /// <remarks/>
+        junction,
+        
+        /// <remarks/>
+        levelCrossing,
+        
+        /// <remarks/>
+        lightingSystem,
+        
+        /// <remarks/>
+        measurementEquipment,
+        
+        /// <remarks/>
+        noiseProtection,
+        
+        /// <remarks/>
+        road,
+        
+        /// <remarks/>
+        roadsideDrains,
+        
+        /// <remarks/>
+        roadsideEmbankment,
+        
+        /// <remarks/>
+        roadsideEquipment,
+        
+        /// <remarks/>
+        roadSigns,
+        
+        /// <remarks/>
+        roundabout,
+        
+        /// <remarks/>
+        tollGate,
+        
+        /// <remarks/>
+        tunnel,
+        
+        /// <remarks/>
+        waterMain,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class MaintenanceVehicles : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string numberOfMaintenanceVehiclesField;
+        
+        private MaintenanceVehicleActionsEnum[] maintenanceVehicleActionsField;
+        
+        private _ExtensionType maintenanceVehiclesExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string numberOfMaintenanceVehicles {
+            get {
+                return this.numberOfMaintenanceVehiclesField;
+            }
+            set {
+                this.numberOfMaintenanceVehiclesField = value;
+                this.RaisePropertyChanged("numberOfMaintenanceVehicles");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("maintenanceVehicleActions", Order=1)]
+        public MaintenanceVehicleActionsEnum[] maintenanceVehicleActions {
+            get {
+                return this.maintenanceVehicleActionsField;
+            }
+            set {
+                this.maintenanceVehicleActionsField = value;
+                this.RaisePropertyChanged("maintenanceVehicleActions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType maintenanceVehiclesExtension {
+            get {
+                return this.maintenanceVehiclesExtensionField;
+            }
+            set {
+                this.maintenanceVehiclesExtensionField = value;
+                this.RaisePropertyChanged("maintenanceVehiclesExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum MaintenanceVehicleActionsEnum {
+        
+        /// <remarks/>
+        maintenanceVehiclesMergingIntoTrafficFlow,
+        
+        /// <remarks/>
+        saltAndGritSpreading,
+        
+        /// <remarks/>
+        slowMoving,
+        
+        /// <remarks/>
+        snowClearing,
+        
+        /// <remarks/>
+        stoppingToServiceEquipments,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class MaintenanceWorks : Roadworks {
+        
+        private RoadMaintenanceTypeEnum[] roadMaintenanceTypeField;
+        
+        private _ExtensionType maintenanceWorksExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("roadMaintenanceType", Order=0)]
+        public RoadMaintenanceTypeEnum[] roadMaintenanceType {
+            get {
+                return this.roadMaintenanceTypeField;
+            }
+            set {
+                this.roadMaintenanceTypeField = value;
+                this.RaisePropertyChanged("roadMaintenanceType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType maintenanceWorksExtension {
+            get {
+                return this.maintenanceWorksExtensionField;
+            }
+            set {
+                this.maintenanceWorksExtensionField = value;
+                this.RaisePropertyChanged("maintenanceWorksExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum RoadMaintenanceTypeEnum {
+        
+        /// <remarks/>
+        clearanceWork,
+        
+        /// <remarks/>
+        controlledAvalanche,
+        
+        /// <remarks/>
+        installationWork,
+        
+        /// <remarks/>
+        grassCuttingWork,
+        
+        /// <remarks/>
+        litterClearance,
+        
+        /// <remarks/>
+        maintenanceWork,
+        
+        /// <remarks/>
+        overheadWorks,
+        
+        /// <remarks/>
+        repairWork,
+        
+        /// <remarks/>
+        resurfacingWork,
+        
+        /// <remarks/>
+        roadMarkingWork,
+        
+        /// <remarks/>
+        roadsideWork,
+        
+        /// <remarks/>
+        roadworksClearance,
+        
+        /// <remarks/>
+        roadworks,
+        
+        /// <remarks/>
+        rockFallPreventativeMaintenance,
+        
+        /// <remarks/>
+        saltingInProgress,
+        
+        /// <remarks/>
+        snowploughsInUse,
+        
+        /// <remarks/>
+        sweepingOfRoad,
+        
+        /// <remarks/>
+        treeAndVegetationCuttingWork,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class ConstructionWorks : Roadworks {
+        
+        private ConstructionWorkTypeEnum constructionWorkTypeField;
+        
+        private bool constructionWorkTypeFieldSpecified;
+        
+        private _ExtensionType constructionWorksExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ConstructionWorkTypeEnum constructionWorkType {
+            get {
+                return this.constructionWorkTypeField;
+            }
+            set {
+                this.constructionWorkTypeField = value;
+                this.RaisePropertyChanged("constructionWorkType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool constructionWorkTypeSpecified {
+            get {
+                return this.constructionWorkTypeFieldSpecified;
+            }
+            set {
+                this.constructionWorkTypeFieldSpecified = value;
+                this.RaisePropertyChanged("constructionWorkTypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType constructionWorksExtension {
+            get {
+                return this.constructionWorksExtensionField;
+            }
+            set {
+                this.constructionWorksExtensionField = value;
+                this.RaisePropertyChanged("constructionWorksExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum ConstructionWorkTypeEnum {
+        
+        /// <remarks/>
+        blastingWork,
+        
+        /// <remarks/>
+        constructionWork,
+        
+        /// <remarks/>
+        demolitionWork,
+        
+        /// <remarks/>
+        roadImprovementOrUpgrading,
+        
+        /// <remarks/>
+        roadWideningWork,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class RoadsideAssistance : OperatorAction {
+        
+        private RoadsideAssistanceTypeEnum roadsideAssistanceTypeField;
+        
+        private _ExtensionType roadsideAssistanceExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public RoadsideAssistanceTypeEnum roadsideAssistanceType {
+            get {
+                return this.roadsideAssistanceTypeField;
+            }
+            set {
+                this.roadsideAssistanceTypeField = value;
+                this.RaisePropertyChanged("roadsideAssistanceType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType roadsideAssistanceExtension {
+            get {
+                return this.roadsideAssistanceExtensionField;
+            }
+            set {
+                this.roadsideAssistanceExtensionField = value;
+                this.RaisePropertyChanged("roadsideAssistanceExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum RoadsideAssistanceTypeEnum {
+        
+        /// <remarks/>
+        airAmbulance,
+        
+        /// <remarks/>
+        busPassengerAssistance,
+        
+        /// <remarks/>
+        emergencyServices,
+        
+        /// <remarks/>
+        firstAid,
+        
+        /// <remarks/>
+        foodDelivery,
+        
+        /// <remarks/>
+        helicopterRescue,
+        
+        /// <remarks/>
+        vehicleRepair,
+        
+        /// <remarks/>
+        vehicleRecovery,
         
         /// <remarks/>
         other,
@@ -14846,10 +15408,10 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasurementEquipmentFault))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsUnitFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasurementEquipmentFault))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElaboratedDataFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsFault))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15004,6 +15566,43 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class VmsUnitFault : Fault {
+        
+        private VmsFaultEnum vmsUnitFaultField;
+        
+        private _ExtensionType vmsUnitFaultExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VmsFaultEnum vmsUnitFault {
+            get {
+                return this.vmsUnitFaultField;
+            }
+            set {
+                this.vmsUnitFaultField = value;
+                this.RaisePropertyChanged("vmsUnitFault");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType vmsUnitFaultExtension {
+            get {
+                return this.vmsUnitFaultExtensionField;
+            }
+            set {
+                this.vmsUnitFaultExtensionField = value;
+                this.RaisePropertyChanged("vmsUnitFaultExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
     public partial class MeasurementEquipmentFault : Fault {
         
         private MeasurementEquipmentFaultEnum measurementEquipmentFaultField;
@@ -15055,43 +15654,6 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class VmsUnitFault : Fault {
-        
-        private VmsFaultEnum vmsUnitFaultField;
-        
-        private _ExtensionType vmsUnitFaultExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public VmsFaultEnum vmsUnitFault {
-            get {
-                return this.vmsUnitFaultField;
-            }
-            set {
-                this.vmsUnitFaultField = value;
-                this.RaisePropertyChanged("vmsUnitFault");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType vmsUnitFaultExtension {
-            get {
-                return this.vmsUnitFaultExtensionField;
-            }
-            set {
-                this.vmsUnitFaultExtensionField = value;
-                this.RaisePropertyChanged("vmsUnitFaultExtension");
-            }
-        }
     }
     
     /// <remarks/>
@@ -15154,746 +15716,10 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstructionWorks))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MaintenanceWorks))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class Roadworks : OperatorAction {
-        
-        private RoadworksDurationEnum roadworksDurationField;
-        
-        private bool roadworksDurationFieldSpecified;
-        
-        private RoadworksScaleEnum roadworksScaleField;
-        
-        private bool roadworksScaleFieldSpecified;
-        
-        private bool underTrafficField;
-        
-        private bool underTrafficFieldSpecified;
-        
-        private bool urgentRoadworksField;
-        
-        private bool urgentRoadworksFieldSpecified;
-        
-        private Mobility mobilityField;
-        
-        private Subjects subjectsField;
-        
-        private MaintenanceVehicles maintenanceVehiclesField;
-        
-        private _ExtensionType roadworksExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public RoadworksDurationEnum roadworksDuration {
-            get {
-                return this.roadworksDurationField;
-            }
-            set {
-                this.roadworksDurationField = value;
-                this.RaisePropertyChanged("roadworksDuration");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool roadworksDurationSpecified {
-            get {
-                return this.roadworksDurationFieldSpecified;
-            }
-            set {
-                this.roadworksDurationFieldSpecified = value;
-                this.RaisePropertyChanged("roadworksDurationSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public RoadworksScaleEnum roadworksScale {
-            get {
-                return this.roadworksScaleField;
-            }
-            set {
-                this.roadworksScaleField = value;
-                this.RaisePropertyChanged("roadworksScale");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool roadworksScaleSpecified {
-            get {
-                return this.roadworksScaleFieldSpecified;
-            }
-            set {
-                this.roadworksScaleFieldSpecified = value;
-                this.RaisePropertyChanged("roadworksScaleSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public bool underTraffic {
-            get {
-                return this.underTrafficField;
-            }
-            set {
-                this.underTrafficField = value;
-                this.RaisePropertyChanged("underTraffic");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool underTrafficSpecified {
-            get {
-                return this.underTrafficFieldSpecified;
-            }
-            set {
-                this.underTrafficFieldSpecified = value;
-                this.RaisePropertyChanged("underTrafficSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public bool urgentRoadworks {
-            get {
-                return this.urgentRoadworksField;
-            }
-            set {
-                this.urgentRoadworksField = value;
-                this.RaisePropertyChanged("urgentRoadworks");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool urgentRoadworksSpecified {
-            get {
-                return this.urgentRoadworksFieldSpecified;
-            }
-            set {
-                this.urgentRoadworksFieldSpecified = value;
-                this.RaisePropertyChanged("urgentRoadworksSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public Mobility mobility {
-            get {
-                return this.mobilityField;
-            }
-            set {
-                this.mobilityField = value;
-                this.RaisePropertyChanged("mobility");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public Subjects subjects {
-            get {
-                return this.subjectsField;
-            }
-            set {
-                this.subjectsField = value;
-                this.RaisePropertyChanged("subjects");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public MaintenanceVehicles maintenanceVehicles {
-            get {
-                return this.maintenanceVehiclesField;
-            }
-            set {
-                this.maintenanceVehiclesField = value;
-                this.RaisePropertyChanged("maintenanceVehicles");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public _ExtensionType roadworksExtension {
-            get {
-                return this.roadworksExtensionField;
-            }
-            set {
-                this.roadworksExtensionField = value;
-                this.RaisePropertyChanged("roadworksExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum RoadworksDurationEnum {
-        
-        /// <remarks/>
-        longTerm,
-        
-        /// <remarks/>
-        mediumTerm,
-        
-        /// <remarks/>
-        shortTerm,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum RoadworksScaleEnum {
-        
-        /// <remarks/>
-        major,
-        
-        /// <remarks/>
-        medium,
-        
-        /// <remarks/>
-        minor,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class Mobility : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private MobilityEnum mobilityTypeField;
-        
-        private _ExtensionType mobilityExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MobilityEnum mobilityType {
-            get {
-                return this.mobilityTypeField;
-            }
-            set {
-                this.mobilityTypeField = value;
-                this.RaisePropertyChanged("mobilityType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType mobilityExtension {
-            get {
-                return this.mobilityExtensionField;
-            }
-            set {
-                this.mobilityExtensionField = value;
-                this.RaisePropertyChanged("mobilityExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum MobilityEnum {
-        
-        /// <remarks/>
-        mobile,
-        
-        /// <remarks/>
-        stationary,
-        
-        /// <remarks/>
-        unknown,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class Subjects : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private SubjectTypeOfWorksEnum subjectTypeOfWorksField;
-        
-        private string numberOfSubjectsField;
-        
-        private _ExtensionType subjectsExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public SubjectTypeOfWorksEnum subjectTypeOfWorks {
-            get {
-                return this.subjectTypeOfWorksField;
-            }
-            set {
-                this.subjectTypeOfWorksField = value;
-                this.RaisePropertyChanged("subjectTypeOfWorks");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
-        public string numberOfSubjects {
-            get {
-                return this.numberOfSubjectsField;
-            }
-            set {
-                this.numberOfSubjectsField = value;
-                this.RaisePropertyChanged("numberOfSubjects");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType subjectsExtension {
-            get {
-                return this.subjectsExtensionField;
-            }
-            set {
-                this.subjectsExtensionField = value;
-                this.RaisePropertyChanged("subjectsExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum SubjectTypeOfWorksEnum {
-        
-        /// <remarks/>
-        bridge,
-        
-        /// <remarks/>
-        buriedCables,
-        
-        /// <remarks/>
-        buriedServices,
-        
-        /// <remarks/>
-        crashBarrier,
-        
-        /// <remarks/>
-        gallery,
-        
-        /// <remarks/>
-        gantry,
-        
-        /// <remarks/>
-        gasMainWork,
-        
-        /// <remarks/>
-        interchange,
-        
-        /// <remarks/>
-        junction,
-        
-        /// <remarks/>
-        levelCrossing,
-        
-        /// <remarks/>
-        lightingSystem,
-        
-        /// <remarks/>
-        measurementEquipment,
-        
-        /// <remarks/>
-        noiseProtection,
-        
-        /// <remarks/>
-        road,
-        
-        /// <remarks/>
-        roadsideDrains,
-        
-        /// <remarks/>
-        roadsideEmbankment,
-        
-        /// <remarks/>
-        roadsideEquipment,
-        
-        /// <remarks/>
-        roadSigns,
-        
-        /// <remarks/>
-        roundabout,
-        
-        /// <remarks/>
-        tollGate,
-        
-        /// <remarks/>
-        tunnel,
-        
-        /// <remarks/>
-        waterMain,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class MaintenanceVehicles : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string numberOfMaintenanceVehiclesField;
-        
-        private MaintenanceVehicleActionsEnum[] maintenanceVehicleActionsField;
-        
-        private _ExtensionType maintenanceVehiclesExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string numberOfMaintenanceVehicles {
-            get {
-                return this.numberOfMaintenanceVehiclesField;
-            }
-            set {
-                this.numberOfMaintenanceVehiclesField = value;
-                this.RaisePropertyChanged("numberOfMaintenanceVehicles");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("maintenanceVehicleActions", Order=1)]
-        public MaintenanceVehicleActionsEnum[] maintenanceVehicleActions {
-            get {
-                return this.maintenanceVehicleActionsField;
-            }
-            set {
-                this.maintenanceVehicleActionsField = value;
-                this.RaisePropertyChanged("maintenanceVehicleActions");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType maintenanceVehiclesExtension {
-            get {
-                return this.maintenanceVehiclesExtensionField;
-            }
-            set {
-                this.maintenanceVehiclesExtensionField = value;
-                this.RaisePropertyChanged("maintenanceVehiclesExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum MaintenanceVehicleActionsEnum {
-        
-        /// <remarks/>
-        maintenanceVehiclesMergingIntoTrafficFlow,
-        
-        /// <remarks/>
-        saltAndGritSpreading,
-        
-        /// <remarks/>
-        slowMoving,
-        
-        /// <remarks/>
-        snowClearing,
-        
-        /// <remarks/>
-        stoppingToServiceEquipments,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class ConstructionWorks : Roadworks {
-        
-        private ConstructionWorkTypeEnum constructionWorkTypeField;
-        
-        private bool constructionWorkTypeFieldSpecified;
-        
-        private _ExtensionType constructionWorksExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ConstructionWorkTypeEnum constructionWorkType {
-            get {
-                return this.constructionWorkTypeField;
-            }
-            set {
-                this.constructionWorkTypeField = value;
-                this.RaisePropertyChanged("constructionWorkType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool constructionWorkTypeSpecified {
-            get {
-                return this.constructionWorkTypeFieldSpecified;
-            }
-            set {
-                this.constructionWorkTypeFieldSpecified = value;
-                this.RaisePropertyChanged("constructionWorkTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType constructionWorksExtension {
-            get {
-                return this.constructionWorksExtensionField;
-            }
-            set {
-                this.constructionWorksExtensionField = value;
-                this.RaisePropertyChanged("constructionWorksExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum ConstructionWorkTypeEnum {
-        
-        /// <remarks/>
-        blastingWork,
-        
-        /// <remarks/>
-        constructionWork,
-        
-        /// <remarks/>
-        demolitionWork,
-        
-        /// <remarks/>
-        roadImprovementOrUpgrading,
-        
-        /// <remarks/>
-        roadWideningWork,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class MaintenanceWorks : Roadworks {
-        
-        private RoadMaintenanceTypeEnum[] roadMaintenanceTypeField;
-        
-        private _ExtensionType maintenanceWorksExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("roadMaintenanceType", Order=0)]
-        public RoadMaintenanceTypeEnum[] roadMaintenanceType {
-            get {
-                return this.roadMaintenanceTypeField;
-            }
-            set {
-                this.roadMaintenanceTypeField = value;
-                this.RaisePropertyChanged("roadMaintenanceType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType maintenanceWorksExtension {
-            get {
-                return this.maintenanceWorksExtensionField;
-            }
-            set {
-                this.maintenanceWorksExtensionField = value;
-                this.RaisePropertyChanged("maintenanceWorksExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum RoadMaintenanceTypeEnum {
-        
-        /// <remarks/>
-        clearanceWork,
-        
-        /// <remarks/>
-        controlledAvalanche,
-        
-        /// <remarks/>
-        installationWork,
-        
-        /// <remarks/>
-        grassCuttingWork,
-        
-        /// <remarks/>
-        litterClearance,
-        
-        /// <remarks/>
-        maintenanceWork,
-        
-        /// <remarks/>
-        overheadWorks,
-        
-        /// <remarks/>
-        repairWork,
-        
-        /// <remarks/>
-        resurfacingWork,
-        
-        /// <remarks/>
-        roadMarkingWork,
-        
-        /// <remarks/>
-        roadsideWork,
-        
-        /// <remarks/>
-        roadworksClearance,
-        
-        /// <remarks/>
-        roadworks,
-        
-        /// <remarks/>
-        rockFallPreventativeMaintenance,
-        
-        /// <remarks/>
-        saltingInProgress,
-        
-        /// <remarks/>
-        snowploughsInUse,
-        
-        /// <remarks/>
-        sweepingOfRoad,
-        
-        /// <remarks/>
-        treeAndVegetationCuttingWork,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class RoadsideAssistance : OperatorAction {
-        
-        private RoadsideAssistanceTypeEnum roadsideAssistanceTypeField;
-        
-        private _ExtensionType roadsideAssistanceExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public RoadsideAssistanceTypeEnum roadsideAssistanceType {
-            get {
-                return this.roadsideAssistanceTypeField;
-            }
-            set {
-                this.roadsideAssistanceTypeField = value;
-                this.RaisePropertyChanged("roadsideAssistanceType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType roadsideAssistanceExtension {
-            get {
-                return this.roadsideAssistanceExtensionField;
-            }
-            set {
-                this.roadsideAssistanceExtensionField = value;
-                this.RaisePropertyChanged("roadsideAssistanceExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum RoadsideAssistanceTypeEnum {
-        
-        /// <remarks/>
-        airAmbulance,
-        
-        /// <remarks/>
-        busPassengerAssistance,
-        
-        /// <remarks/>
-        emergencyServices,
-        
-        /// <remarks/>
-        firstAid,
-        
-        /// <remarks/>
-        foodDelivery,
-        
-        /// <remarks/>
-        helicopterRescue,
-        
-        /// <remarks/>
-        vehicleRepair,
-        
-        /// <remarks/>
-        vehicleRecovery,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CarParks))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TransitInformation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadOperatorServiceDisruption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TransitInformation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadsideServiceDisruption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CarParks))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15914,6 +15740,388 @@ namespace TestClient.SubscriberServiceReference {
                 this.RaisePropertyChanged("nonRoadEventInformationExtension");
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class RoadOperatorServiceDisruption : NonRoadEventInformation {
+        
+        private RoadOperatorServiceDisruptionTypeEnum[] roadOperatorServiceDisruptionTypeField;
+        
+        private _ExtensionType roadOperatorServiceDisruptionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("roadOperatorServiceDisruptionType", Order=0)]
+        public RoadOperatorServiceDisruptionTypeEnum[] roadOperatorServiceDisruptionType {
+            get {
+                return this.roadOperatorServiceDisruptionTypeField;
+            }
+            set {
+                this.roadOperatorServiceDisruptionTypeField = value;
+                this.RaisePropertyChanged("roadOperatorServiceDisruptionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType roadOperatorServiceDisruptionExtension {
+            get {
+                return this.roadOperatorServiceDisruptionExtensionField;
+            }
+            set {
+                this.roadOperatorServiceDisruptionExtensionField = value;
+                this.RaisePropertyChanged("roadOperatorServiceDisruptionExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum RoadOperatorServiceDisruptionTypeEnum {
+        
+        /// <remarks/>
+        emergencyTelephoneNumberOutOfService,
+        
+        /// <remarks/>
+        informationServiceTelephoneNumberOutOfService,
+        
+        /// <remarks/>
+        noTrafficOfficerPatrolService,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TransitInformation : NonRoadEventInformation {
+        
+        private MultilingualString journeyDestinationField;
+        
+        private MultilingualString journeyOriginField;
+        
+        private string journeyReferenceField;
+        
+        private TransitServiceInformationEnum transitServiceInformationField;
+        
+        private TransitServiceTypeEnum transitServiceTypeField;
+        
+        private System.DateTime scheduledDepartureTimeField;
+        
+        private bool scheduledDepartureTimeFieldSpecified;
+        
+        private _ExtensionType transitInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MultilingualString journeyDestination {
+            get {
+                return this.journeyDestinationField;
+            }
+            set {
+                this.journeyDestinationField = value;
+                this.RaisePropertyChanged("journeyDestination");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public MultilingualString journeyOrigin {
+            get {
+                return this.journeyOriginField;
+            }
+            set {
+                this.journeyOriginField = value;
+                this.RaisePropertyChanged("journeyOrigin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string journeyReference {
+            get {
+                return this.journeyReferenceField;
+            }
+            set {
+                this.journeyReferenceField = value;
+                this.RaisePropertyChanged("journeyReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public TransitServiceInformationEnum transitServiceInformation {
+            get {
+                return this.transitServiceInformationField;
+            }
+            set {
+                this.transitServiceInformationField = value;
+                this.RaisePropertyChanged("transitServiceInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public TransitServiceTypeEnum transitServiceType {
+            get {
+                return this.transitServiceTypeField;
+            }
+            set {
+                this.transitServiceTypeField = value;
+                this.RaisePropertyChanged("transitServiceType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public System.DateTime scheduledDepartureTime {
+            get {
+                return this.scheduledDepartureTimeField;
+            }
+            set {
+                this.scheduledDepartureTimeField = value;
+                this.RaisePropertyChanged("scheduledDepartureTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool scheduledDepartureTimeSpecified {
+            get {
+                return this.scheduledDepartureTimeFieldSpecified;
+            }
+            set {
+                this.scheduledDepartureTimeFieldSpecified = value;
+                this.RaisePropertyChanged("scheduledDepartureTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public _ExtensionType transitInformationExtension {
+            get {
+                return this.transitInformationExtensionField;
+            }
+            set {
+                this.transitInformationExtensionField = value;
+                this.RaisePropertyChanged("transitInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TransitServiceInformationEnum {
+        
+        /// <remarks/>
+        cancellations,
+        
+        /// <remarks/>
+        delayDueToBadWeather,
+        
+        /// <remarks/>
+        delayDueToRepairs,
+        
+        /// <remarks/>
+        delayedUntilFurtherNotice,
+        
+        /// <remarks/>
+        delaysDueToFlotsam,
+        
+        /// <remarks/>
+        departureOnSchedule,
+        
+        /// <remarks/>
+        ferryReplacedByIceRoad,
+        
+        /// <remarks/>
+        freeShuttleServiceOperating,
+        
+        /// <remarks/>
+        informationServiceNotAvailable,
+        
+        /// <remarks/>
+        irregularServiceDelays,
+        
+        /// <remarks/>
+        loadCapacityChanged,
+        
+        /// <remarks/>
+        restrictionsForLongerVehicles,
+        
+        /// <remarks/>
+        serviceDelays,
+        
+        /// <remarks/>
+        serviceDelaysOfUncertainDuration,
+        
+        /// <remarks/>
+        serviceFullyBooked,
+        
+        /// <remarks/>
+        serviceNotOperating,
+        
+        /// <remarks/>
+        serviceNotOperatingSubstituteServiceAvailable,
+        
+        /// <remarks/>
+        serviceSuspended,
+        
+        /// <remarks/>
+        serviceWithdrawn,
+        
+        /// <remarks/>
+        shuttleServiceOperating,
+        
+        /// <remarks/>
+        temporaryChangesToTimetables,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TransitServiceTypeEnum {
+        
+        /// <remarks/>
+        air,
+        
+        /// <remarks/>
+        bus,
+        
+        /// <remarks/>
+        ferry,
+        
+        /// <remarks/>
+        hydrofoil,
+        
+        /// <remarks/>
+        rail,
+        
+        /// <remarks/>
+        tram,
+        
+        /// <remarks/>
+        undergroundMetro,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class RoadsideServiceDisruption : NonRoadEventInformation {
+        
+        private RoadsideServiceDisruptionTypeEnum[] roadsideServiceDisruptionTypeField;
+        
+        private _ExtensionType roadsideServiceDisruptionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("roadsideServiceDisruptionType", Order=0)]
+        public RoadsideServiceDisruptionTypeEnum[] roadsideServiceDisruptionType {
+            get {
+                return this.roadsideServiceDisruptionTypeField;
+            }
+            set {
+                this.roadsideServiceDisruptionTypeField = value;
+                this.RaisePropertyChanged("roadsideServiceDisruptionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType roadsideServiceDisruptionExtension {
+            get {
+                return this.roadsideServiceDisruptionExtensionField;
+            }
+            set {
+                this.roadsideServiceDisruptionExtensionField = value;
+                this.RaisePropertyChanged("roadsideServiceDisruptionExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum RoadsideServiceDisruptionTypeEnum {
+        
+        /// <remarks/>
+        barClosed,
+        
+        /// <remarks/>
+        dieselShortage,
+        
+        /// <remarks/>
+        fuelShortage,
+        
+        /// <remarks/>
+        lpgShortage,
+        
+        /// <remarks/>
+        methaneShortage,
+        
+        /// <remarks/>
+        noDieselForHeavyVehicles,
+        
+        /// <remarks/>
+        noDieselForLightVehicles,
+        
+        /// <remarks/>
+        noPublicTelephones,
+        
+        /// <remarks/>
+        noToiletFacilities,
+        
+        /// <remarks/>
+        noVehicleRepairFacilities,
+        
+        /// <remarks/>
+        petrolShortage,
+        
+        /// <remarks/>
+        restAreaBusy,
+        
+        /// <remarks/>
+        restAreaClosed,
+        
+        /// <remarks/>
+        restAreaOvercrowdedDriveToAnotherRestArea,
+        
+        /// <remarks/>
+        serviceAreaBusy,
+        
+        /// <remarks/>
+        serviceAreaClosed,
+        
+        /// <remarks/>
+        serviceAreaFuelStationClosed,
+        
+        /// <remarks/>
+        serviceAreaOvercrowdedDriveToAnotherServiceArea,
+        
+        /// <remarks/>
+        serviceAreaRestaurantClosed,
+        
+        /// <remarks/>
+        someCommercialServicesClosed,
+        
+        /// <remarks/>
+        waterShortage,
     }
     
     /// <remarks/>
@@ -16215,388 +16423,6 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TransitInformation : NonRoadEventInformation {
-        
-        private MultilingualString journeyDestinationField;
-        
-        private MultilingualString journeyOriginField;
-        
-        private string journeyReferenceField;
-        
-        private TransitServiceInformationEnum transitServiceInformationField;
-        
-        private TransitServiceTypeEnum transitServiceTypeField;
-        
-        private System.DateTime scheduledDepartureTimeField;
-        
-        private bool scheduledDepartureTimeFieldSpecified;
-        
-        private _ExtensionType transitInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MultilingualString journeyDestination {
-            get {
-                return this.journeyDestinationField;
-            }
-            set {
-                this.journeyDestinationField = value;
-                this.RaisePropertyChanged("journeyDestination");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public MultilingualString journeyOrigin {
-            get {
-                return this.journeyOriginField;
-            }
-            set {
-                this.journeyOriginField = value;
-                this.RaisePropertyChanged("journeyOrigin");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string journeyReference {
-            get {
-                return this.journeyReferenceField;
-            }
-            set {
-                this.journeyReferenceField = value;
-                this.RaisePropertyChanged("journeyReference");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public TransitServiceInformationEnum transitServiceInformation {
-            get {
-                return this.transitServiceInformationField;
-            }
-            set {
-                this.transitServiceInformationField = value;
-                this.RaisePropertyChanged("transitServiceInformation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public TransitServiceTypeEnum transitServiceType {
-            get {
-                return this.transitServiceTypeField;
-            }
-            set {
-                this.transitServiceTypeField = value;
-                this.RaisePropertyChanged("transitServiceType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public System.DateTime scheduledDepartureTime {
-            get {
-                return this.scheduledDepartureTimeField;
-            }
-            set {
-                this.scheduledDepartureTimeField = value;
-                this.RaisePropertyChanged("scheduledDepartureTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool scheduledDepartureTimeSpecified {
-            get {
-                return this.scheduledDepartureTimeFieldSpecified;
-            }
-            set {
-                this.scheduledDepartureTimeFieldSpecified = value;
-                this.RaisePropertyChanged("scheduledDepartureTimeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public _ExtensionType transitInformationExtension {
-            get {
-                return this.transitInformationExtensionField;
-            }
-            set {
-                this.transitInformationExtensionField = value;
-                this.RaisePropertyChanged("transitInformationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TransitServiceInformationEnum {
-        
-        /// <remarks/>
-        cancellations,
-        
-        /// <remarks/>
-        delayDueToBadWeather,
-        
-        /// <remarks/>
-        delayDueToRepairs,
-        
-        /// <remarks/>
-        delayedUntilFurtherNotice,
-        
-        /// <remarks/>
-        delaysDueToFlotsam,
-        
-        /// <remarks/>
-        departureOnSchedule,
-        
-        /// <remarks/>
-        ferryReplacedByIceRoad,
-        
-        /// <remarks/>
-        freeShuttleServiceOperating,
-        
-        /// <remarks/>
-        informationServiceNotAvailable,
-        
-        /// <remarks/>
-        irregularServiceDelays,
-        
-        /// <remarks/>
-        loadCapacityChanged,
-        
-        /// <remarks/>
-        restrictionsForLongerVehicles,
-        
-        /// <remarks/>
-        serviceDelays,
-        
-        /// <remarks/>
-        serviceDelaysOfUncertainDuration,
-        
-        /// <remarks/>
-        serviceFullyBooked,
-        
-        /// <remarks/>
-        serviceNotOperating,
-        
-        /// <remarks/>
-        serviceNotOperatingSubstituteServiceAvailable,
-        
-        /// <remarks/>
-        serviceSuspended,
-        
-        /// <remarks/>
-        serviceWithdrawn,
-        
-        /// <remarks/>
-        shuttleServiceOperating,
-        
-        /// <remarks/>
-        temporaryChangesToTimetables,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TransitServiceTypeEnum {
-        
-        /// <remarks/>
-        air,
-        
-        /// <remarks/>
-        bus,
-        
-        /// <remarks/>
-        ferry,
-        
-        /// <remarks/>
-        hydrofoil,
-        
-        /// <remarks/>
-        rail,
-        
-        /// <remarks/>
-        tram,
-        
-        /// <remarks/>
-        undergroundMetro,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class RoadOperatorServiceDisruption : NonRoadEventInformation {
-        
-        private RoadOperatorServiceDisruptionTypeEnum[] roadOperatorServiceDisruptionTypeField;
-        
-        private _ExtensionType roadOperatorServiceDisruptionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("roadOperatorServiceDisruptionType", Order=0)]
-        public RoadOperatorServiceDisruptionTypeEnum[] roadOperatorServiceDisruptionType {
-            get {
-                return this.roadOperatorServiceDisruptionTypeField;
-            }
-            set {
-                this.roadOperatorServiceDisruptionTypeField = value;
-                this.RaisePropertyChanged("roadOperatorServiceDisruptionType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType roadOperatorServiceDisruptionExtension {
-            get {
-                return this.roadOperatorServiceDisruptionExtensionField;
-            }
-            set {
-                this.roadOperatorServiceDisruptionExtensionField = value;
-                this.RaisePropertyChanged("roadOperatorServiceDisruptionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum RoadOperatorServiceDisruptionTypeEnum {
-        
-        /// <remarks/>
-        emergencyTelephoneNumberOutOfService,
-        
-        /// <remarks/>
-        informationServiceTelephoneNumberOutOfService,
-        
-        /// <remarks/>
-        noTrafficOfficerPatrolService,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class RoadsideServiceDisruption : NonRoadEventInformation {
-        
-        private RoadsideServiceDisruptionTypeEnum[] roadsideServiceDisruptionTypeField;
-        
-        private _ExtensionType roadsideServiceDisruptionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("roadsideServiceDisruptionType", Order=0)]
-        public RoadsideServiceDisruptionTypeEnum[] roadsideServiceDisruptionType {
-            get {
-                return this.roadsideServiceDisruptionTypeField;
-            }
-            set {
-                this.roadsideServiceDisruptionTypeField = value;
-                this.RaisePropertyChanged("roadsideServiceDisruptionType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType roadsideServiceDisruptionExtension {
-            get {
-                return this.roadsideServiceDisruptionExtensionField;
-            }
-            set {
-                this.roadsideServiceDisruptionExtensionField = value;
-                this.RaisePropertyChanged("roadsideServiceDisruptionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum RoadsideServiceDisruptionTypeEnum {
-        
-        /// <remarks/>
-        barClosed,
-        
-        /// <remarks/>
-        dieselShortage,
-        
-        /// <remarks/>
-        fuelShortage,
-        
-        /// <remarks/>
-        lpgShortage,
-        
-        /// <remarks/>
-        methaneShortage,
-        
-        /// <remarks/>
-        noDieselForHeavyVehicles,
-        
-        /// <remarks/>
-        noDieselForLightVehicles,
-        
-        /// <remarks/>
-        noPublicTelephones,
-        
-        /// <remarks/>
-        noToiletFacilities,
-        
-        /// <remarks/>
-        noVehicleRepairFacilities,
-        
-        /// <remarks/>
-        petrolShortage,
-        
-        /// <remarks/>
-        restAreaBusy,
-        
-        /// <remarks/>
-        restAreaClosed,
-        
-        /// <remarks/>
-        restAreaOvercrowdedDriveToAnotherRestArea,
-        
-        /// <remarks/>
-        serviceAreaBusy,
-        
-        /// <remarks/>
-        serviceAreaClosed,
-        
-        /// <remarks/>
-        serviceAreaFuelStationClosed,
-        
-        /// <remarks/>
-        serviceAreaOvercrowdedDriveToAnotherServiceArea,
-        
-        /// <remarks/>
-        serviceAreaRestaurantClosed,
-        
-        /// <remarks/>
-        someCommercialServicesClosed,
-        
-        /// <remarks/>
-        waterShortage,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
     public abstract partial class GenericSituationRecord : SituationRecord {
         
         private string genericSituationRecordNameField;
@@ -16629,51 +16455,150 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Conditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PoorEnvironmentConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonWeatherRelatedRoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Accident))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Obstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InfrastructureDamageObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AnimalPresenceObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnvironmentalObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EquipmentOrSystemFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Activity))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublicEvent))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisturbanceActivity))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthorityOperation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbnormalTraffic))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class TrafficElement : SituationRecord {
+    public partial class EquipmentOrSystemFault : TrafficElement {
         
-        private _ExtensionType trafficElementExtensionField;
+        private EquipmentOrSystemFaultTypeEnum equipmentOrSystemFaultTypeField;
+        
+        private EquipmentOrSystemTypeEnum faultyEquipmentOrSystemTypeField;
+        
+        private _ExtensionType equipmentOrSystemFaultExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _ExtensionType trafficElementExtension {
+        public EquipmentOrSystemFaultTypeEnum equipmentOrSystemFaultType {
             get {
-                return this.trafficElementExtensionField;
+                return this.equipmentOrSystemFaultTypeField;
             }
             set {
-                this.trafficElementExtensionField = value;
-                this.RaisePropertyChanged("trafficElementExtension");
+                this.equipmentOrSystemFaultTypeField = value;
+                this.RaisePropertyChanged("equipmentOrSystemFaultType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EquipmentOrSystemTypeEnum faultyEquipmentOrSystemType {
+            get {
+                return this.faultyEquipmentOrSystemTypeField;
+            }
+            set {
+                this.faultyEquipmentOrSystemTypeField = value;
+                this.RaisePropertyChanged("faultyEquipmentOrSystemType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType equipmentOrSystemFaultExtension {
+            get {
+                return this.equipmentOrSystemFaultExtensionField;
+            }
+            set {
+                this.equipmentOrSystemFaultExtensionField = value;
+                this.RaisePropertyChanged("equipmentOrSystemFaultExtension");
             }
         }
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PoorEnvironmentConditions))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum EquipmentOrSystemFaultTypeEnum {
+        
+        /// <remarks/>
+        notWorking,
+        
+        /// <remarks/>
+        outOfService,
+        
+        /// <remarks/>
+        workingIncorrectly,
+        
+        /// <remarks/>
+        workingIntermittently,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum EquipmentOrSystemTypeEnum {
+        
+        /// <remarks/>
+        anprCameras,
+        
+        /// <remarks/>
+        automatedTollSystem,
+        
+        /// <remarks/>
+        cctvCameras,
+        
+        /// <remarks/>
+        emergencyRoadsideTelephones,
+        
+        /// <remarks/>
+        galleryLights,
+        
+        /// <remarks/>
+        laneControlSigns,
+        
+        /// <remarks/>
+        levelCrossing,
+        
+        /// <remarks/>
+        matrixSigns,
+        
+        /// <remarks/>
+        rampControls,
+        
+        /// <remarks/>
+        roadsideCommunicationsSystem,
+        
+        /// <remarks/>
+        roadsidePowerSystem,
+        
+        /// <remarks/>
+        speedControlSigns,
+        
+        /// <remarks/>
+        streetLighting,
+        
+        /// <remarks/>
+        temporaryTrafficLights,
+        
+        /// <remarks/>
+        tollGates,
+        
+        /// <remarks/>
+        trafficLightSets,
+        
+        /// <remarks/>
+        trafficSignals,
+        
+        /// <remarks/>
+        tunnelLights,
+        
+        /// <remarks/>
+        tunnelVentilation,
+        
+        /// <remarks/>
+        variableMessageSigns,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonWeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PoorEnvironmentConditions))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16753,6 +16678,1382 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         other,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonWeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class RoadConditions : Conditions {
+        
+        private _ExtensionType roadConditionsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _ExtensionType roadConditionsExtension {
+            get {
+                return this.roadConditionsExtensionField;
+            }
+            set {
+                this.roadConditionsExtensionField = value;
+                this.RaisePropertyChanged("roadConditionsExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class NonWeatherRelatedRoadConditions : RoadConditions {
+        
+        private NonWeatherRelatedRoadConditionTypeEnum[] nonWeatherRelatedRoadConditionTypeField;
+        
+        private _ExtensionType nonWeatherRelatedRoadConditionsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("nonWeatherRelatedRoadConditionType", Order=0)]
+        public NonWeatherRelatedRoadConditionTypeEnum[] nonWeatherRelatedRoadConditionType {
+            get {
+                return this.nonWeatherRelatedRoadConditionTypeField;
+            }
+            set {
+                this.nonWeatherRelatedRoadConditionTypeField = value;
+                this.RaisePropertyChanged("nonWeatherRelatedRoadConditionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType nonWeatherRelatedRoadConditionsExtension {
+            get {
+                return this.nonWeatherRelatedRoadConditionsExtensionField;
+            }
+            set {
+                this.nonWeatherRelatedRoadConditionsExtensionField = value;
+                this.RaisePropertyChanged("nonWeatherRelatedRoadConditionsExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum NonWeatherRelatedRoadConditionTypeEnum {
+        
+        /// <remarks/>
+        dieselOnRoad,
+        
+        /// <remarks/>
+        leavesOnRoad,
+        
+        /// <remarks/>
+        looseChippings,
+        
+        /// <remarks/>
+        looseSandOnRoad,
+        
+        /// <remarks/>
+        mudOnRoad,
+        
+        /// <remarks/>
+        oilOnRoad,
+        
+        /// <remarks/>
+        petrolOnRoad,
+        
+        /// <remarks/>
+        roadSurfaceInPoorCondition,
+        
+        /// <remarks/>
+        slipperyRoad,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class WeatherRelatedRoadConditions : RoadConditions {
+        
+        private WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionTypeField;
+        
+        private RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurementsField;
+        
+        private _ExtensionType weatherRelatedRoadConditionsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("weatherRelatedRoadConditionType", Order=0)]
+        public WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionType {
+            get {
+                return this.weatherRelatedRoadConditionTypeField;
+            }
+            set {
+                this.weatherRelatedRoadConditionTypeField = value;
+                this.RaisePropertyChanged("weatherRelatedRoadConditionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurements {
+            get {
+                return this.roadSurfaceConditionMeasurementsField;
+            }
+            set {
+                this.roadSurfaceConditionMeasurementsField = value;
+                this.RaisePropertyChanged("roadSurfaceConditionMeasurements");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType weatherRelatedRoadConditionsExtension {
+            get {
+                return this.weatherRelatedRoadConditionsExtensionField;
+            }
+            set {
+                this.weatherRelatedRoadConditionsExtensionField = value;
+                this.RaisePropertyChanged("weatherRelatedRoadConditionsExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum WeatherRelatedRoadConditionTypeEnum {
+        
+        /// <remarks/>
+        blackIce,
+        
+        /// <remarks/>
+        deepSnow,
+        
+        /// <remarks/>
+        dry,
+        
+        /// <remarks/>
+        freezingOfWetRoads,
+        
+        /// <remarks/>
+        freezingPavements,
+        
+        /// <remarks/>
+        freezingRain,
+        
+        /// <remarks/>
+        freshSnow,
+        
+        /// <remarks/>
+        ice,
+        
+        /// <remarks/>
+        iceBuildUp,
+        
+        /// <remarks/>
+        iceWithWheelBarTracks,
+        
+        /// <remarks/>
+        icyPatches,
+        
+        /// <remarks/>
+        looseSnow,
+        
+        /// <remarks/>
+        normalWinterConditionsForPedestrians,
+        
+        /// <remarks/>
+        packedSnow,
+        
+        /// <remarks/>
+        roadSurfaceMelting,
+        
+        /// <remarks/>
+        slipperyRoad,
+        
+        /// <remarks/>
+        slushOnRoad,
+        
+        /// <remarks/>
+        slushStrings,
+        
+        /// <remarks/>
+        snowDrifts,
+        
+        /// <remarks/>
+        snowOnPavement,
+        
+        /// <remarks/>
+        snowOnTheRoad,
+        
+        /// <remarks/>
+        surfaceWater,
+        
+        /// <remarks/>
+        wet,
+        
+        /// <remarks/>
+        wetAndIcyRoad,
+        
+        /// <remarks/>
+        wetIcyPavement,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class RoadSurfaceConditionMeasurements : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private TemperatureValue roadSurfaceTemperatureField;
+        
+        private TemperatureValue protectionTemperatureField;
+        
+        private ApplicationRateValue deIcingApplicationRateField;
+        
+        private KilogramsConcentrationValue deIcingConcentrationField;
+        
+        private FloatingPointMetreDistanceValue depthOfSnowField;
+        
+        private FloatingPointMetreDistanceValue waterFilmThicknessField;
+        
+        private _ExtensionType roadSurfaceConditionMeasurementsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TemperatureValue roadSurfaceTemperature {
+            get {
+                return this.roadSurfaceTemperatureField;
+            }
+            set {
+                this.roadSurfaceTemperatureField = value;
+                this.RaisePropertyChanged("roadSurfaceTemperature");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TemperatureValue protectionTemperature {
+            get {
+                return this.protectionTemperatureField;
+            }
+            set {
+                this.protectionTemperatureField = value;
+                this.RaisePropertyChanged("protectionTemperature");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ApplicationRateValue deIcingApplicationRate {
+            get {
+                return this.deIcingApplicationRateField;
+            }
+            set {
+                this.deIcingApplicationRateField = value;
+                this.RaisePropertyChanged("deIcingApplicationRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public KilogramsConcentrationValue deIcingConcentration {
+            get {
+                return this.deIcingConcentrationField;
+            }
+            set {
+                this.deIcingConcentrationField = value;
+                this.RaisePropertyChanged("deIcingConcentration");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public FloatingPointMetreDistanceValue depthOfSnow {
+            get {
+                return this.depthOfSnowField;
+            }
+            set {
+                this.depthOfSnowField = value;
+                this.RaisePropertyChanged("depthOfSnow");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public FloatingPointMetreDistanceValue waterFilmThickness {
+            get {
+                return this.waterFilmThicknessField;
+            }
+            set {
+                this.waterFilmThicknessField = value;
+                this.RaisePropertyChanged("waterFilmThickness");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public _ExtensionType roadSurfaceConditionMeasurementsExtension {
+            get {
+                return this.roadSurfaceConditionMeasurementsExtensionField;
+            }
+            set {
+                this.roadSurfaceConditionMeasurementsExtensionField = value;
+                this.RaisePropertyChanged("roadSurfaceConditionMeasurementsExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TemperatureValue : DataValue {
+        
+        private float temperatureField;
+        
+        private _ExtensionType temperatureValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float temperature {
+            get {
+                return this.temperatureField;
+            }
+            set {
+                this.temperatureField = value;
+                this.RaisePropertyChanged("temperature");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType temperatureValueExtension {
+            get {
+                return this.temperatureValueExtensionField;
+            }
+            set {
+                this.temperatureValueExtensionField = value;
+                this.RaisePropertyChanged("temperatureValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficStatusValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemperatureValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpeedValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecipitationIntensityValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentageValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PcuFlowValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MicrogramsConcentrationValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KilogramsConcentrationValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IntegerMetreDistanceValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloatingPointMetreDistanceValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DirectionCompassValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DirectionBearingValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleFlowValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConcentrationOfVehiclesValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AxleFlowValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationRateValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DurationValue))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class DataValue : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool dataErrorField;
+        
+        private bool dataErrorFieldSpecified;
+        
+        private MultilingualString reasonForDataErrorField;
+        
+        private _ExtensionType dataValueExtensionField;
+        
+        private float accuracyField;
+        
+        private bool accuracyFieldSpecified;
+        
+        private ComputationMethodEnum computationalMethodField;
+        
+        private bool computationalMethodFieldSpecified;
+        
+        private string numberOfIncompleteInputsField;
+        
+        private string numberOfInputValuesUsedField;
+        
+        private float smoothingFactorField;
+        
+        private bool smoothingFactorFieldSpecified;
+        
+        private float standardDeviationField;
+        
+        private bool standardDeviationFieldSpecified;
+        
+        private float supplierCalculatedDataQualityField;
+        
+        private bool supplierCalculatedDataQualityFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool dataError {
+            get {
+                return this.dataErrorField;
+            }
+            set {
+                this.dataErrorField = value;
+                this.RaisePropertyChanged("dataError");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool dataErrorSpecified {
+            get {
+                return this.dataErrorFieldSpecified;
+            }
+            set {
+                this.dataErrorFieldSpecified = value;
+                this.RaisePropertyChanged("dataErrorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public MultilingualString reasonForDataError {
+            get {
+                return this.reasonForDataErrorField;
+            }
+            set {
+                this.reasonForDataErrorField = value;
+                this.RaisePropertyChanged("reasonForDataError");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType dataValueExtension {
+            get {
+                return this.dataValueExtensionField;
+            }
+            set {
+                this.dataValueExtensionField = value;
+                this.RaisePropertyChanged("dataValueExtension");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float accuracy {
+            get {
+                return this.accuracyField;
+            }
+            set {
+                this.accuracyField = value;
+                this.RaisePropertyChanged("accuracy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool accuracySpecified {
+            get {
+                return this.accuracyFieldSpecified;
+            }
+            set {
+                this.accuracyFieldSpecified = value;
+                this.RaisePropertyChanged("accuracySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ComputationMethodEnum computationalMethod {
+            get {
+                return this.computationalMethodField;
+            }
+            set {
+                this.computationalMethodField = value;
+                this.RaisePropertyChanged("computationalMethod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool computationalMethodSpecified {
+            get {
+                return this.computationalMethodFieldSpecified;
+            }
+            set {
+                this.computationalMethodFieldSpecified = value;
+                this.RaisePropertyChanged("computationalMethodSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string numberOfIncompleteInputs {
+            get {
+                return this.numberOfIncompleteInputsField;
+            }
+            set {
+                this.numberOfIncompleteInputsField = value;
+                this.RaisePropertyChanged("numberOfIncompleteInputs");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string numberOfInputValuesUsed {
+            get {
+                return this.numberOfInputValuesUsedField;
+            }
+            set {
+                this.numberOfInputValuesUsedField = value;
+                this.RaisePropertyChanged("numberOfInputValuesUsed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float smoothingFactor {
+            get {
+                return this.smoothingFactorField;
+            }
+            set {
+                this.smoothingFactorField = value;
+                this.RaisePropertyChanged("smoothingFactor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool smoothingFactorSpecified {
+            get {
+                return this.smoothingFactorFieldSpecified;
+            }
+            set {
+                this.smoothingFactorFieldSpecified = value;
+                this.RaisePropertyChanged("smoothingFactorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float standardDeviation {
+            get {
+                return this.standardDeviationField;
+            }
+            set {
+                this.standardDeviationField = value;
+                this.RaisePropertyChanged("standardDeviation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool standardDeviationSpecified {
+            get {
+                return this.standardDeviationFieldSpecified;
+            }
+            set {
+                this.standardDeviationFieldSpecified = value;
+                this.RaisePropertyChanged("standardDeviationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float supplierCalculatedDataQuality {
+            get {
+                return this.supplierCalculatedDataQualityField;
+            }
+            set {
+                this.supplierCalculatedDataQualityField = value;
+                this.RaisePropertyChanged("supplierCalculatedDataQuality");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool supplierCalculatedDataQualitySpecified {
+            get {
+                return this.supplierCalculatedDataQualityFieldSpecified;
+            }
+            set {
+                this.supplierCalculatedDataQualityFieldSpecified = value;
+                this.RaisePropertyChanged("supplierCalculatedDataQualitySpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum ComputationMethodEnum {
+        
+        /// <remarks/>
+        arithmeticAverageOfSamplesBasedOnAFixedNumberOfSamples,
+        
+        /// <remarks/>
+        arithmeticAverageOfSamplesInATimePeriod,
+        
+        /// <remarks/>
+        harmonicAverageOfSamplesInATimePeriod,
+        
+        /// <remarks/>
+        medianOfSamplesInATimePeriod,
+        
+        /// <remarks/>
+        movingAverageOfSamples,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class DateTimeValue : DataValue {
+        
+        private System.DateTime dateTimeField;
+        
+        private _ExtensionType dateTimeValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime dateTime {
+            get {
+                return this.dateTimeField;
+            }
+            set {
+                this.dateTimeField = value;
+                this.RaisePropertyChanged("dateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType dateTimeValueExtension {
+            get {
+                return this.dateTimeValueExtensionField;
+            }
+            set {
+                this.dateTimeValueExtensionField = value;
+                this.RaisePropertyChanged("dateTimeValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TrafficStatusValue : DataValue {
+        
+        private TrafficStatusEnum trafficStatusValueField;
+        
+        private _ExtensionType trafficStatusValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TrafficStatusEnum trafficStatusValue {
+            get {
+                return this.trafficStatusValueField;
+            }
+            set {
+                this.trafficStatusValueField = value;
+                this.RaisePropertyChanged("trafficStatusValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType trafficStatusValueExtension {
+            get {
+                return this.trafficStatusValueExtensionField;
+            }
+            set {
+                this.trafficStatusValueExtensionField = value;
+                this.RaisePropertyChanged("trafficStatusValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TrafficStatusEnum {
+        
+        /// <remarks/>
+        impossible,
+        
+        /// <remarks/>
+        congested,
+        
+        /// <remarks/>
+        heavy,
+        
+        /// <remarks/>
+        freeFlow,
+        
+        /// <remarks/>
+        unknown,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class SpeedValue : DataValue {
+        
+        private float speedField;
+        
+        private _ExtensionType speedValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float speed {
+            get {
+                return this.speedField;
+            }
+            set {
+                this.speedField = value;
+                this.RaisePropertyChanged("speed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType speedValueExtension {
+            get {
+                return this.speedValueExtensionField;
+            }
+            set {
+                this.speedValueExtensionField = value;
+                this.RaisePropertyChanged("speedValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PrecipitationIntensityValue : DataValue {
+        
+        private float millimetresPerHourIntensityField;
+        
+        private _ExtensionType precipitationIntensityValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float millimetresPerHourIntensity {
+            get {
+                return this.millimetresPerHourIntensityField;
+            }
+            set {
+                this.millimetresPerHourIntensityField = value;
+                this.RaisePropertyChanged("millimetresPerHourIntensity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType precipitationIntensityValueExtension {
+            get {
+                return this.precipitationIntensityValueExtensionField;
+            }
+            set {
+                this.precipitationIntensityValueExtensionField = value;
+                this.RaisePropertyChanged("precipitationIntensityValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PercentageValue : DataValue {
+        
+        private float percentageField;
+        
+        private _ExtensionType percentageValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float percentage {
+            get {
+                return this.percentageField;
+            }
+            set {
+                this.percentageField = value;
+                this.RaisePropertyChanged("percentage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType percentageValueExtension {
+            get {
+                return this.percentageValueExtensionField;
+            }
+            set {
+                this.percentageValueExtensionField = value;
+                this.RaisePropertyChanged("percentageValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PcuFlowValue : DataValue {
+        
+        private string pcuFlowRateField;
+        
+        private _ExtensionType pcuFlowValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string pcuFlowRate {
+            get {
+                return this.pcuFlowRateField;
+            }
+            set {
+                this.pcuFlowRateField = value;
+                this.RaisePropertyChanged("pcuFlowRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType pcuFlowValueExtension {
+            get {
+                return this.pcuFlowValueExtensionField;
+            }
+            set {
+                this.pcuFlowValueExtensionField = value;
+                this.RaisePropertyChanged("pcuFlowValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class MicrogramsConcentrationValue : DataValue {
+        
+        private float microgramsConcentrationField;
+        
+        private _ExtensionType microgramsConcentrationValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float microgramsConcentration {
+            get {
+                return this.microgramsConcentrationField;
+            }
+            set {
+                this.microgramsConcentrationField = value;
+                this.RaisePropertyChanged("microgramsConcentration");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType microgramsConcentrationValueExtension {
+            get {
+                return this.microgramsConcentrationValueExtensionField;
+            }
+            set {
+                this.microgramsConcentrationValueExtensionField = value;
+                this.RaisePropertyChanged("microgramsConcentrationValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class KilogramsConcentrationValue : DataValue {
+        
+        private float kilogramsConcentrationField;
+        
+        private _ExtensionType kilogramsConcentrationValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float kilogramsConcentration {
+            get {
+                return this.kilogramsConcentrationField;
+            }
+            set {
+                this.kilogramsConcentrationField = value;
+                this.RaisePropertyChanged("kilogramsConcentration");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType kilogramsConcentrationValueExtension {
+            get {
+                return this.kilogramsConcentrationValueExtensionField;
+            }
+            set {
+                this.kilogramsConcentrationValueExtensionField = value;
+                this.RaisePropertyChanged("kilogramsConcentrationValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class IntegerMetreDistanceValue : DataValue {
+        
+        private string integerMetreDistanceField;
+        
+        private _ExtensionType integerMetreDistanceValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string integerMetreDistance {
+            get {
+                return this.integerMetreDistanceField;
+            }
+            set {
+                this.integerMetreDistanceField = value;
+                this.RaisePropertyChanged("integerMetreDistance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType integerMetreDistanceValueExtension {
+            get {
+                return this.integerMetreDistanceValueExtensionField;
+            }
+            set {
+                this.integerMetreDistanceValueExtensionField = value;
+                this.RaisePropertyChanged("integerMetreDistanceValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class FloatingPointMetreDistanceValue : DataValue {
+        
+        private float floatingPointMetreDistanceField;
+        
+        private _ExtensionType floatingPointMetreDistanceValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float floatingPointMetreDistance {
+            get {
+                return this.floatingPointMetreDistanceField;
+            }
+            set {
+                this.floatingPointMetreDistanceField = value;
+                this.RaisePropertyChanged("floatingPointMetreDistance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType floatingPointMetreDistanceValueExtension {
+            get {
+                return this.floatingPointMetreDistanceValueExtensionField;
+            }
+            set {
+                this.floatingPointMetreDistanceValueExtensionField = value;
+                this.RaisePropertyChanged("floatingPointMetreDistanceValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class DirectionCompassValue : DataValue {
+        
+        private DirectionCompassEnum directionCompassField;
+        
+        private _ExtensionType directionCompassValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public DirectionCompassEnum directionCompass {
+            get {
+                return this.directionCompassField;
+            }
+            set {
+                this.directionCompassField = value;
+                this.RaisePropertyChanged("directionCompass");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType directionCompassValueExtension {
+            get {
+                return this.directionCompassValueExtensionField;
+            }
+            set {
+                this.directionCompassValueExtensionField = value;
+                this.RaisePropertyChanged("directionCompassValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum DirectionCompassEnum {
+        
+        /// <remarks/>
+        east,
+        
+        /// <remarks/>
+        eastNorthEast,
+        
+        /// <remarks/>
+        eastSouthEast,
+        
+        /// <remarks/>
+        north,
+        
+        /// <remarks/>
+        northEast,
+        
+        /// <remarks/>
+        northNorthEast,
+        
+        /// <remarks/>
+        northNorthWest,
+        
+        /// <remarks/>
+        northWest,
+        
+        /// <remarks/>
+        south,
+        
+        /// <remarks/>
+        southEast,
+        
+        /// <remarks/>
+        southSouthEast,
+        
+        /// <remarks/>
+        southSouthWest,
+        
+        /// <remarks/>
+        southWest,
+        
+        /// <remarks/>
+        west,
+        
+        /// <remarks/>
+        westNorthWest,
+        
+        /// <remarks/>
+        westSouthWest,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class DirectionBearingValue : DataValue {
+        
+        private string directionBearingField;
+        
+        private _ExtensionType directionBearingValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string directionBearing {
+            get {
+                return this.directionBearingField;
+            }
+            set {
+                this.directionBearingField = value;
+                this.RaisePropertyChanged("directionBearing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType directionBearingValueExtension {
+            get {
+                return this.directionBearingValueExtensionField;
+            }
+            set {
+                this.directionBearingValueExtensionField = value;
+                this.RaisePropertyChanged("directionBearingValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class VehicleFlowValue : DataValue {
+        
+        private string vehicleFlowRateField;
+        
+        private _ExtensionType vehicleFlowValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string vehicleFlowRate {
+            get {
+                return this.vehicleFlowRateField;
+            }
+            set {
+                this.vehicleFlowRateField = value;
+                this.RaisePropertyChanged("vehicleFlowRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType vehicleFlowValueExtension {
+            get {
+                return this.vehicleFlowValueExtensionField;
+            }
+            set {
+                this.vehicleFlowValueExtensionField = value;
+                this.RaisePropertyChanged("vehicleFlowValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class ConcentrationOfVehiclesValue : DataValue {
+        
+        private string concentrationOfVehiclesField;
+        
+        private _ExtensionType concentrationOfVehiclesValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string concentrationOfVehicles {
+            get {
+                return this.concentrationOfVehiclesField;
+            }
+            set {
+                this.concentrationOfVehiclesField = value;
+                this.RaisePropertyChanged("concentrationOfVehicles");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType concentrationOfVehiclesValueExtension {
+            get {
+                return this.concentrationOfVehiclesValueExtensionField;
+            }
+            set {
+                this.concentrationOfVehiclesValueExtensionField = value;
+                this.RaisePropertyChanged("concentrationOfVehiclesValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AxleFlowValue : DataValue {
+        
+        private string axleFlowRateField;
+        
+        private _ExtensionType axleFlowValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string axleFlowRate {
+            get {
+                return this.axleFlowRateField;
+            }
+            set {
+                this.axleFlowRateField = value;
+                this.RaisePropertyChanged("axleFlowRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType axleFlowValueExtension {
+            get {
+                return this.axleFlowValueExtensionField;
+            }
+            set {
+                this.axleFlowValueExtensionField = value;
+                this.RaisePropertyChanged("axleFlowValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class ApplicationRateValue : DataValue {
+        
+        private float applicationRateField;
+        
+        private _ExtensionType applicationRateValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float applicationRate {
+            get {
+                return this.applicationRateField;
+            }
+            set {
+                this.applicationRateField = value;
+                this.RaisePropertyChanged("applicationRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType applicationRateValueExtension {
+            get {
+                return this.applicationRateValueExtensionField;
+            }
+            set {
+                this.applicationRateValueExtensionField = value;
+                this.RaisePropertyChanged("applicationRateValueExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class DurationValue : DataValue {
+        
+        private float durationField;
+        
+        private _ExtensionType durationValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float duration {
+            get {
+                return this.durationField;
+            }
+            set {
+                this.durationField = value;
+                this.RaisePropertyChanged("duration");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType durationValueExtension {
+            get {
+                return this.durationValueExtensionField;
+            }
+            set {
+                this.durationValueExtensionField = value;
+                this.RaisePropertyChanged("durationValueExtension");
+            }
+        }
     }
     
     /// <remarks/>
@@ -17141,1031 +18442,6 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         snow,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PrecipitationIntensityValue : DataValue {
-        
-        private float millimetresPerHourIntensityField;
-        
-        private _ExtensionType precipitationIntensityValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float millimetresPerHourIntensity {
-            get {
-                return this.millimetresPerHourIntensityField;
-            }
-            set {
-                this.millimetresPerHourIntensityField = value;
-                this.RaisePropertyChanged("millimetresPerHourIntensity");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType precipitationIntensityValueExtension {
-            get {
-                return this.precipitationIntensityValueExtensionField;
-            }
-            set {
-                this.precipitationIntensityValueExtensionField = value;
-                this.RaisePropertyChanged("precipitationIntensityValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleFlowValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpeedValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecipitationIntensityValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentageValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PcuFlowValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MicrogramsConcentrationValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KilogramsConcentrationValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IntegerMetreDistanceValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloatingPointMetreDistanceValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DurationValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DirectionCompassValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DirectionBearingValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConcentrationOfVehiclesValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemperatureValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationRateValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AxleFlowValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficStatusValue))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class DataValue : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private bool dataErrorField;
-        
-        private bool dataErrorFieldSpecified;
-        
-        private MultilingualString reasonForDataErrorField;
-        
-        private _ExtensionType dataValueExtensionField;
-        
-        private float accuracyField;
-        
-        private bool accuracyFieldSpecified;
-        
-        private ComputationMethodEnum computationalMethodField;
-        
-        private bool computationalMethodFieldSpecified;
-        
-        private string numberOfIncompleteInputsField;
-        
-        private string numberOfInputValuesUsedField;
-        
-        private float smoothingFactorField;
-        
-        private bool smoothingFactorFieldSpecified;
-        
-        private float standardDeviationField;
-        
-        private bool standardDeviationFieldSpecified;
-        
-        private float supplierCalculatedDataQualityField;
-        
-        private bool supplierCalculatedDataQualityFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public bool dataError {
-            get {
-                return this.dataErrorField;
-            }
-            set {
-                this.dataErrorField = value;
-                this.RaisePropertyChanged("dataError");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dataErrorSpecified {
-            get {
-                return this.dataErrorFieldSpecified;
-            }
-            set {
-                this.dataErrorFieldSpecified = value;
-                this.RaisePropertyChanged("dataErrorSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public MultilingualString reasonForDataError {
-            get {
-                return this.reasonForDataErrorField;
-            }
-            set {
-                this.reasonForDataErrorField = value;
-                this.RaisePropertyChanged("reasonForDataError");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType dataValueExtension {
-            get {
-                return this.dataValueExtensionField;
-            }
-            set {
-                this.dataValueExtensionField = value;
-                this.RaisePropertyChanged("dataValueExtension");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float accuracy {
-            get {
-                return this.accuracyField;
-            }
-            set {
-                this.accuracyField = value;
-                this.RaisePropertyChanged("accuracy");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool accuracySpecified {
-            get {
-                return this.accuracyFieldSpecified;
-            }
-            set {
-                this.accuracyFieldSpecified = value;
-                this.RaisePropertyChanged("accuracySpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ComputationMethodEnum computationalMethod {
-            get {
-                return this.computationalMethodField;
-            }
-            set {
-                this.computationalMethodField = value;
-                this.RaisePropertyChanged("computationalMethod");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool computationalMethodSpecified {
-            get {
-                return this.computationalMethodFieldSpecified;
-            }
-            set {
-                this.computationalMethodFieldSpecified = value;
-                this.RaisePropertyChanged("computationalMethodSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
-        public string numberOfIncompleteInputs {
-            get {
-                return this.numberOfIncompleteInputsField;
-            }
-            set {
-                this.numberOfIncompleteInputsField = value;
-                this.RaisePropertyChanged("numberOfIncompleteInputs");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
-        public string numberOfInputValuesUsed {
-            get {
-                return this.numberOfInputValuesUsedField;
-            }
-            set {
-                this.numberOfInputValuesUsedField = value;
-                this.RaisePropertyChanged("numberOfInputValuesUsed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float smoothingFactor {
-            get {
-                return this.smoothingFactorField;
-            }
-            set {
-                this.smoothingFactorField = value;
-                this.RaisePropertyChanged("smoothingFactor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool smoothingFactorSpecified {
-            get {
-                return this.smoothingFactorFieldSpecified;
-            }
-            set {
-                this.smoothingFactorFieldSpecified = value;
-                this.RaisePropertyChanged("smoothingFactorSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float standardDeviation {
-            get {
-                return this.standardDeviationField;
-            }
-            set {
-                this.standardDeviationField = value;
-                this.RaisePropertyChanged("standardDeviation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool standardDeviationSpecified {
-            get {
-                return this.standardDeviationFieldSpecified;
-            }
-            set {
-                this.standardDeviationFieldSpecified = value;
-                this.RaisePropertyChanged("standardDeviationSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float supplierCalculatedDataQuality {
-            get {
-                return this.supplierCalculatedDataQualityField;
-            }
-            set {
-                this.supplierCalculatedDataQualityField = value;
-                this.RaisePropertyChanged("supplierCalculatedDataQuality");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool supplierCalculatedDataQualitySpecified {
-            get {
-                return this.supplierCalculatedDataQualityFieldSpecified;
-            }
-            set {
-                this.supplierCalculatedDataQualityFieldSpecified = value;
-                this.RaisePropertyChanged("supplierCalculatedDataQualitySpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum ComputationMethodEnum {
-        
-        /// <remarks/>
-        arithmeticAverageOfSamplesBasedOnAFixedNumberOfSamples,
-        
-        /// <remarks/>
-        arithmeticAverageOfSamplesInATimePeriod,
-        
-        /// <remarks/>
-        harmonicAverageOfSamplesInATimePeriod,
-        
-        /// <remarks/>
-        medianOfSamplesInATimePeriod,
-        
-        /// <remarks/>
-        movingAverageOfSamples,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class VehicleFlowValue : DataValue {
-        
-        private string vehicleFlowRateField;
-        
-        private _ExtensionType vehicleFlowValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string vehicleFlowRate {
-            get {
-                return this.vehicleFlowRateField;
-            }
-            set {
-                this.vehicleFlowRateField = value;
-                this.RaisePropertyChanged("vehicleFlowRate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType vehicleFlowValueExtension {
-            get {
-                return this.vehicleFlowValueExtensionField;
-            }
-            set {
-                this.vehicleFlowValueExtensionField = value;
-                this.RaisePropertyChanged("vehicleFlowValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class SpeedValue : DataValue {
-        
-        private float speedField;
-        
-        private _ExtensionType speedValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float speed {
-            get {
-                return this.speedField;
-            }
-            set {
-                this.speedField = value;
-                this.RaisePropertyChanged("speed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType speedValueExtension {
-            get {
-                return this.speedValueExtensionField;
-            }
-            set {
-                this.speedValueExtensionField = value;
-                this.RaisePropertyChanged("speedValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PercentageValue : DataValue {
-        
-        private float percentageField;
-        
-        private _ExtensionType percentageValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float percentage {
-            get {
-                return this.percentageField;
-            }
-            set {
-                this.percentageField = value;
-                this.RaisePropertyChanged("percentage");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType percentageValueExtension {
-            get {
-                return this.percentageValueExtensionField;
-            }
-            set {
-                this.percentageValueExtensionField = value;
-                this.RaisePropertyChanged("percentageValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PcuFlowValue : DataValue {
-        
-        private string pcuFlowRateField;
-        
-        private _ExtensionType pcuFlowValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string pcuFlowRate {
-            get {
-                return this.pcuFlowRateField;
-            }
-            set {
-                this.pcuFlowRateField = value;
-                this.RaisePropertyChanged("pcuFlowRate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType pcuFlowValueExtension {
-            get {
-                return this.pcuFlowValueExtensionField;
-            }
-            set {
-                this.pcuFlowValueExtensionField = value;
-                this.RaisePropertyChanged("pcuFlowValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class MicrogramsConcentrationValue : DataValue {
-        
-        private float microgramsConcentrationField;
-        
-        private _ExtensionType microgramsConcentrationValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float microgramsConcentration {
-            get {
-                return this.microgramsConcentrationField;
-            }
-            set {
-                this.microgramsConcentrationField = value;
-                this.RaisePropertyChanged("microgramsConcentration");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType microgramsConcentrationValueExtension {
-            get {
-                return this.microgramsConcentrationValueExtensionField;
-            }
-            set {
-                this.microgramsConcentrationValueExtensionField = value;
-                this.RaisePropertyChanged("microgramsConcentrationValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class KilogramsConcentrationValue : DataValue {
-        
-        private float kilogramsConcentrationField;
-        
-        private _ExtensionType kilogramsConcentrationValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float kilogramsConcentration {
-            get {
-                return this.kilogramsConcentrationField;
-            }
-            set {
-                this.kilogramsConcentrationField = value;
-                this.RaisePropertyChanged("kilogramsConcentration");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType kilogramsConcentrationValueExtension {
-            get {
-                return this.kilogramsConcentrationValueExtensionField;
-            }
-            set {
-                this.kilogramsConcentrationValueExtensionField = value;
-                this.RaisePropertyChanged("kilogramsConcentrationValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class IntegerMetreDistanceValue : DataValue {
-        
-        private string integerMetreDistanceField;
-        
-        private _ExtensionType integerMetreDistanceValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string integerMetreDistance {
-            get {
-                return this.integerMetreDistanceField;
-            }
-            set {
-                this.integerMetreDistanceField = value;
-                this.RaisePropertyChanged("integerMetreDistance");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType integerMetreDistanceValueExtension {
-            get {
-                return this.integerMetreDistanceValueExtensionField;
-            }
-            set {
-                this.integerMetreDistanceValueExtensionField = value;
-                this.RaisePropertyChanged("integerMetreDistanceValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class FloatingPointMetreDistanceValue : DataValue {
-        
-        private float floatingPointMetreDistanceField;
-        
-        private _ExtensionType floatingPointMetreDistanceValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float floatingPointMetreDistance {
-            get {
-                return this.floatingPointMetreDistanceField;
-            }
-            set {
-                this.floatingPointMetreDistanceField = value;
-                this.RaisePropertyChanged("floatingPointMetreDistance");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType floatingPointMetreDistanceValueExtension {
-            get {
-                return this.floatingPointMetreDistanceValueExtensionField;
-            }
-            set {
-                this.floatingPointMetreDistanceValueExtensionField = value;
-                this.RaisePropertyChanged("floatingPointMetreDistanceValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class DurationValue : DataValue {
-        
-        private float durationField;
-        
-        private _ExtensionType durationValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float duration {
-            get {
-                return this.durationField;
-            }
-            set {
-                this.durationField = value;
-                this.RaisePropertyChanged("duration");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType durationValueExtension {
-            get {
-                return this.durationValueExtensionField;
-            }
-            set {
-                this.durationValueExtensionField = value;
-                this.RaisePropertyChanged("durationValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class DirectionCompassValue : DataValue {
-        
-        private DirectionCompassEnum directionCompassField;
-        
-        private _ExtensionType directionCompassValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public DirectionCompassEnum directionCompass {
-            get {
-                return this.directionCompassField;
-            }
-            set {
-                this.directionCompassField = value;
-                this.RaisePropertyChanged("directionCompass");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType directionCompassValueExtension {
-            get {
-                return this.directionCompassValueExtensionField;
-            }
-            set {
-                this.directionCompassValueExtensionField = value;
-                this.RaisePropertyChanged("directionCompassValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum DirectionCompassEnum {
-        
-        /// <remarks/>
-        east,
-        
-        /// <remarks/>
-        eastNorthEast,
-        
-        /// <remarks/>
-        eastSouthEast,
-        
-        /// <remarks/>
-        north,
-        
-        /// <remarks/>
-        northEast,
-        
-        /// <remarks/>
-        northNorthEast,
-        
-        /// <remarks/>
-        northNorthWest,
-        
-        /// <remarks/>
-        northWest,
-        
-        /// <remarks/>
-        south,
-        
-        /// <remarks/>
-        southEast,
-        
-        /// <remarks/>
-        southSouthEast,
-        
-        /// <remarks/>
-        southSouthWest,
-        
-        /// <remarks/>
-        southWest,
-        
-        /// <remarks/>
-        west,
-        
-        /// <remarks/>
-        westNorthWest,
-        
-        /// <remarks/>
-        westSouthWest,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class DirectionBearingValue : DataValue {
-        
-        private string directionBearingField;
-        
-        private _ExtensionType directionBearingValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string directionBearing {
-            get {
-                return this.directionBearingField;
-            }
-            set {
-                this.directionBearingField = value;
-                this.RaisePropertyChanged("directionBearing");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType directionBearingValueExtension {
-            get {
-                return this.directionBearingValueExtensionField;
-            }
-            set {
-                this.directionBearingValueExtensionField = value;
-                this.RaisePropertyChanged("directionBearingValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class DateTimeValue : DataValue {
-        
-        private System.DateTime dateTimeField;
-        
-        private _ExtensionType dateTimeValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public System.DateTime dateTime {
-            get {
-                return this.dateTimeField;
-            }
-            set {
-                this.dateTimeField = value;
-                this.RaisePropertyChanged("dateTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType dateTimeValueExtension {
-            get {
-                return this.dateTimeValueExtensionField;
-            }
-            set {
-                this.dateTimeValueExtensionField = value;
-                this.RaisePropertyChanged("dateTimeValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class ConcentrationOfVehiclesValue : DataValue {
-        
-        private string concentrationOfVehiclesField;
-        
-        private _ExtensionType concentrationOfVehiclesValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string concentrationOfVehicles {
-            get {
-                return this.concentrationOfVehiclesField;
-            }
-            set {
-                this.concentrationOfVehiclesField = value;
-                this.RaisePropertyChanged("concentrationOfVehicles");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType concentrationOfVehiclesValueExtension {
-            get {
-                return this.concentrationOfVehiclesValueExtensionField;
-            }
-            set {
-                this.concentrationOfVehiclesValueExtensionField = value;
-                this.RaisePropertyChanged("concentrationOfVehiclesValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TemperatureValue : DataValue {
-        
-        private float temperatureField;
-        
-        private _ExtensionType temperatureValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float temperature {
-            get {
-                return this.temperatureField;
-            }
-            set {
-                this.temperatureField = value;
-                this.RaisePropertyChanged("temperature");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType temperatureValueExtension {
-            get {
-                return this.temperatureValueExtensionField;
-            }
-            set {
-                this.temperatureValueExtensionField = value;
-                this.RaisePropertyChanged("temperatureValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class ApplicationRateValue : DataValue {
-        
-        private float applicationRateField;
-        
-        private _ExtensionType applicationRateValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float applicationRate {
-            get {
-                return this.applicationRateField;
-            }
-            set {
-                this.applicationRateField = value;
-                this.RaisePropertyChanged("applicationRate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType applicationRateValueExtension {
-            get {
-                return this.applicationRateValueExtensionField;
-            }
-            set {
-                this.applicationRateValueExtensionField = value;
-                this.RaisePropertyChanged("applicationRateValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AxleFlowValue : DataValue {
-        
-        private string axleFlowRateField;
-        
-        private _ExtensionType axleFlowValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string axleFlowRate {
-            get {
-                return this.axleFlowRateField;
-            }
-            set {
-                this.axleFlowRateField = value;
-                this.RaisePropertyChanged("axleFlowRate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType axleFlowValueExtension {
-            get {
-                return this.axleFlowValueExtensionField;
-            }
-            set {
-                this.axleFlowValueExtensionField = value;
-                this.RaisePropertyChanged("axleFlowValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TrafficStatusValue : DataValue {
-        
-        private TrafficStatusEnum trafficStatusValueField;
-        
-        private _ExtensionType trafficStatusValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TrafficStatusEnum trafficStatusValue {
-            get {
-                return this.trafficStatusValueField;
-            }
-            set {
-                this.trafficStatusValueField = value;
-                this.RaisePropertyChanged("trafficStatusValue");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType trafficStatusValueExtension {
-            get {
-                return this.trafficStatusValueExtensionField;
-            }
-            set {
-                this.trafficStatusValueExtensionField = value;
-                this.RaisePropertyChanged("trafficStatusValueExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TrafficStatusEnum {
-        
-        /// <remarks/>
-        impossible,
-        
-        /// <remarks/>
-        congested,
-        
-        /// <remarks/>
-        heavy,
-        
-        /// <remarks/>
-        freeFlow,
-        
-        /// <remarks/>
-        unknown,
     }
     
     /// <remarks/>
@@ -18563,77 +18839,78 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherRelatedRoadConditions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonWeatherRelatedRoadConditions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublicEvent))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisturbanceActivity))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthorityOperation))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class RoadConditions : Conditions {
+    public abstract partial class Activity : TrafficElement {
         
-        private _ExtensionType roadConditionsExtensionField;
+        private Mobility mobilityOfActivityField;
+        
+        private _ExtensionType activityExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _ExtensionType roadConditionsExtension {
+        public Mobility mobilityOfActivity {
             get {
-                return this.roadConditionsExtensionField;
+                return this.mobilityOfActivityField;
             }
             set {
-                this.roadConditionsExtensionField = value;
-                this.RaisePropertyChanged("roadConditionsExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class WeatherRelatedRoadConditions : RoadConditions {
-        
-        private WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionTypeField;
-        
-        private RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurementsField;
-        
-        private _ExtensionType weatherRelatedRoadConditionsExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("weatherRelatedRoadConditionType", Order=0)]
-        public WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionType {
-            get {
-                return this.weatherRelatedRoadConditionTypeField;
-            }
-            set {
-                this.weatherRelatedRoadConditionTypeField = value;
-                this.RaisePropertyChanged("weatherRelatedRoadConditionType");
+                this.mobilityOfActivityField = value;
+                this.RaisePropertyChanged("mobilityOfActivity");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurements {
+        public _ExtensionType activityExtension {
             get {
-                return this.roadSurfaceConditionMeasurementsField;
+                return this.activityExtensionField;
             }
             set {
-                this.roadSurfaceConditionMeasurementsField = value;
-                this.RaisePropertyChanged("roadSurfaceConditionMeasurements");
+                this.activityExtensionField = value;
+                this.RaisePropertyChanged("activityExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PublicEvent : Activity {
+        
+        private PublicEventTypeEnum publicEventTypeField;
+        
+        private _ExtensionType publicEventExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PublicEventTypeEnum publicEventType {
+            get {
+                return this.publicEventTypeField;
+            }
+            set {
+                this.publicEventTypeField = value;
+                this.RaisePropertyChanged("publicEventType");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType weatherRelatedRoadConditionsExtension {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType publicEventExtension {
             get {
-                return this.weatherRelatedRoadConditionsExtensionField;
+                return this.publicEventExtensionField;
             }
             set {
-                this.weatherRelatedRoadConditionsExtensionField = value;
-                this.RaisePropertyChanged("weatherRelatedRoadConditionsExtension");
+                this.publicEventExtensionField = value;
+                this.RaisePropertyChanged("publicEventExtension");
             }
         }
     }
@@ -18642,82 +18919,148 @@ namespace TestClient.SubscriberServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum WeatherRelatedRoadConditionTypeEnum {
+    public enum PublicEventTypeEnum {
         
         /// <remarks/>
-        blackIce,
+        agriculturalShow,
         
         /// <remarks/>
-        deepSnow,
+        airShow,
         
         /// <remarks/>
-        dry,
+        athleticsMeeting,
         
         /// <remarks/>
-        freezingOfWetRoads,
+        commercialEvent,
         
         /// <remarks/>
-        freezingPavements,
+        culturalEvent,
         
         /// <remarks/>
-        freezingRain,
+        ballGame,
         
         /// <remarks/>
-        freshSnow,
+        baseballGame,
         
         /// <remarks/>
-        ice,
+        basketballGame,
         
         /// <remarks/>
-        iceBuildUp,
+        bicycleRace,
         
         /// <remarks/>
-        iceWithWheelBarTracks,
+        boatRace,
         
         /// <remarks/>
-        icyPatches,
+        boatShow,
         
         /// <remarks/>
-        looseSnow,
+        boxingTournament,
         
         /// <remarks/>
-        normalWinterConditionsForPedestrians,
+        bullFight,
         
         /// <remarks/>
-        packedSnow,
+        ceremonialEvent,
         
         /// <remarks/>
-        roadSurfaceMelting,
+        concert,
         
         /// <remarks/>
-        slipperyRoad,
+        cricketMatch,
         
         /// <remarks/>
-        slushOnRoad,
+        exhibition,
         
         /// <remarks/>
-        slushStrings,
+        fair,
         
         /// <remarks/>
-        snowDrifts,
+        festival,
         
         /// <remarks/>
-        snowOnPavement,
+        filmTVMaking,
         
         /// <remarks/>
-        snowOnTheRoad,
+        footballMatch,
         
         /// <remarks/>
-        surfaceWater,
+        funfair,
         
         /// <remarks/>
-        wet,
+        gardeningOrFlowerShow,
         
         /// <remarks/>
-        wetAndIcyRoad,
+        golfTournament,
         
         /// <remarks/>
-        wetIcyPavement,
+        hockeyGame,
+        
+        /// <remarks/>
+        horseRaceMeeting,
+        
+        /// <remarks/>
+        internationalSportsMeeting,
+        
+        /// <remarks/>
+        majorEvent,
+        
+        /// <remarks/>
+        marathon,
+        
+        /// <remarks/>
+        market,
+        
+        /// <remarks/>
+        match,
+        
+        /// <remarks/>
+        motorShow,
+        
+        /// <remarks/>
+        motorSportRaceMeeting,
+        
+        /// <remarks/>
+        parade,
+        
+        /// <remarks/>
+        procession,
+        
+        /// <remarks/>
+        raceMeeting,
+        
+        /// <remarks/>
+        rugbyMatch,
+        
+        /// <remarks/>
+        severalMajorEvents,
+        
+        /// <remarks/>
+        show,
+        
+        /// <remarks/>
+        showJumping,
+        
+        /// <remarks/>
+        sportsMeeting,
+        
+        /// <remarks/>
+        stateOccasion,
+        
+        /// <remarks/>
+        tennisTournament,
+        
+        /// <remarks/>
+        tournament,
+        
+        /// <remarks/>
+        tradeFair,
+        
+        /// <remarks/>
+        waterSportsMeeting,
+        
+        /// <remarks/>
+        winterSportsMeeting,
         
         /// <remarks/>
         other,
@@ -18729,114 +19072,129 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class RoadSurfaceConditionMeasurements : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DisturbanceActivity : Activity {
         
-        private TemperatureValue roadSurfaceTemperatureField;
+        private DisturbanceActivityTypeEnum disturbanceActivityTypeField;
         
-        private TemperatureValue protectionTemperatureField;
-        
-        private ApplicationRateValue deIcingApplicationRateField;
-        
-        private KilogramsConcentrationValue deIcingConcentrationField;
-        
-        private FloatingPointMetreDistanceValue depthOfSnowField;
-        
-        private FloatingPointMetreDistanceValue waterFilmThicknessField;
-        
-        private _ExtensionType roadSurfaceConditionMeasurementsExtensionField;
+        private _ExtensionType disturbanceActivityExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TemperatureValue roadSurfaceTemperature {
+        public DisturbanceActivityTypeEnum disturbanceActivityType {
             get {
-                return this.roadSurfaceTemperatureField;
+                return this.disturbanceActivityTypeField;
             }
             set {
-                this.roadSurfaceTemperatureField = value;
-                this.RaisePropertyChanged("roadSurfaceTemperature");
+                this.disturbanceActivityTypeField = value;
+                this.RaisePropertyChanged("disturbanceActivityType");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TemperatureValue protectionTemperature {
+        public _ExtensionType disturbanceActivityExtension {
             get {
-                return this.protectionTemperatureField;
+                return this.disturbanceActivityExtensionField;
             }
             set {
-                this.protectionTemperatureField = value;
-                this.RaisePropertyChanged("protectionTemperature");
+                this.disturbanceActivityExtensionField = value;
+                this.RaisePropertyChanged("disturbanceActivityExtension");
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum DisturbanceActivityTypeEnum {
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public ApplicationRateValue deIcingApplicationRate {
-            get {
-                return this.deIcingApplicationRateField;
-            }
-            set {
-                this.deIcingApplicationRateField = value;
-                this.RaisePropertyChanged("deIcingApplicationRate");
-            }
-        }
+        airRaid,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public KilogramsConcentrationValue deIcingConcentration {
-            get {
-                return this.deIcingConcentrationField;
-            }
-            set {
-                this.deIcingConcentrationField = value;
-                this.RaisePropertyChanged("deIcingConcentration");
-            }
-        }
+        altercationOfVehicleOccupants,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public FloatingPointMetreDistanceValue depthOfSnow {
-            get {
-                return this.depthOfSnowField;
-            }
-            set {
-                this.depthOfSnowField = value;
-                this.RaisePropertyChanged("depthOfSnow");
-            }
-        }
+        assault,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public FloatingPointMetreDistanceValue waterFilmThickness {
-            get {
-                return this.waterFilmThicknessField;
-            }
-            set {
-                this.waterFilmThicknessField = value;
-                this.RaisePropertyChanged("waterFilmThickness");
-            }
-        }
+        assetDestruction,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public _ExtensionType roadSurfaceConditionMeasurementsExtension {
-            get {
-                return this.roadSurfaceConditionMeasurementsExtensionField;
-            }
-            set {
-                this.roadSurfaceConditionMeasurementsExtensionField = value;
-                this.RaisePropertyChanged("roadSurfaceConditionMeasurementsExtension");
-            }
-        }
+        attack,
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <remarks/>
+        attackOnVehicle,
         
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        /// <remarks/>
+        blockadeOrBarrier,
+        
+        /// <remarks/>
+        bombAlert,
+        
+        /// <remarks/>
+        crowd,
+        
+        /// <remarks/>
+        demonstration,
+        
+        /// <remarks/>
+        evacuation,
+        
+        /// <remarks/>
+        filterBlockade,
+        
+        /// <remarks/>
+        goSlowOperation,
+        
+        /// <remarks/>
+        gunfireOnRoadway,
+        
+        /// <remarks/>
+        illVehicleOccupants,
+        
+        /// <remarks/>
+        march,
+        
+        /// <remarks/>
+        publicDisturbance,
+        
+        /// <remarks/>
+        radioactiveLeakAlert,
+        
+        /// <remarks/>
+        riot,
+        
+        /// <remarks/>
+        sabotage,
+        
+        /// <remarks/>
+        securityAlert,
+        
+        /// <remarks/>
+        securityIncident,
+        
+        /// <remarks/>
+        sightseersObstructingAccess,
+        
+        /// <remarks/>
+        strike,
+        
+        /// <remarks/>
+        terroristIncident,
+        
+        /// <remarks/>
+        theft,
+        
+        /// <remarks/>
+        toxicCloudAlert,
+        
+        /// <remarks/>
+        unspecifiedAlert,
+        
+        /// <remarks/>
+        other,
     }
     
     /// <remarks/>
@@ -18845,33 +19203,33 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class NonWeatherRelatedRoadConditions : RoadConditions {
+    public partial class AuthorityOperation : Activity {
         
-        private NonWeatherRelatedRoadConditionTypeEnum[] nonWeatherRelatedRoadConditionTypeField;
+        private AuthorityOperationTypeEnum authorityOperationTypeField;
         
-        private _ExtensionType nonWeatherRelatedRoadConditionsExtensionField;
+        private _ExtensionType authorityOperationExtensionField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("nonWeatherRelatedRoadConditionType", Order=0)]
-        public NonWeatherRelatedRoadConditionTypeEnum[] nonWeatherRelatedRoadConditionType {
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AuthorityOperationTypeEnum authorityOperationType {
             get {
-                return this.nonWeatherRelatedRoadConditionTypeField;
+                return this.authorityOperationTypeField;
             }
             set {
-                this.nonWeatherRelatedRoadConditionTypeField = value;
-                this.RaisePropertyChanged("nonWeatherRelatedRoadConditionType");
+                this.authorityOperationTypeField = value;
+                this.RaisePropertyChanged("authorityOperationType");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType nonWeatherRelatedRoadConditionsExtension {
+        public _ExtensionType authorityOperationExtension {
             get {
-                return this.nonWeatherRelatedRoadConditionsExtensionField;
+                return this.authorityOperationExtensionField;
             }
             set {
-                this.nonWeatherRelatedRoadConditionsExtensionField = value;
-                this.RaisePropertyChanged("nonWeatherRelatedRoadConditionsExtension");
+                this.authorityOperationExtensionField = value;
+                this.RaisePropertyChanged("authorityOperationExtension");
             }
         }
     }
@@ -18880,34 +19238,49 @@ namespace TestClient.SubscriberServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum NonWeatherRelatedRoadConditionTypeEnum {
+    public enum AuthorityOperationTypeEnum {
         
         /// <remarks/>
-        dieselOnRoad,
+        accidentInvestigationWork,
         
         /// <remarks/>
-        leavesOnRoad,
+        bombSquadInAction,
         
         /// <remarks/>
-        looseChippings,
+        civilEmergency,
         
         /// <remarks/>
-        looseSandOnRoad,
+        customsOperation,
         
         /// <remarks/>
-        mudOnRoad,
+        juridicalReconstruction,
         
         /// <remarks/>
-        oilOnRoad,
+        policeCheckPoint,
         
         /// <remarks/>
-        petrolOnRoad,
+        policeInvestigation,
         
         /// <remarks/>
-        roadSurfaceInPoorCondition,
+        roadOperatorCheckPoint,
         
         /// <remarks/>
-        slipperyRoad,
+        survey,
+        
+        /// <remarks/>
+        transportOfVip,
+        
+        /// <remarks/>
+        undefinedAuthorityActivity,
+        
+        /// <remarks/>
+        vehicleInspectionCheckPoint,
+        
+        /// <remarks/>
+        vehicleWeighing,
+        
+        /// <remarks/>
+        weighInMotion,
         
         /// <remarks/>
         other,
@@ -20133,1230 +20506,6 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InfrastructureDamageObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AnimalPresenceObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnvironmentalObstruction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleObstruction))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class Obstruction : TrafficElement {
-        
-        private string numberOfObstructionsField;
-        
-        private Mobility mobilityOfObstructionField;
-        
-        private _ExtensionType obstructionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string numberOfObstructions {
-            get {
-                return this.numberOfObstructionsField;
-            }
-            set {
-                this.numberOfObstructionsField = value;
-                this.RaisePropertyChanged("numberOfObstructions");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Mobility mobilityOfObstruction {
-            get {
-                return this.mobilityOfObstructionField;
-            }
-            set {
-                this.mobilityOfObstructionField = value;
-                this.RaisePropertyChanged("mobilityOfObstruction");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType obstructionExtension {
-            get {
-                return this.obstructionExtensionField;
-            }
-            set {
-                this.obstructionExtensionField = value;
-                this.RaisePropertyChanged("obstructionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class InfrastructureDamageObstruction : Obstruction {
-        
-        private InfrastructureDamageTypeEnum infrastructureDamageTypeField;
-        
-        private _ExtensionType infrastructureDamageObstructionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public InfrastructureDamageTypeEnum infrastructureDamageType {
-            get {
-                return this.infrastructureDamageTypeField;
-            }
-            set {
-                this.infrastructureDamageTypeField = value;
-                this.RaisePropertyChanged("infrastructureDamageType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType infrastructureDamageObstructionExtension {
-            get {
-                return this.infrastructureDamageObstructionExtensionField;
-            }
-            set {
-                this.infrastructureDamageObstructionExtensionField = value;
-                this.RaisePropertyChanged("infrastructureDamageObstructionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum InfrastructureDamageTypeEnum {
-        
-        /// <remarks/>
-        burstPipe,
-        
-        /// <remarks/>
-        burstWaterMain,
-        
-        /// <remarks/>
-        collapsedSewer,
-        
-        /// <remarks/>
-        damagedBridge,
-        
-        /// <remarks/>
-        damagedCrashBarrier,
-        
-        /// <remarks/>
-        damagedFlyover,
-        
-        /// <remarks/>
-        damagedGallery,
-        
-        /// <remarks/>
-        damagedGantry,
-        
-        /// <remarks/>
-        damagedRoadSurface,
-        
-        /// <remarks/>
-        damagedTunnel,
-        
-        /// <remarks/>
-        damagedViaduct,
-        
-        /// <remarks/>
-        fallenPowerCables,
-        
-        /// <remarks/>
-        gasLeak,
-        
-        /// <remarks/>
-        weakBridge,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class GeneralObstruction : Obstruction {
-        
-        private ObstructionTypeEnum[] obstructionTypeField;
-        
-        private GroupOfPeopleInvolved[] groupOfPeopleInvolvedField;
-        
-        private _ExtensionType generalObstructionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("obstructionType", Order=0)]
-        public ObstructionTypeEnum[] obstructionType {
-            get {
-                return this.obstructionTypeField;
-            }
-            set {
-                this.obstructionTypeField = value;
-                this.RaisePropertyChanged("obstructionType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("groupOfPeopleInvolved", Order=1)]
-        public GroupOfPeopleInvolved[] groupOfPeopleInvolved {
-            get {
-                return this.groupOfPeopleInvolvedField;
-            }
-            set {
-                this.groupOfPeopleInvolvedField = value;
-                this.RaisePropertyChanged("groupOfPeopleInvolved");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType generalObstructionExtension {
-            get {
-                return this.generalObstructionExtensionField;
-            }
-            set {
-                this.generalObstructionExtensionField = value;
-                this.RaisePropertyChanged("generalObstructionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum ObstructionTypeEnum {
-        
-        /// <remarks/>
-        airCrash,
-        
-        /// <remarks/>
-        childrenOnRoadway,
-        
-        /// <remarks/>
-        clearanceWork,
-        
-        /// <remarks/>
-        craneOperating,
-        
-        /// <remarks/>
-        cyclistsOnRoadway,
-        
-        /// <remarks/>
-        debris,
-        
-        /// <remarks/>
-        explosion,
-        
-        /// <remarks/>
-        explosionHazard,
-        
-        /// <remarks/>
-        hazardsOnTheRoad,
-        
-        /// <remarks/>
-        highSpeedChase,
-        
-        /// <remarks/>
-        houseFire,
-        
-        /// <remarks/>
-        incident,
-        
-        /// <remarks/>
-        industrialAccident,
-        
-        /// <remarks/>
-        objectOnTheRoad,
-        
-        /// <remarks/>
-        objectsFallingFromMovingVehicle,
-        
-        /// <remarks/>
-        obstructionOnTheRoad,
-        
-        /// <remarks/>
-        peopleOnRoadway,
-        
-        /// <remarks/>
-        railCrash,
-        
-        /// <remarks/>
-        recklessDriver,
-        
-        /// <remarks/>
-        rescueAndRecoveryWork,
-        
-        /// <remarks/>
-        severeFrostDamagedRoadway,
-        
-        /// <remarks/>
-        shedLoad,
-        
-        /// <remarks/>
-        snowAndIceDebris,
-        
-        /// <remarks/>
-        spillageOccurringFromMovingVehicle,
-        
-        /// <remarks/>
-        spillageOnTheRoad,
-        
-        /// <remarks/>
-        unprotectedAccidentArea,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AnimalPresenceObstruction : Obstruction {
-        
-        private bool aliveField;
-        
-        private bool aliveFieldSpecified;
-        
-        private AnimalPresenceTypeEnum animalPresenceTypeField;
-        
-        private _ExtensionType animalPresenceObstructionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public bool alive {
-            get {
-                return this.aliveField;
-            }
-            set {
-                this.aliveField = value;
-                this.RaisePropertyChanged("alive");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool aliveSpecified {
-            get {
-                return this.aliveFieldSpecified;
-            }
-            set {
-                this.aliveFieldSpecified = value;
-                this.RaisePropertyChanged("aliveSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public AnimalPresenceTypeEnum animalPresenceType {
-            get {
-                return this.animalPresenceTypeField;
-            }
-            set {
-                this.animalPresenceTypeField = value;
-                this.RaisePropertyChanged("animalPresenceType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType animalPresenceObstructionExtension {
-            get {
-                return this.animalPresenceObstructionExtensionField;
-            }
-            set {
-                this.animalPresenceObstructionExtensionField = value;
-                this.RaisePropertyChanged("animalPresenceObstructionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum AnimalPresenceTypeEnum {
-        
-        /// <remarks/>
-        animalsOnTheRoad,
-        
-        /// <remarks/>
-        herdOfAnimalsOnTheRoad,
-        
-        /// <remarks/>
-        largeAnimalsOnTheRoad,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class EnvironmentalObstruction : Obstruction {
-        
-        private float depthField;
-        
-        private bool depthFieldSpecified;
-        
-        private EnvironmentalObstructionTypeEnum environmentalObstructionTypeField;
-        
-        private _ExtensionType environmentalObstructionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public float depth {
-            get {
-                return this.depthField;
-            }
-            set {
-                this.depthField = value;
-                this.RaisePropertyChanged("depth");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool depthSpecified {
-            get {
-                return this.depthFieldSpecified;
-            }
-            set {
-                this.depthFieldSpecified = value;
-                this.RaisePropertyChanged("depthSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public EnvironmentalObstructionTypeEnum environmentalObstructionType {
-            get {
-                return this.environmentalObstructionTypeField;
-            }
-            set {
-                this.environmentalObstructionTypeField = value;
-                this.RaisePropertyChanged("environmentalObstructionType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType environmentalObstructionExtension {
-            get {
-                return this.environmentalObstructionExtensionField;
-            }
-            set {
-                this.environmentalObstructionExtensionField = value;
-                this.RaisePropertyChanged("environmentalObstructionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum EnvironmentalObstructionTypeEnum {
-        
-        /// <remarks/>
-        avalanches,
-        
-        /// <remarks/>
-        earthquakeDamage,
-        
-        /// <remarks/>
-        fallenTrees,
-        
-        /// <remarks/>
-        fallingIce,
-        
-        /// <remarks/>
-        fallingLightIceOrSnow,
-        
-        /// <remarks/>
-        flashFloods,
-        
-        /// <remarks/>
-        flooding,
-        
-        /// <remarks/>
-        forestFire,
-        
-        /// <remarks/>
-        grassFire,
-        
-        /// <remarks/>
-        landslips,
-        
-        /// <remarks/>
-        mudSlide,
-        
-        /// <remarks/>
-        sewerOverflow,
-        
-        /// <remarks/>
-        rockfalls,
-        
-        /// <remarks/>
-        seriousFire,
-        
-        /// <remarks/>
-        smokeOrFumes,
-        
-        /// <remarks/>
-        stormDamage,
-        
-        /// <remarks/>
-        subsidence,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class VehicleObstruction : Obstruction {
-        
-        private VehicleObstructionTypeEnum vehicleObstructionTypeField;
-        
-        private Vehicle[] obstructingVehicleField;
-        
-        private _ExtensionType vehicleObstructionExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public VehicleObstructionTypeEnum vehicleObstructionType {
-            get {
-                return this.vehicleObstructionTypeField;
-            }
-            set {
-                this.vehicleObstructionTypeField = value;
-                this.RaisePropertyChanged("vehicleObstructionType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("obstructingVehicle", Order=1)]
-        public Vehicle[] obstructingVehicle {
-            get {
-                return this.obstructingVehicleField;
-            }
-            set {
-                this.obstructingVehicleField = value;
-                this.RaisePropertyChanged("obstructingVehicle");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType vehicleObstructionExtension {
-            get {
-                return this.vehicleObstructionExtensionField;
-            }
-            set {
-                this.vehicleObstructionExtensionField = value;
-                this.RaisePropertyChanged("vehicleObstructionExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum VehicleObstructionTypeEnum {
-        
-        /// <remarks/>
-        abandonedVehicle,
-        
-        /// <remarks/>
-        abnormalLoad,
-        
-        /// <remarks/>
-        brokenDownBus,
-        
-        /// <remarks/>
-        brokenDownHeavyLorry,
-        
-        /// <remarks/>
-        brokenDownVehicle,
-        
-        /// <remarks/>
-        convoy,
-        
-        /// <remarks/>
-        damagedVehicle,
-        
-        /// <remarks/>
-        dangerousSlowMovingVehicle,
-        
-        /// <remarks/>
-        emergencyVehicle,
-        
-        /// <remarks/>
-        highSpeedEmergencyVehicle,
-        
-        /// <remarks/>
-        longLoad,
-        
-        /// <remarks/>
-        militaryConvoy,
-        
-        /// <remarks/>
-        overheightVehicle,
-        
-        /// <remarks/>
-        prohibitedVehicleOnTheRoadway,
-        
-        /// <remarks/>
-        saltingOrGrittingVehicleInUse,
-        
-        /// <remarks/>
-        slowMovingMaintenanceVehicle,
-        
-        /// <remarks/>
-        slowVehicle,
-        
-        /// <remarks/>
-        snowplough,
-        
-        /// <remarks/>
-        trackLayingVehicle,
-        
-        /// <remarks/>
-        unlitVehicleOnTheRoad,
-        
-        /// <remarks/>
-        vehicleOnFire,
-        
-        /// <remarks/>
-        vehicleCarryingHazardousMaterials,
-        
-        /// <remarks/>
-        vehicleInDifficulty,
-        
-        /// <remarks/>
-        vehicleOnWrongCarriageway,
-        
-        /// <remarks/>
-        vehicleStuck,
-        
-        /// <remarks/>
-        vehicleStuckUnderBridge,
-        
-        /// <remarks/>
-        vehicleWithOverheightLoad,
-        
-        /// <remarks/>
-        vehicleWithOverwideLoad,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class EquipmentOrSystemFault : TrafficElement {
-        
-        private EquipmentOrSystemFaultTypeEnum equipmentOrSystemFaultTypeField;
-        
-        private EquipmentOrSystemTypeEnum faultyEquipmentOrSystemTypeField;
-        
-        private _ExtensionType equipmentOrSystemFaultExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public EquipmentOrSystemFaultTypeEnum equipmentOrSystemFaultType {
-            get {
-                return this.equipmentOrSystemFaultTypeField;
-            }
-            set {
-                this.equipmentOrSystemFaultTypeField = value;
-                this.RaisePropertyChanged("equipmentOrSystemFaultType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public EquipmentOrSystemTypeEnum faultyEquipmentOrSystemType {
-            get {
-                return this.faultyEquipmentOrSystemTypeField;
-            }
-            set {
-                this.faultyEquipmentOrSystemTypeField = value;
-                this.RaisePropertyChanged("faultyEquipmentOrSystemType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType equipmentOrSystemFaultExtension {
-            get {
-                return this.equipmentOrSystemFaultExtensionField;
-            }
-            set {
-                this.equipmentOrSystemFaultExtensionField = value;
-                this.RaisePropertyChanged("equipmentOrSystemFaultExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum EquipmentOrSystemFaultTypeEnum {
-        
-        /// <remarks/>
-        notWorking,
-        
-        /// <remarks/>
-        outOfService,
-        
-        /// <remarks/>
-        workingIncorrectly,
-        
-        /// <remarks/>
-        workingIntermittently,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum EquipmentOrSystemTypeEnum {
-        
-        /// <remarks/>
-        anprCameras,
-        
-        /// <remarks/>
-        automatedTollSystem,
-        
-        /// <remarks/>
-        cctvCameras,
-        
-        /// <remarks/>
-        emergencyRoadsideTelephones,
-        
-        /// <remarks/>
-        galleryLights,
-        
-        /// <remarks/>
-        laneControlSigns,
-        
-        /// <remarks/>
-        levelCrossing,
-        
-        /// <remarks/>
-        matrixSigns,
-        
-        /// <remarks/>
-        rampControls,
-        
-        /// <remarks/>
-        roadsideCommunicationsSystem,
-        
-        /// <remarks/>
-        roadsidePowerSystem,
-        
-        /// <remarks/>
-        speedControlSigns,
-        
-        /// <remarks/>
-        streetLighting,
-        
-        /// <remarks/>
-        temporaryTrafficLights,
-        
-        /// <remarks/>
-        tollGates,
-        
-        /// <remarks/>
-        trafficLightSets,
-        
-        /// <remarks/>
-        trafficSignals,
-        
-        /// <remarks/>
-        tunnelLights,
-        
-        /// <remarks/>
-        tunnelVentilation,
-        
-        /// <remarks/>
-        variableMessageSigns,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublicEvent))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisturbanceActivity))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthorityOperation))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class Activity : TrafficElement {
-        
-        private Mobility mobilityOfActivityField;
-        
-        private _ExtensionType activityExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Mobility mobilityOfActivity {
-            get {
-                return this.mobilityOfActivityField;
-            }
-            set {
-                this.mobilityOfActivityField = value;
-                this.RaisePropertyChanged("mobilityOfActivity");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType activityExtension {
-            get {
-                return this.activityExtensionField;
-            }
-            set {
-                this.activityExtensionField = value;
-                this.RaisePropertyChanged("activityExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PublicEvent : Activity {
-        
-        private PublicEventTypeEnum publicEventTypeField;
-        
-        private _ExtensionType publicEventExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PublicEventTypeEnum publicEventType {
-            get {
-                return this.publicEventTypeField;
-            }
-            set {
-                this.publicEventTypeField = value;
-                this.RaisePropertyChanged("publicEventType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType publicEventExtension {
-            get {
-                return this.publicEventExtensionField;
-            }
-            set {
-                this.publicEventExtensionField = value;
-                this.RaisePropertyChanged("publicEventExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum PublicEventTypeEnum {
-        
-        /// <remarks/>
-        agriculturalShow,
-        
-        /// <remarks/>
-        airShow,
-        
-        /// <remarks/>
-        athleticsMeeting,
-        
-        /// <remarks/>
-        commercialEvent,
-        
-        /// <remarks/>
-        culturalEvent,
-        
-        /// <remarks/>
-        ballGame,
-        
-        /// <remarks/>
-        baseballGame,
-        
-        /// <remarks/>
-        basketballGame,
-        
-        /// <remarks/>
-        bicycleRace,
-        
-        /// <remarks/>
-        boatRace,
-        
-        /// <remarks/>
-        boatShow,
-        
-        /// <remarks/>
-        boxingTournament,
-        
-        /// <remarks/>
-        bullFight,
-        
-        /// <remarks/>
-        ceremonialEvent,
-        
-        /// <remarks/>
-        concert,
-        
-        /// <remarks/>
-        cricketMatch,
-        
-        /// <remarks/>
-        exhibition,
-        
-        /// <remarks/>
-        fair,
-        
-        /// <remarks/>
-        festival,
-        
-        /// <remarks/>
-        filmTVMaking,
-        
-        /// <remarks/>
-        footballMatch,
-        
-        /// <remarks/>
-        funfair,
-        
-        /// <remarks/>
-        gardeningOrFlowerShow,
-        
-        /// <remarks/>
-        golfTournament,
-        
-        /// <remarks/>
-        hockeyGame,
-        
-        /// <remarks/>
-        horseRaceMeeting,
-        
-        /// <remarks/>
-        internationalSportsMeeting,
-        
-        /// <remarks/>
-        majorEvent,
-        
-        /// <remarks/>
-        marathon,
-        
-        /// <remarks/>
-        market,
-        
-        /// <remarks/>
-        match,
-        
-        /// <remarks/>
-        motorShow,
-        
-        /// <remarks/>
-        motorSportRaceMeeting,
-        
-        /// <remarks/>
-        parade,
-        
-        /// <remarks/>
-        procession,
-        
-        /// <remarks/>
-        raceMeeting,
-        
-        /// <remarks/>
-        rugbyMatch,
-        
-        /// <remarks/>
-        severalMajorEvents,
-        
-        /// <remarks/>
-        show,
-        
-        /// <remarks/>
-        showJumping,
-        
-        /// <remarks/>
-        sportsMeeting,
-        
-        /// <remarks/>
-        stateOccasion,
-        
-        /// <remarks/>
-        tennisTournament,
-        
-        /// <remarks/>
-        tournament,
-        
-        /// <remarks/>
-        tradeFair,
-        
-        /// <remarks/>
-        waterSportsMeeting,
-        
-        /// <remarks/>
-        winterSportsMeeting,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class DisturbanceActivity : Activity {
-        
-        private DisturbanceActivityTypeEnum disturbanceActivityTypeField;
-        
-        private _ExtensionType disturbanceActivityExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public DisturbanceActivityTypeEnum disturbanceActivityType {
-            get {
-                return this.disturbanceActivityTypeField;
-            }
-            set {
-                this.disturbanceActivityTypeField = value;
-                this.RaisePropertyChanged("disturbanceActivityType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType disturbanceActivityExtension {
-            get {
-                return this.disturbanceActivityExtensionField;
-            }
-            set {
-                this.disturbanceActivityExtensionField = value;
-                this.RaisePropertyChanged("disturbanceActivityExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum DisturbanceActivityTypeEnum {
-        
-        /// <remarks/>
-        airRaid,
-        
-        /// <remarks/>
-        altercationOfVehicleOccupants,
-        
-        /// <remarks/>
-        assault,
-        
-        /// <remarks/>
-        assetDestruction,
-        
-        /// <remarks/>
-        attack,
-        
-        /// <remarks/>
-        attackOnVehicle,
-        
-        /// <remarks/>
-        blockadeOrBarrier,
-        
-        /// <remarks/>
-        bombAlert,
-        
-        /// <remarks/>
-        crowd,
-        
-        /// <remarks/>
-        demonstration,
-        
-        /// <remarks/>
-        evacuation,
-        
-        /// <remarks/>
-        filterBlockade,
-        
-        /// <remarks/>
-        goSlowOperation,
-        
-        /// <remarks/>
-        gunfireOnRoadway,
-        
-        /// <remarks/>
-        illVehicleOccupants,
-        
-        /// <remarks/>
-        march,
-        
-        /// <remarks/>
-        publicDisturbance,
-        
-        /// <remarks/>
-        radioactiveLeakAlert,
-        
-        /// <remarks/>
-        riot,
-        
-        /// <remarks/>
-        sabotage,
-        
-        /// <remarks/>
-        securityAlert,
-        
-        /// <remarks/>
-        securityIncident,
-        
-        /// <remarks/>
-        sightseersObstructingAccess,
-        
-        /// <remarks/>
-        strike,
-        
-        /// <remarks/>
-        terroristIncident,
-        
-        /// <remarks/>
-        theft,
-        
-        /// <remarks/>
-        toxicCloudAlert,
-        
-        /// <remarks/>
-        unspecifiedAlert,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class AuthorityOperation : Activity {
-        
-        private AuthorityOperationTypeEnum authorityOperationTypeField;
-        
-        private _ExtensionType authorityOperationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public AuthorityOperationTypeEnum authorityOperationType {
-            get {
-                return this.authorityOperationTypeField;
-            }
-            set {
-                this.authorityOperationTypeField = value;
-                this.RaisePropertyChanged("authorityOperationType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType authorityOperationExtension {
-            get {
-                return this.authorityOperationExtensionField;
-            }
-            set {
-                this.authorityOperationExtensionField = value;
-                this.RaisePropertyChanged("authorityOperationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum AuthorityOperationTypeEnum {
-        
-        /// <remarks/>
-        accidentInvestigationWork,
-        
-        /// <remarks/>
-        bombSquadInAction,
-        
-        /// <remarks/>
-        civilEmergency,
-        
-        /// <remarks/>
-        customsOperation,
-        
-        /// <remarks/>
-        juridicalReconstruction,
-        
-        /// <remarks/>
-        policeCheckPoint,
-        
-        /// <remarks/>
-        policeInvestigation,
-        
-        /// <remarks/>
-        roadOperatorCheckPoint,
-        
-        /// <remarks/>
-        survey,
-        
-        /// <remarks/>
-        transportOfVip,
-        
-        /// <remarks/>
-        undefinedAuthorityActivity,
-        
-        /// <remarks/>
-        vehicleInspectionCheckPoint,
-        
-        /// <remarks/>
-        vehicleWeighing,
-        
-        /// <remarks/>
-        weighInMotion,
-        
-        /// <remarks/>
-        other,
-    }
-    
-    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -21605,119 +20754,639 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeneralObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VehicleObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InfrastructureDamageObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnvironmentalObstruction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AnimalPresenceObstruction))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TrafficViewRecord : object, System.ComponentModel.INotifyPropertyChanged {
+    public abstract partial class Obstruction : TrafficElement {
         
-        private string recordSequenceNumberField;
+        private string numberOfObstructionsField;
         
-        private TrafficElement trafficElementField;
+        private Mobility mobilityOfObstructionField;
         
-        private OperatorAction operatorActionField;
-        
-        private ElaboratedData elaboratedDataField;
-        
-        private UrlLink[] urlLinkField;
-        
-        private _ExtensionType trafficViewRecordExtensionField;
-        
-        private string idField;
+        private _ExtensionType obstructionExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string recordSequenceNumber {
+        public string numberOfObstructions {
             get {
-                return this.recordSequenceNumberField;
+                return this.numberOfObstructionsField;
             }
             set {
-                this.recordSequenceNumberField = value;
-                this.RaisePropertyChanged("recordSequenceNumber");
+                this.numberOfObstructionsField = value;
+                this.RaisePropertyChanged("numberOfObstructions");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TrafficElement trafficElement {
+        public Mobility mobilityOfObstruction {
             get {
-                return this.trafficElementField;
+                return this.mobilityOfObstructionField;
             }
             set {
-                this.trafficElementField = value;
-                this.RaisePropertyChanged("trafficElement");
+                this.mobilityOfObstructionField = value;
+                this.RaisePropertyChanged("mobilityOfObstruction");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public OperatorAction operatorAction {
+        public _ExtensionType obstructionExtension {
             get {
-                return this.operatorActionField;
+                return this.obstructionExtensionField;
             }
             set {
-                this.operatorActionField = value;
-                this.RaisePropertyChanged("operatorAction");
+                this.obstructionExtensionField = value;
+                this.RaisePropertyChanged("obstructionExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class GeneralObstruction : Obstruction {
+        
+        private ObstructionTypeEnum[] obstructionTypeField;
+        
+        private GroupOfPeopleInvolved[] groupOfPeopleInvolvedField;
+        
+        private _ExtensionType generalObstructionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("obstructionType", Order=0)]
+        public ObstructionTypeEnum[] obstructionType {
+            get {
+                return this.obstructionTypeField;
+            }
+            set {
+                this.obstructionTypeField = value;
+                this.RaisePropertyChanged("obstructionType");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public ElaboratedData elaboratedData {
+        [System.Xml.Serialization.XmlElementAttribute("groupOfPeopleInvolved", Order=1)]
+        public GroupOfPeopleInvolved[] groupOfPeopleInvolved {
             get {
-                return this.elaboratedDataField;
+                return this.groupOfPeopleInvolvedField;
             }
             set {
-                this.elaboratedDataField = value;
-                this.RaisePropertyChanged("elaboratedData");
+                this.groupOfPeopleInvolvedField = value;
+                this.RaisePropertyChanged("groupOfPeopleInvolved");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("urlLink", Order=4)]
-        public UrlLink[] urlLink {
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType generalObstructionExtension {
             get {
-                return this.urlLinkField;
+                return this.generalObstructionExtensionField;
             }
             set {
-                this.urlLinkField = value;
-                this.RaisePropertyChanged("urlLink");
+                this.generalObstructionExtensionField = value;
+                this.RaisePropertyChanged("generalObstructionExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum ObstructionTypeEnum {
+        
+        /// <remarks/>
+        airCrash,
+        
+        /// <remarks/>
+        childrenOnRoadway,
+        
+        /// <remarks/>
+        clearanceWork,
+        
+        /// <remarks/>
+        craneOperating,
+        
+        /// <remarks/>
+        cyclistsOnRoadway,
+        
+        /// <remarks/>
+        debris,
+        
+        /// <remarks/>
+        explosion,
+        
+        /// <remarks/>
+        explosionHazard,
+        
+        /// <remarks/>
+        hazardsOnTheRoad,
+        
+        /// <remarks/>
+        highSpeedChase,
+        
+        /// <remarks/>
+        houseFire,
+        
+        /// <remarks/>
+        incident,
+        
+        /// <remarks/>
+        industrialAccident,
+        
+        /// <remarks/>
+        objectOnTheRoad,
+        
+        /// <remarks/>
+        objectsFallingFromMovingVehicle,
+        
+        /// <remarks/>
+        obstructionOnTheRoad,
+        
+        /// <remarks/>
+        peopleOnRoadway,
+        
+        /// <remarks/>
+        railCrash,
+        
+        /// <remarks/>
+        recklessDriver,
+        
+        /// <remarks/>
+        rescueAndRecoveryWork,
+        
+        /// <remarks/>
+        severeFrostDamagedRoadway,
+        
+        /// <remarks/>
+        shedLoad,
+        
+        /// <remarks/>
+        snowAndIceDebris,
+        
+        /// <remarks/>
+        spillageOccurringFromMovingVehicle,
+        
+        /// <remarks/>
+        spillageOnTheRoad,
+        
+        /// <remarks/>
+        unprotectedAccidentArea,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class VehicleObstruction : Obstruction {
+        
+        private VehicleObstructionTypeEnum vehicleObstructionTypeField;
+        
+        private Vehicle[] obstructingVehicleField;
+        
+        private _ExtensionType vehicleObstructionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VehicleObstructionTypeEnum vehicleObstructionType {
+            get {
+                return this.vehicleObstructionTypeField;
+            }
+            set {
+                this.vehicleObstructionTypeField = value;
+                this.RaisePropertyChanged("vehicleObstructionType");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public _ExtensionType trafficViewRecordExtension {
+        [System.Xml.Serialization.XmlElementAttribute("obstructingVehicle", Order=1)]
+        public Vehicle[] obstructingVehicle {
             get {
-                return this.trafficViewRecordExtensionField;
+                return this.obstructingVehicleField;
             }
             set {
-                this.trafficViewRecordExtensionField = value;
-                this.RaisePropertyChanged("trafficViewRecordExtension");
+                this.obstructingVehicleField = value;
+                this.RaisePropertyChanged("obstructingVehicle");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id {
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType vehicleObstructionExtension {
             get {
-                return this.idField;
+                return this.vehicleObstructionExtensionField;
             }
             set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
+                this.vehicleObstructionExtensionField = value;
+                this.RaisePropertyChanged("vehicleObstructionExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum VehicleObstructionTypeEnum {
+        
+        /// <remarks/>
+        abandonedVehicle,
+        
+        /// <remarks/>
+        abnormalLoad,
+        
+        /// <remarks/>
+        brokenDownBus,
+        
+        /// <remarks/>
+        brokenDownHeavyLorry,
+        
+        /// <remarks/>
+        brokenDownVehicle,
+        
+        /// <remarks/>
+        convoy,
+        
+        /// <remarks/>
+        damagedVehicle,
+        
+        /// <remarks/>
+        dangerousSlowMovingVehicle,
+        
+        /// <remarks/>
+        emergencyVehicle,
+        
+        /// <remarks/>
+        highSpeedEmergencyVehicle,
+        
+        /// <remarks/>
+        longLoad,
+        
+        /// <remarks/>
+        militaryConvoy,
+        
+        /// <remarks/>
+        overheightVehicle,
+        
+        /// <remarks/>
+        prohibitedVehicleOnTheRoadway,
+        
+        /// <remarks/>
+        saltingOrGrittingVehicleInUse,
+        
+        /// <remarks/>
+        slowMovingMaintenanceVehicle,
+        
+        /// <remarks/>
+        slowVehicle,
+        
+        /// <remarks/>
+        snowplough,
+        
+        /// <remarks/>
+        trackLayingVehicle,
+        
+        /// <remarks/>
+        unlitVehicleOnTheRoad,
+        
+        /// <remarks/>
+        vehicleOnFire,
+        
+        /// <remarks/>
+        vehicleCarryingHazardousMaterials,
+        
+        /// <remarks/>
+        vehicleInDifficulty,
+        
+        /// <remarks/>
+        vehicleOnWrongCarriageway,
+        
+        /// <remarks/>
+        vehicleStuck,
+        
+        /// <remarks/>
+        vehicleStuckUnderBridge,
+        
+        /// <remarks/>
+        vehicleWithOverheightLoad,
+        
+        /// <remarks/>
+        vehicleWithOverwideLoad,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class InfrastructureDamageObstruction : Obstruction {
+        
+        private InfrastructureDamageTypeEnum infrastructureDamageTypeField;
+        
+        private _ExtensionType infrastructureDamageObstructionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public InfrastructureDamageTypeEnum infrastructureDamageType {
+            get {
+                return this.infrastructureDamageTypeField;
+            }
+            set {
+                this.infrastructureDamageTypeField = value;
+                this.RaisePropertyChanged("infrastructureDamageType");
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType infrastructureDamageObstructionExtension {
+            get {
+                return this.infrastructureDamageObstructionExtensionField;
+            }
+            set {
+                this.infrastructureDamageObstructionExtensionField = value;
+                this.RaisePropertyChanged("infrastructureDamageObstructionExtension");
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum InfrastructureDamageTypeEnum {
+        
+        /// <remarks/>
+        burstPipe,
+        
+        /// <remarks/>
+        burstWaterMain,
+        
+        /// <remarks/>
+        collapsedSewer,
+        
+        /// <remarks/>
+        damagedBridge,
+        
+        /// <remarks/>
+        damagedCrashBarrier,
+        
+        /// <remarks/>
+        damagedFlyover,
+        
+        /// <remarks/>
+        damagedGallery,
+        
+        /// <remarks/>
+        damagedGantry,
+        
+        /// <remarks/>
+        damagedRoadSurface,
+        
+        /// <remarks/>
+        damagedTunnel,
+        
+        /// <remarks/>
+        damagedViaduct,
+        
+        /// <remarks/>
+        fallenPowerCables,
+        
+        /// <remarks/>
+        gasLeak,
+        
+        /// <remarks/>
+        weakBridge,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class EnvironmentalObstruction : Obstruction {
+        
+        private float depthField;
+        
+        private bool depthFieldSpecified;
+        
+        private EnvironmentalObstructionTypeEnum environmentalObstructionTypeField;
+        
+        private _ExtensionType environmentalObstructionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float depth {
+            get {
+                return this.depthField;
+            }
+            set {
+                this.depthField = value;
+                this.RaisePropertyChanged("depth");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool depthSpecified {
+            get {
+                return this.depthFieldSpecified;
+            }
+            set {
+                this.depthFieldSpecified = value;
+                this.RaisePropertyChanged("depthSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EnvironmentalObstructionTypeEnum environmentalObstructionType {
+            get {
+                return this.environmentalObstructionTypeField;
+            }
+            set {
+                this.environmentalObstructionTypeField = value;
+                this.RaisePropertyChanged("environmentalObstructionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType environmentalObstructionExtension {
+            get {
+                return this.environmentalObstructionExtensionField;
+            }
+            set {
+                this.environmentalObstructionExtensionField = value;
+                this.RaisePropertyChanged("environmentalObstructionExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum EnvironmentalObstructionTypeEnum {
+        
+        /// <remarks/>
+        avalanches,
+        
+        /// <remarks/>
+        earthquakeDamage,
+        
+        /// <remarks/>
+        fallenTrees,
+        
+        /// <remarks/>
+        fallingIce,
+        
+        /// <remarks/>
+        fallingLightIceOrSnow,
+        
+        /// <remarks/>
+        flashFloods,
+        
+        /// <remarks/>
+        flooding,
+        
+        /// <remarks/>
+        forestFire,
+        
+        /// <remarks/>
+        grassFire,
+        
+        /// <remarks/>
+        landslips,
+        
+        /// <remarks/>
+        mudSlide,
+        
+        /// <remarks/>
+        sewerOverflow,
+        
+        /// <remarks/>
+        rockfalls,
+        
+        /// <remarks/>
+        seriousFire,
+        
+        /// <remarks/>
+        smokeOrFumes,
+        
+        /// <remarks/>
+        stormDamage,
+        
+        /// <remarks/>
+        subsidence,
+        
+        /// <remarks/>
+        other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class AnimalPresenceObstruction : Obstruction {
+        
+        private bool aliveField;
+        
+        private bool aliveFieldSpecified;
+        
+        private AnimalPresenceTypeEnum animalPresenceTypeField;
+        
+        private _ExtensionType animalPresenceObstructionExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool alive {
+            get {
+                return this.aliveField;
+            }
+            set {
+                this.aliveField = value;
+                this.RaisePropertyChanged("alive");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool aliveSpecified {
+            get {
+                return this.aliveFieldSpecified;
+            }
+            set {
+                this.aliveFieldSpecified = value;
+                this.RaisePropertyChanged("aliveSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public AnimalPresenceTypeEnum animalPresenceType {
+            get {
+                return this.animalPresenceTypeField;
+            }
+            set {
+                this.animalPresenceTypeField = value;
+                this.RaisePropertyChanged("animalPresenceType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType animalPresenceObstructionExtension {
+            get {
+                return this.animalPresenceObstructionExtensionField;
+            }
+            set {
+                this.animalPresenceObstructionExtensionField = value;
+                this.RaisePropertyChanged("animalPresenceObstructionExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum AnimalPresenceTypeEnum {
+        
+        /// <remarks/>
+        animalsOnTheRoad,
+        
+        /// <remarks/>
+        herdOfAnimalsOnTheRoad,
+        
+        /// <remarks/>
+        largeAnimalsOnTheRoad,
     }
     
     /// <remarks/>
@@ -21837,15 +21506,6 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TravelTimeData))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherData))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PollutionInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HumidityInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WindInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VisibilityInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemperatureInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadSurfaceConditionInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecipitationInformation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficData))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(IndividualVehicleDataValues))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficSpeed))]
@@ -21853,6 +21513,15 @@ namespace TestClient.SubscriberServiceReference {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficFlow))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficConcentration))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficStatus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WeatherData))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WindInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemperatureInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadSurfaceConditionInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecipitationInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PollutionInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HumidityInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VisibilityInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TravelTimeData))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -22005,521 +21674,6 @@ namespace TestClient.SubscriberServiceReference {
         
         /// <remarks/>
         hour,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TravelTimeData : BasicData {
-        
-        private TravelTimeTrendTypeEnum travelTimeTrendTypeField;
-        
-        private bool travelTimeTrendTypeFieldSpecified;
-        
-        private TravelTimeTypeEnum travelTimeTypeField;
-        
-        private bool travelTimeTypeFieldSpecified;
-        
-        private VehicleTypeEnum[] vehicleTypeField;
-        
-        private DurationValue travelTimeField;
-        
-        private DurationValue freeFlowTravelTimeField;
-        
-        private DurationValue normallyExpectedTravelTimeField;
-        
-        private SpeedValue freeFlowSpeedField;
-        
-        private _ExtensionType travelTimeDataExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TravelTimeTrendTypeEnum travelTimeTrendType {
-            get {
-                return this.travelTimeTrendTypeField;
-            }
-            set {
-                this.travelTimeTrendTypeField = value;
-                this.RaisePropertyChanged("travelTimeTrendType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool travelTimeTrendTypeSpecified {
-            get {
-                return this.travelTimeTrendTypeFieldSpecified;
-            }
-            set {
-                this.travelTimeTrendTypeFieldSpecified = value;
-                this.RaisePropertyChanged("travelTimeTrendTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TravelTimeTypeEnum travelTimeType {
-            get {
-                return this.travelTimeTypeField;
-            }
-            set {
-                this.travelTimeTypeField = value;
-                this.RaisePropertyChanged("travelTimeType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool travelTimeTypeSpecified {
-            get {
-                return this.travelTimeTypeFieldSpecified;
-            }
-            set {
-                this.travelTimeTypeFieldSpecified = value;
-                this.RaisePropertyChanged("travelTimeTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("vehicleType", Order=2)]
-        public VehicleTypeEnum[] vehicleType {
-            get {
-                return this.vehicleTypeField;
-            }
-            set {
-                this.vehicleTypeField = value;
-                this.RaisePropertyChanged("vehicleType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public DurationValue travelTime {
-            get {
-                return this.travelTimeField;
-            }
-            set {
-                this.travelTimeField = value;
-                this.RaisePropertyChanged("travelTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public DurationValue freeFlowTravelTime {
-            get {
-                return this.freeFlowTravelTimeField;
-            }
-            set {
-                this.freeFlowTravelTimeField = value;
-                this.RaisePropertyChanged("freeFlowTravelTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public DurationValue normallyExpectedTravelTime {
-            get {
-                return this.normallyExpectedTravelTimeField;
-            }
-            set {
-                this.normallyExpectedTravelTimeField = value;
-                this.RaisePropertyChanged("normallyExpectedTravelTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public SpeedValue freeFlowSpeed {
-            get {
-                return this.freeFlowSpeedField;
-            }
-            set {
-                this.freeFlowSpeedField = value;
-                this.RaisePropertyChanged("freeFlowSpeed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public _ExtensionType travelTimeDataExtension {
-            get {
-                return this.travelTimeDataExtensionField;
-            }
-            set {
-                this.travelTimeDataExtensionField = value;
-                this.RaisePropertyChanged("travelTimeDataExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TravelTimeTrendTypeEnum {
-        
-        /// <remarks/>
-        decreasing,
-        
-        /// <remarks/>
-        increasing,
-        
-        /// <remarks/>
-        stable,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public enum TravelTimeTypeEnum {
-        
-        /// <remarks/>
-        best,
-        
-        /// <remarks/>
-        estimated,
-        
-        /// <remarks/>
-        instantaneous,
-        
-        /// <remarks/>
-        reconstituted,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PollutionInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HumidityInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WindInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VisibilityInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemperatureInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadSurfaceConditionInformation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecipitationInformation))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public abstract partial class WeatherData : BasicData {
-        
-        private _ExtensionType weatherDataExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _ExtensionType weatherDataExtension {
-            get {
-                return this.weatherDataExtensionField;
-            }
-            set {
-                this.weatherDataExtensionField = value;
-                this.RaisePropertyChanged("weatherDataExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PollutionInformation : WeatherData {
-        
-        private Pollution[] pollutionField;
-        
-        private _ExtensionType pollutionInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("pollution", Order=0)]
-        public Pollution[] pollution {
-            get {
-                return this.pollutionField;
-            }
-            set {
-                this.pollutionField = value;
-                this.RaisePropertyChanged("pollution");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType pollutionInformationExtension {
-            get {
-                return this.pollutionInformationExtensionField;
-            }
-            set {
-                this.pollutionInformationExtensionField = value;
-                this.RaisePropertyChanged("pollutionInformationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class HumidityInformation : WeatherData {
-        
-        private Humidity humidityField;
-        
-        private _ExtensionType humidityInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Humidity humidity {
-            get {
-                return this.humidityField;
-            }
-            set {
-                this.humidityField = value;
-                this.RaisePropertyChanged("humidity");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType humidityInformationExtension {
-            get {
-                return this.humidityInformationExtensionField;
-            }
-            set {
-                this.humidityInformationExtensionField = value;
-                this.RaisePropertyChanged("humidityInformationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class WindInformation : WeatherData {
-        
-        private Wind windField;
-        
-        private _ExtensionType windInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Wind wind {
-            get {
-                return this.windField;
-            }
-            set {
-                this.windField = value;
-                this.RaisePropertyChanged("wind");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType windInformationExtension {
-            get {
-                return this.windInformationExtensionField;
-            }
-            set {
-                this.windInformationExtensionField = value;
-                this.RaisePropertyChanged("windInformationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class VisibilityInformation : WeatherData {
-        
-        private Visibility visibilityField;
-        
-        private _ExtensionType visibilityInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Visibility visibility {
-            get {
-                return this.visibilityField;
-            }
-            set {
-                this.visibilityField = value;
-                this.RaisePropertyChanged("visibility");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType visibilityInformationExtension {
-            get {
-                return this.visibilityInformationExtensionField;
-            }
-            set {
-                this.visibilityInformationExtensionField = value;
-                this.RaisePropertyChanged("visibilityInformationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class TemperatureInformation : WeatherData {
-        
-        private Temperature temperatureField;
-        
-        private _ExtensionType temperatureInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Temperature temperature {
-            get {
-                return this.temperatureField;
-            }
-            set {
-                this.temperatureField = value;
-                this.RaisePropertyChanged("temperature");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType temperatureInformationExtension {
-            get {
-                return this.temperatureInformationExtensionField;
-            }
-            set {
-                this.temperatureInformationExtensionField = value;
-                this.RaisePropertyChanged("temperatureInformationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class RoadSurfaceConditionInformation : WeatherData {
-        
-        private WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionTypeField;
-        
-        private RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurementsField;
-        
-        private _ExtensionType roadSurfaceConditionInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("weatherRelatedRoadConditionType", Order=0)]
-        public WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionType {
-            get {
-                return this.weatherRelatedRoadConditionTypeField;
-            }
-            set {
-                this.weatherRelatedRoadConditionTypeField = value;
-                this.RaisePropertyChanged("weatherRelatedRoadConditionType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurements {
-            get {
-                return this.roadSurfaceConditionMeasurementsField;
-            }
-            set {
-                this.roadSurfaceConditionMeasurementsField = value;
-                this.RaisePropertyChanged("roadSurfaceConditionMeasurements");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType roadSurfaceConditionInformationExtension {
-            get {
-                return this.roadSurfaceConditionInformationExtensionField;
-            }
-            set {
-                this.roadSurfaceConditionInformationExtensionField = value;
-                this.RaisePropertyChanged("roadSurfaceConditionInformationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class PrecipitationInformation : WeatherData {
-        
-        private bool noPrecipitationField;
-        
-        private bool noPrecipitationFieldSpecified;
-        
-        private PrecipitationDetail precipitationDetailField;
-        
-        private _ExtensionType precipitationInformationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public bool noPrecipitation {
-            get {
-                return this.noPrecipitationField;
-            }
-            set {
-                this.noPrecipitationField = value;
-                this.RaisePropertyChanged("noPrecipitation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noPrecipitationSpecified {
-            get {
-                return this.noPrecipitationFieldSpecified;
-            }
-            set {
-                this.noPrecipitationFieldSpecified = value;
-                this.RaisePropertyChanged("noPrecipitationSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public PrecipitationDetail precipitationDetail {
-            get {
-                return this.precipitationDetailField;
-            }
-            set {
-                this.precipitationDetailField = value;
-                this.RaisePropertyChanged("precipitationDetail");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType precipitationInformationExtension {
-            get {
-                return this.precipitationInformationExtensionField;
-            }
-            set {
-                this.precipitationInformationExtensionField = value;
-                this.RaisePropertyChanged("precipitationInformationExtension");
-            }
-        }
     }
     
     /// <remarks/>
@@ -23068,6 +22222,521 @@ namespace TestClient.SubscriberServiceReference {
                 this.RaisePropertyChanged("trafficStatusExtension");
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WindInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemperatureInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadSurfaceConditionInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecipitationInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PollutionInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HumidityInformation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VisibilityInformation))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public abstract partial class WeatherData : BasicData {
+        
+        private _ExtensionType weatherDataExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _ExtensionType weatherDataExtension {
+            get {
+                return this.weatherDataExtensionField;
+            }
+            set {
+                this.weatherDataExtensionField = value;
+                this.RaisePropertyChanged("weatherDataExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class WindInformation : WeatherData {
+        
+        private Wind windField;
+        
+        private _ExtensionType windInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Wind wind {
+            get {
+                return this.windField;
+            }
+            set {
+                this.windField = value;
+                this.RaisePropertyChanged("wind");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType windInformationExtension {
+            get {
+                return this.windInformationExtensionField;
+            }
+            set {
+                this.windInformationExtensionField = value;
+                this.RaisePropertyChanged("windInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TemperatureInformation : WeatherData {
+        
+        private Temperature temperatureField;
+        
+        private _ExtensionType temperatureInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Temperature temperature {
+            get {
+                return this.temperatureField;
+            }
+            set {
+                this.temperatureField = value;
+                this.RaisePropertyChanged("temperature");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType temperatureInformationExtension {
+            get {
+                return this.temperatureInformationExtensionField;
+            }
+            set {
+                this.temperatureInformationExtensionField = value;
+                this.RaisePropertyChanged("temperatureInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class RoadSurfaceConditionInformation : WeatherData {
+        
+        private WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionTypeField;
+        
+        private RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurementsField;
+        
+        private _ExtensionType roadSurfaceConditionInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("weatherRelatedRoadConditionType", Order=0)]
+        public WeatherRelatedRoadConditionTypeEnum[] weatherRelatedRoadConditionType {
+            get {
+                return this.weatherRelatedRoadConditionTypeField;
+            }
+            set {
+                this.weatherRelatedRoadConditionTypeField = value;
+                this.RaisePropertyChanged("weatherRelatedRoadConditionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public RoadSurfaceConditionMeasurements roadSurfaceConditionMeasurements {
+            get {
+                return this.roadSurfaceConditionMeasurementsField;
+            }
+            set {
+                this.roadSurfaceConditionMeasurementsField = value;
+                this.RaisePropertyChanged("roadSurfaceConditionMeasurements");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType roadSurfaceConditionInformationExtension {
+            get {
+                return this.roadSurfaceConditionInformationExtensionField;
+            }
+            set {
+                this.roadSurfaceConditionInformationExtensionField = value;
+                this.RaisePropertyChanged("roadSurfaceConditionInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PrecipitationInformation : WeatherData {
+        
+        private bool noPrecipitationField;
+        
+        private bool noPrecipitationFieldSpecified;
+        
+        private PrecipitationDetail precipitationDetailField;
+        
+        private _ExtensionType precipitationInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool noPrecipitation {
+            get {
+                return this.noPrecipitationField;
+            }
+            set {
+                this.noPrecipitationField = value;
+                this.RaisePropertyChanged("noPrecipitation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool noPrecipitationSpecified {
+            get {
+                return this.noPrecipitationFieldSpecified;
+            }
+            set {
+                this.noPrecipitationFieldSpecified = value;
+                this.RaisePropertyChanged("noPrecipitationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PrecipitationDetail precipitationDetail {
+            get {
+                return this.precipitationDetailField;
+            }
+            set {
+                this.precipitationDetailField = value;
+                this.RaisePropertyChanged("precipitationDetail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType precipitationInformationExtension {
+            get {
+                return this.precipitationInformationExtensionField;
+            }
+            set {
+                this.precipitationInformationExtensionField = value;
+                this.RaisePropertyChanged("precipitationInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class PollutionInformation : WeatherData {
+        
+        private Pollution[] pollutionField;
+        
+        private _ExtensionType pollutionInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("pollution", Order=0)]
+        public Pollution[] pollution {
+            get {
+                return this.pollutionField;
+            }
+            set {
+                this.pollutionField = value;
+                this.RaisePropertyChanged("pollution");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType pollutionInformationExtension {
+            get {
+                return this.pollutionInformationExtensionField;
+            }
+            set {
+                this.pollutionInformationExtensionField = value;
+                this.RaisePropertyChanged("pollutionInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class HumidityInformation : WeatherData {
+        
+        private Humidity humidityField;
+        
+        private _ExtensionType humidityInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Humidity humidity {
+            get {
+                return this.humidityField;
+            }
+            set {
+                this.humidityField = value;
+                this.RaisePropertyChanged("humidity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType humidityInformationExtension {
+            get {
+                return this.humidityInformationExtensionField;
+            }
+            set {
+                this.humidityInformationExtensionField = value;
+                this.RaisePropertyChanged("humidityInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class VisibilityInformation : WeatherData {
+        
+        private Visibility visibilityField;
+        
+        private _ExtensionType visibilityInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Visibility visibility {
+            get {
+                return this.visibilityField;
+            }
+            set {
+                this.visibilityField = value;
+                this.RaisePropertyChanged("visibility");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType visibilityInformationExtension {
+            get {
+                return this.visibilityInformationExtensionField;
+            }
+            set {
+                this.visibilityInformationExtensionField = value;
+                this.RaisePropertyChanged("visibilityInformationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class TravelTimeData : BasicData {
+        
+        private TravelTimeTrendTypeEnum travelTimeTrendTypeField;
+        
+        private bool travelTimeTrendTypeFieldSpecified;
+        
+        private TravelTimeTypeEnum travelTimeTypeField;
+        
+        private bool travelTimeTypeFieldSpecified;
+        
+        private VehicleTypeEnum[] vehicleTypeField;
+        
+        private DurationValue travelTimeField;
+        
+        private DurationValue freeFlowTravelTimeField;
+        
+        private DurationValue normallyExpectedTravelTimeField;
+        
+        private SpeedValue freeFlowSpeedField;
+        
+        private _ExtensionType travelTimeDataExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TravelTimeTrendTypeEnum travelTimeTrendType {
+            get {
+                return this.travelTimeTrendTypeField;
+            }
+            set {
+                this.travelTimeTrendTypeField = value;
+                this.RaisePropertyChanged("travelTimeTrendType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool travelTimeTrendTypeSpecified {
+            get {
+                return this.travelTimeTrendTypeFieldSpecified;
+            }
+            set {
+                this.travelTimeTrendTypeFieldSpecified = value;
+                this.RaisePropertyChanged("travelTimeTrendTypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TravelTimeTypeEnum travelTimeType {
+            get {
+                return this.travelTimeTypeField;
+            }
+            set {
+                this.travelTimeTypeField = value;
+                this.RaisePropertyChanged("travelTimeType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool travelTimeTypeSpecified {
+            get {
+                return this.travelTimeTypeFieldSpecified;
+            }
+            set {
+                this.travelTimeTypeFieldSpecified = value;
+                this.RaisePropertyChanged("travelTimeTypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("vehicleType", Order=2)]
+        public VehicleTypeEnum[] vehicleType {
+            get {
+                return this.vehicleTypeField;
+            }
+            set {
+                this.vehicleTypeField = value;
+                this.RaisePropertyChanged("vehicleType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public DurationValue travelTime {
+            get {
+                return this.travelTimeField;
+            }
+            set {
+                this.travelTimeField = value;
+                this.RaisePropertyChanged("travelTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public DurationValue freeFlowTravelTime {
+            get {
+                return this.freeFlowTravelTimeField;
+            }
+            set {
+                this.freeFlowTravelTimeField = value;
+                this.RaisePropertyChanged("freeFlowTravelTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public DurationValue normallyExpectedTravelTime {
+            get {
+                return this.normallyExpectedTravelTimeField;
+            }
+            set {
+                this.normallyExpectedTravelTimeField = value;
+                this.RaisePropertyChanged("normallyExpectedTravelTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public SpeedValue freeFlowSpeed {
+            get {
+                return this.freeFlowSpeedField;
+            }
+            set {
+                this.freeFlowSpeedField = value;
+                this.RaisePropertyChanged("freeFlowSpeed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public _ExtensionType travelTimeDataExtension {
+            get {
+                return this.travelTimeDataExtensionField;
+            }
+            set {
+                this.travelTimeDataExtensionField = value;
+                this.RaisePropertyChanged("travelTimeDataExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TravelTimeTrendTypeEnum {
+        
+        /// <remarks/>
+        decreasing,
+        
+        /// <remarks/>
+        increasing,
+        
+        /// <remarks/>
+        stable,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum TravelTimeTypeEnum {
+        
+        /// <remarks/>
+        best,
+        
+        /// <remarks/>
+        estimated,
+        
+        /// <remarks/>
+        instantaneous,
+        
+        /// <remarks/>
+        reconstituted,
     }
     
     /// <remarks/>
@@ -24159,376 +23828,6 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class LocationCharacteristicsOverride : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private LaneEnum measurementLanesOverrideField;
-        
-        private bool measurementLanesOverrideFieldSpecified;
-        
-        private bool reversedFlowField;
-        
-        private bool reversedFlowFieldSpecified;
-        
-        private _ExtensionType locationCharacteristicsOverrideExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public LaneEnum measurementLanesOverride {
-            get {
-                return this.measurementLanesOverrideField;
-            }
-            set {
-                this.measurementLanesOverrideField = value;
-                this.RaisePropertyChanged("measurementLanesOverride");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool measurementLanesOverrideSpecified {
-            get {
-                return this.measurementLanesOverrideFieldSpecified;
-            }
-            set {
-                this.measurementLanesOverrideFieldSpecified = value;
-                this.RaisePropertyChanged("measurementLanesOverrideSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public bool reversedFlow {
-            get {
-                return this.reversedFlowField;
-            }
-            set {
-                this.reversedFlowField = value;
-                this.RaisePropertyChanged("reversedFlow");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool reversedFlowSpecified {
-            get {
-                return this.reversedFlowFieldSpecified;
-            }
-            set {
-                this.reversedFlowFieldSpecified = value;
-                this.RaisePropertyChanged("reversedFlowSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType locationCharacteristicsOverrideExtension {
-            get {
-                return this.locationCharacteristicsOverrideExtensionField;
-            }
-            set {
-                this.locationCharacteristicsOverrideExtensionField = value;
-                this.RaisePropertyChanged("locationCharacteristicsOverrideExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class MeasuredValue : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private MultilingualString measurementEquipmentTypeUsedField;
-        
-        private LocationCharacteristicsOverride locationCharacteristicsOverrideField;
-        
-        private MeasurementEquipmentFault[] measurementEquipmentFaultField;
-        
-        private BasicData basicDataField;
-        
-        private _ExtensionType measuredValueExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MultilingualString measurementEquipmentTypeUsed {
-            get {
-                return this.measurementEquipmentTypeUsedField;
-            }
-            set {
-                this.measurementEquipmentTypeUsedField = value;
-                this.RaisePropertyChanged("measurementEquipmentTypeUsed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public LocationCharacteristicsOverride locationCharacteristicsOverride {
-            get {
-                return this.locationCharacteristicsOverrideField;
-            }
-            set {
-                this.locationCharacteristicsOverrideField = value;
-                this.RaisePropertyChanged("locationCharacteristicsOverride");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("measurementEquipmentFault", Order=2)]
-        public MeasurementEquipmentFault[] measurementEquipmentFault {
-            get {
-                return this.measurementEquipmentFaultField;
-            }
-            set {
-                this.measurementEquipmentFaultField = value;
-                this.RaisePropertyChanged("measurementEquipmentFault");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public BasicData basicData {
-            get {
-                return this.basicDataField;
-            }
-            set {
-                this.basicDataField = value;
-                this.RaisePropertyChanged("basicData");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public _ExtensionType measuredValueExtension {
-            get {
-                return this.measuredValueExtensionField;
-            }
-            set {
-                this.measuredValueExtensionField = value;
-                this.RaisePropertyChanged("measuredValueExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _SiteMeasurementsIndexMeasuredValue : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private MeasuredValue measuredValueField;
-        
-        private int indexField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MeasuredValue measuredValue {
-            get {
-                return this.measuredValueField;
-            }
-            set {
-                this.measuredValueField = value;
-                this.RaisePropertyChanged("measuredValue");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int index {
-            get {
-                return this.indexField;
-            }
-            set {
-                this.indexField = value;
-                this.RaisePropertyChanged("index");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class SiteMeasurements : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private _MeasurementSiteRecordVersionedReference measurementSiteReferenceField;
-        
-        private System.DateTime measurementTimeDefaultField;
-        
-        private _SiteMeasurementsIndexMeasuredValue[] measuredValueField;
-        
-        private _ExtensionType siteMeasurementsExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _MeasurementSiteRecordVersionedReference measurementSiteReference {
-            get {
-                return this.measurementSiteReferenceField;
-            }
-            set {
-                this.measurementSiteReferenceField = value;
-                this.RaisePropertyChanged("measurementSiteReference");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public System.DateTime measurementTimeDefault {
-            get {
-                return this.measurementTimeDefaultField;
-            }
-            set {
-                this.measurementTimeDefaultField = value;
-                this.RaisePropertyChanged("measurementTimeDefault");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("measuredValue", Order=2)]
-        public _SiteMeasurementsIndexMeasuredValue[] measuredValue {
-            get {
-                return this.measuredValueField;
-            }
-            set {
-                this.measuredValueField = value;
-                this.RaisePropertyChanged("measuredValue");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public _ExtensionType siteMeasurementsExtension {
-            get {
-                return this.siteMeasurementsExtensionField;
-            }
-            set {
-                this.siteMeasurementsExtensionField = value;
-                this.RaisePropertyChanged("siteMeasurementsExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class ReferenceSettings : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReferenceField;
-        
-        private TrafficStatusEnum trafficStatusDefaultField;
-        
-        private bool trafficStatusDefaultFieldSpecified;
-        
-        private _ExtensionType referenceSettingsExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReference {
-            get {
-                return this.predefinedNonOrderedLocationGroupReferenceField;
-            }
-            set {
-                this.predefinedNonOrderedLocationGroupReferenceField = value;
-                this.RaisePropertyChanged("predefinedNonOrderedLocationGroupReference");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public TrafficStatusEnum trafficStatusDefault {
-            get {
-                return this.trafficStatusDefaultField;
-            }
-            set {
-                this.trafficStatusDefaultField = value;
-                this.RaisePropertyChanged("trafficStatusDefault");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool trafficStatusDefaultSpecified {
-            get {
-                return this.trafficStatusDefaultFieldSpecified;
-            }
-            set {
-                this.trafficStatusDefaultFieldSpecified = value;
-                this.RaisePropertyChanged("trafficStatusDefaultSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType referenceSettingsExtension {
-            get {
-                return this.referenceSettingsExtensionField;
-            }
-            set {
-                this.referenceSettingsExtensionField = value;
-                this.RaisePropertyChanged("referenceSettingsExtension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
     public partial class _VmsRecordPictogramDisplayAreaIndexVmsPictogramDisplayCharacteristics : object, System.ComponentModel.INotifyPropertyChanged {
         
         private VmsPictogramDisplayCharacteristics vmsPictogramDisplayCharacteristicsField;
@@ -25213,17 +24512,718 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class Situation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private SeverityEnum overallSeverityField;
+        
+        private bool overallSeverityFieldSpecified;
+        
+        private _SituationVersionedReference[] relatedSituationField;
+        
+        private System.DateTime situationVersionTimeField;
+        
+        private bool situationVersionTimeFieldSpecified;
+        
+        private HeaderInformation headerInformationField;
+        
+        private SituationRecord[] situationRecordField;
+        
+        private _ExtensionType situationExtensionField;
+        
+        private string idField;
+        
+        private string versionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public SeverityEnum overallSeverity {
+            get {
+                return this.overallSeverityField;
+            }
+            set {
+                this.overallSeverityField = value;
+                this.RaisePropertyChanged("overallSeverity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool overallSeveritySpecified {
+            get {
+                return this.overallSeverityFieldSpecified;
+            }
+            set {
+                this.overallSeverityFieldSpecified = value;
+                this.RaisePropertyChanged("overallSeveritySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("relatedSituation", Order=1)]
+        public _SituationVersionedReference[] relatedSituation {
+            get {
+                return this.relatedSituationField;
+            }
+            set {
+                this.relatedSituationField = value;
+                this.RaisePropertyChanged("relatedSituation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime situationVersionTime {
+            get {
+                return this.situationVersionTimeField;
+            }
+            set {
+                this.situationVersionTimeField = value;
+                this.RaisePropertyChanged("situationVersionTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool situationVersionTimeSpecified {
+            get {
+                return this.situationVersionTimeFieldSpecified;
+            }
+            set {
+                this.situationVersionTimeFieldSpecified = value;
+                this.RaisePropertyChanged("situationVersionTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public HeaderInformation headerInformation {
+            get {
+                return this.headerInformationField;
+            }
+            set {
+                this.headerInformationField = value;
+                this.RaisePropertyChanged("headerInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("situationRecord", Order=4)]
+        public SituationRecord[] situationRecord {
+            get {
+                return this.situationRecordField;
+            }
+            set {
+                this.situationRecordField = value;
+                this.RaisePropertyChanged("situationRecord");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public _ExtensionType situationExtension {
+            get {
+                return this.situationExtensionField;
+            }
+            set {
+                this.situationExtensionField = value;
+                this.RaisePropertyChanged("situationExtension");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
+                this.RaisePropertyChanged("version");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class HeaderInformation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AreaOfInterestEnum areaOfInterestField;
+        
+        private bool areaOfInterestFieldSpecified;
+        
+        private ConfidentialityValueEnum confidentialityField;
+        
+        private InformationStatusEnum informationStatusField;
+        
+        private UrgencyEnum urgencyField;
+        
+        private bool urgencyFieldSpecified;
+        
+        private _ExtensionType headerInformationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AreaOfInterestEnum areaOfInterest {
+            get {
+                return this.areaOfInterestField;
+            }
+            set {
+                this.areaOfInterestField = value;
+                this.RaisePropertyChanged("areaOfInterest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool areaOfInterestSpecified {
+            get {
+                return this.areaOfInterestFieldSpecified;
+            }
+            set {
+                this.areaOfInterestFieldSpecified = value;
+                this.RaisePropertyChanged("areaOfInterestSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ConfidentialityValueEnum confidentiality {
+            get {
+                return this.confidentialityField;
+            }
+            set {
+                this.confidentialityField = value;
+                this.RaisePropertyChanged("confidentiality");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public InformationStatusEnum informationStatus {
+            get {
+                return this.informationStatusField;
+            }
+            set {
+                this.informationStatusField = value;
+                this.RaisePropertyChanged("informationStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public UrgencyEnum urgency {
+            get {
+                return this.urgencyField;
+            }
+            set {
+                this.urgencyField = value;
+                this.RaisePropertyChanged("urgency");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool urgencySpecified {
+            get {
+                return this.urgencyFieldSpecified;
+            }
+            set {
+                this.urgencyFieldSpecified = value;
+                this.RaisePropertyChanged("urgencySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public _ExtensionType headerInformationExtension {
+            get {
+                return this.headerInformationExtensionField;
+            }
+            set {
+                this.headerInformationExtensionField = value;
+                this.RaisePropertyChanged("headerInformationExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum AreaOfInterestEnum {
+        
+        /// <remarks/>
+        continentWide,
+        
+        /// <remarks/>
+        national,
+        
+        /// <remarks/>
+        neighbouringCountries,
+        
+        /// <remarks/>
+        notSpecified,
+        
+        /// <remarks/>
+        regional,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum InformationStatusEnum {
+        
+        /// <remarks/>
+        real,
+        
+        /// <remarks/>
+        securityExercise,
+        
+        /// <remarks/>
+        technicalExercise,
+        
+        /// <remarks/>
+        test,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public enum UrgencyEnum {
+        
+        /// <remarks/>
+        extremelyUrgent,
+        
+        /// <remarks/>
+        urgent,
+        
+        /// <remarks/>
+        normalUrgency,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class LocationCharacteristicsOverride : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private LaneEnum measurementLanesOverrideField;
+        
+        private bool measurementLanesOverrideFieldSpecified;
+        
+        private bool reversedFlowField;
+        
+        private bool reversedFlowFieldSpecified;
+        
+        private _ExtensionType locationCharacteristicsOverrideExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public LaneEnum measurementLanesOverride {
+            get {
+                return this.measurementLanesOverrideField;
+            }
+            set {
+                this.measurementLanesOverrideField = value;
+                this.RaisePropertyChanged("measurementLanesOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool measurementLanesOverrideSpecified {
+            get {
+                return this.measurementLanesOverrideFieldSpecified;
+            }
+            set {
+                this.measurementLanesOverrideFieldSpecified = value;
+                this.RaisePropertyChanged("measurementLanesOverrideSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool reversedFlow {
+            get {
+                return this.reversedFlowField;
+            }
+            set {
+                this.reversedFlowField = value;
+                this.RaisePropertyChanged("reversedFlow");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reversedFlowSpecified {
+            get {
+                return this.reversedFlowFieldSpecified;
+            }
+            set {
+                this.reversedFlowFieldSpecified = value;
+                this.RaisePropertyChanged("reversedFlowSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType locationCharacteristicsOverrideExtension {
+            get {
+                return this.locationCharacteristicsOverrideExtensionField;
+            }
+            set {
+                this.locationCharacteristicsOverrideExtensionField = value;
+                this.RaisePropertyChanged("locationCharacteristicsOverrideExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class MeasuredValue : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private MultilingualString measurementEquipmentTypeUsedField;
+        
+        private LocationCharacteristicsOverride locationCharacteristicsOverrideField;
+        
+        private MeasurementEquipmentFault[] measurementEquipmentFaultField;
+        
+        private BasicData basicDataField;
+        
+        private _ExtensionType measuredValueExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MultilingualString measurementEquipmentTypeUsed {
+            get {
+                return this.measurementEquipmentTypeUsedField;
+            }
+            set {
+                this.measurementEquipmentTypeUsedField = value;
+                this.RaisePropertyChanged("measurementEquipmentTypeUsed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public LocationCharacteristicsOverride locationCharacteristicsOverride {
+            get {
+                return this.locationCharacteristicsOverrideField;
+            }
+            set {
+                this.locationCharacteristicsOverrideField = value;
+                this.RaisePropertyChanged("locationCharacteristicsOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("measurementEquipmentFault", Order=2)]
+        public MeasurementEquipmentFault[] measurementEquipmentFault {
+            get {
+                return this.measurementEquipmentFaultField;
+            }
+            set {
+                this.measurementEquipmentFaultField = value;
+                this.RaisePropertyChanged("measurementEquipmentFault");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public BasicData basicData {
+            get {
+                return this.basicDataField;
+            }
+            set {
+                this.basicDataField = value;
+                this.RaisePropertyChanged("basicData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public _ExtensionType measuredValueExtension {
+            get {
+                return this.measuredValueExtensionField;
+            }
+            set {
+                this.measuredValueExtensionField = value;
+                this.RaisePropertyChanged("measuredValueExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class _SiteMeasurementsIndexMeasuredValue : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private MeasuredValue measuredValueField;
+        
+        private int indexField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MeasuredValue measuredValue {
+            get {
+                return this.measuredValueField;
+            }
+            set {
+                this.measuredValueField = value;
+                this.RaisePropertyChanged("measuredValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+                this.RaisePropertyChanged("index");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class SiteMeasurements : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private _MeasurementSiteRecordVersionedReference measurementSiteReferenceField;
+        
+        private System.DateTime measurementTimeDefaultField;
+        
+        private _SiteMeasurementsIndexMeasuredValue[] measuredValueField;
+        
+        private _ExtensionType siteMeasurementsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _MeasurementSiteRecordVersionedReference measurementSiteReference {
+            get {
+                return this.measurementSiteReferenceField;
+            }
+            set {
+                this.measurementSiteReferenceField = value;
+                this.RaisePropertyChanged("measurementSiteReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime measurementTimeDefault {
+            get {
+                return this.measurementTimeDefaultField;
+            }
+            set {
+                this.measurementTimeDefaultField = value;
+                this.RaisePropertyChanged("measurementTimeDefault");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("measuredValue", Order=2)]
+        public _SiteMeasurementsIndexMeasuredValue[] measuredValue {
+            get {
+                return this.measuredValueField;
+            }
+            set {
+                this.measuredValueField = value;
+                this.RaisePropertyChanged("measuredValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public _ExtensionType siteMeasurementsExtension {
+            get {
+                return this.siteMeasurementsExtensionField;
+            }
+            set {
+                this.siteMeasurementsExtensionField = value;
+                this.RaisePropertyChanged("siteMeasurementsExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class ReferenceSettings : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReferenceField;
+        
+        private TrafficStatusEnum trafficStatusDefaultField;
+        
+        private bool trafficStatusDefaultFieldSpecified;
+        
+        private _ExtensionType referenceSettingsExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public _PredefinedNonOrderedLocationGroupVersionedReference predefinedNonOrderedLocationGroupReference {
+            get {
+                return this.predefinedNonOrderedLocationGroupReferenceField;
+            }
+            set {
+                this.predefinedNonOrderedLocationGroupReferenceField = value;
+                this.RaisePropertyChanged("predefinedNonOrderedLocationGroupReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TrafficStatusEnum trafficStatusDefault {
+            get {
+                return this.trafficStatusDefaultField;
+            }
+            set {
+                this.trafficStatusDefaultField = value;
+                this.RaisePropertyChanged("trafficStatusDefault");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool trafficStatusDefaultSpecified {
+            get {
+                return this.trafficStatusDefaultFieldSpecified;
+            }
+            set {
+                this.trafficStatusDefaultFieldSpecified = value;
+                this.RaisePropertyChanged("trafficStatusDefaultSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType referenceSettingsExtension {
+            get {
+                return this.referenceSettingsExtensionField;
+            }
+            set {
+                this.referenceSettingsExtensionField = value;
+                this.RaisePropertyChanged("referenceSettingsExtension");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FusedDataPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(JourneyTimePublication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SituationPublication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficViewPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PredefinedLocationsPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasurementSiteTablePublication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsTablePublication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SituationPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasuredDataPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElaboratedDataPublication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsTablePublication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmsPublication))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -25378,94 +25378,6 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class SituationPublication : PayloadPublication {
-        
-        private Situation[] situationField;
-        
-        private _ExtensionType situationPublicationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("situation", Order=0)]
-        public Situation[] situation {
-            get {
-                return this.situationField;
-            }
-            set {
-                this.situationField = value;
-                this.RaisePropertyChanged("situation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public _ExtensionType situationPublicationExtension {
-            get {
-                return this.situationPublicationExtensionField;
-            }
-            set {
-                this.situationPublicationExtensionField = value;
-                this.RaisePropertyChanged("situationPublicationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class VmsPublication : PayloadPublication {
-        
-        private HeaderInformation headerInformationField;
-        
-        private VmsUnit[] vmsUnitField;
-        
-        private _ExtensionType vmsPublicationExtensionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public HeaderInformation headerInformation {
-            get {
-                return this.headerInformationField;
-            }
-            set {
-                this.headerInformationField = value;
-                this.RaisePropertyChanged("headerInformation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("vmsUnit", Order=1)]
-        public VmsUnit[] vmsUnit {
-            get {
-                return this.vmsUnitField;
-            }
-            set {
-                this.vmsUnitField = value;
-                this.RaisePropertyChanged("vmsUnit");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType vmsPublicationExtension {
-            get {
-                return this.vmsPublicationExtensionField;
-            }
-            set {
-                this.vmsPublicationExtensionField = value;
-                this.RaisePropertyChanged("vmsPublicationExtension");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
     public partial class TrafficViewPublication : PayloadPublication {
         
         private HeaderInformation headerInformationField;
@@ -25609,6 +25521,94 @@ namespace TestClient.SubscriberServiceReference {
             set {
                 this.measurementSiteTablePublicationExtensionField = value;
                 this.RaisePropertyChanged("measurementSiteTablePublicationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class VmsTablePublication : PayloadPublication {
+        
+        private HeaderInformation headerInformationField;
+        
+        private VmsUnitTable[] vmsUnitTableField;
+        
+        private _ExtensionType vmsTablePublicationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public HeaderInformation headerInformation {
+            get {
+                return this.headerInformationField;
+            }
+            set {
+                this.headerInformationField = value;
+                this.RaisePropertyChanged("headerInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("vmsUnitTable", Order=1)]
+        public VmsUnitTable[] vmsUnitTable {
+            get {
+                return this.vmsUnitTableField;
+            }
+            set {
+                this.vmsUnitTableField = value;
+                this.RaisePropertyChanged("vmsUnitTable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public _ExtensionType vmsTablePublicationExtension {
+            get {
+                return this.vmsTablePublicationExtensionField;
+            }
+            set {
+                this.vmsTablePublicationExtensionField = value;
+                this.RaisePropertyChanged("vmsTablePublicationExtension");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
+    public partial class SituationPublication : PayloadPublication {
+        
+        private Situation[] situationField;
+        
+        private _ExtensionType situationPublicationExtensionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("situation", Order=0)]
+        public Situation[] situation {
+            get {
+                return this.situationField;
+            }
+            set {
+                this.situationField = value;
+                this.RaisePropertyChanged("situation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public _ExtensionType situationPublicationExtension {
+            get {
+                return this.situationPublicationExtensionField;
+            }
+            set {
+                this.situationPublicationExtensionField = value;
+                this.RaisePropertyChanged("situationPublicationExtension");
             }
         }
     }
@@ -25870,13 +25870,13 @@ namespace TestClient.SubscriberServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class VmsTablePublication : PayloadPublication {
+    public partial class VmsPublication : PayloadPublication {
         
         private HeaderInformation headerInformationField;
         
-        private VmsUnitTable[] vmsUnitTableField;
+        private VmsUnit[] vmsUnitField;
         
-        private _ExtensionType vmsTablePublicationExtensionField;
+        private _ExtensionType vmsPublicationExtensionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -25891,26 +25891,26 @@ namespace TestClient.SubscriberServiceReference {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("vmsUnitTable", Order=1)]
-        public VmsUnitTable[] vmsUnitTable {
+        [System.Xml.Serialization.XmlElementAttribute("vmsUnit", Order=1)]
+        public VmsUnit[] vmsUnit {
             get {
-                return this.vmsUnitTableField;
+                return this.vmsUnitField;
             }
             set {
-                this.vmsUnitTableField = value;
-                this.RaisePropertyChanged("vmsUnitTable");
+                this.vmsUnitField = value;
+                this.RaisePropertyChanged("vmsUnit");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public _ExtensionType vmsTablePublicationExtension {
+        public _ExtensionType vmsPublicationExtension {
             get {
-                return this.vmsTablePublicationExtensionField;
+                return this.vmsPublicationExtensionField;
             }
             set {
-                this.vmsTablePublicationExtensionField = value;
-                this.RaisePropertyChanged("vmsTablePublicationExtension");
+                this.vmsPublicationExtensionField = value;
+                this.RaisePropertyChanged("vmsPublicationExtension");
             }
         }
     }
