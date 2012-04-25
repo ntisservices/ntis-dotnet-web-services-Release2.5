@@ -21,7 +21,6 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="SubscriberService.wsdl" MetadataType="Wsdl" ID="cc75eebe-25d6-4579-b87e-ae56d9fd6699" SourceId="1" SourceUrl="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?wsdl" />
-    <MetadataFile FileName="schema4.xsd" MetadataType="Schema" ID="d5053a83-908e-40f4-835d-55128ae450be" SourceId="1" SourceUrl="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema4" />
     <MetadataFile FileName="schema3.xsd" MetadataType="Schema" ID="a2575057-409e-484e-a644-54ffdb86543a" SourceId="1" SourceUrl="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema3" />
     <MetadataFile FileName="schema2.xsd" MetadataType="Schema" ID="a404221d-e958-4aa9-b1b6-7dc5ae4097ff" SourceId="1" SourceUrl="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema2" />
     <MetadataFile FileName="schema1.xsd" MetadataType="Schema" ID="4efed122-a275-4516-a595-eb905cf9e6b4" SourceId="1" SourceUrl="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema1" />

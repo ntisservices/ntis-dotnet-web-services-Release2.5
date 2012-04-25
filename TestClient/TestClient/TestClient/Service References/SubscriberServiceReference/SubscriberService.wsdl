@@ -6,7 +6,6 @@
       <s:import schemaLocation="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema1" namespace="http://www.thalesgroup.com/NTIS/SubscriberService" />
       <s:import schemaLocation="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema2" namespace="http://datex2.eu/schema/2/2_0" />
       <s:import schemaLocation="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema3" namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" />
-      <s:import schemaLocation="http://141.196.44.91/SubscriberWebSite/SubscriberService.asmx?schema=schema4" namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" />
     </s:schema>
   </wsdl:types>
   <wsdl:service name="SubscriberService">

@@ -70,7 +70,6 @@
     <None Include="Service References\SubscriberServiceReference\schema1.xsd" />
     <None Include="Service References\SubscriberServiceReference\schema2.xsd" />
     <None Include="Service References\SubscriberServiceReference\schema3.xsd" />
-    <None Include="Service References\SubscriberServiceReference\schema4.xsd" />
     <None Include="Service References\SubscriberServiceReference\SubscriberService.wsdl" />
   </ItemGroup>
   <ItemGroup>
