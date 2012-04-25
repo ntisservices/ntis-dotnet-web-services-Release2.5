@@ -22099,7 +22099,6 @@ namespace Subscriber {
         private bool isSuspectField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string camera1 {
             get {
                 return this.camera1Field;
@@ -22110,7 +22109,6 @@ namespace Subscriber {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string camera2 {
             get {
                 return this.camera2Field;
@@ -22121,7 +22119,6 @@ namespace Subscriber {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.DateTime timeStamp {
             get {
                 return this.timeStampField;
@@ -22132,7 +22129,6 @@ namespace Subscriber {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public uint travelTime {
             get {
                 return this.travelTimeField;
@@ -22143,7 +22139,6 @@ namespace Subscriber {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public bool isSuspect {
             get {
                 return this.isSuspectField;
@@ -22768,8 +22763,7 @@ namespace Subscriber {
         private JourneyTime[] journeyTimesField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("journeyTime", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("journeyTime", IsNullable=false)]
         public JourneyTime[] journeyTimes {
             get {
                 return this.journeyTimesField;

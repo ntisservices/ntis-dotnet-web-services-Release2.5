@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1">
+<xs:schema xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1">
   <xs:import schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd" namespace="http://datex2.eu/schema/2/2_0"/>
   <xs:simpleType name="Guid">
     <xs:annotation>

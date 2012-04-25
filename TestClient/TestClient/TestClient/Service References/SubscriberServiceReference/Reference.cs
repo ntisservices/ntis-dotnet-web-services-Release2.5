@@ -834,6 +834,94 @@ namespace TestClient.SubscriberServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0")]
+    public partial class JourneyTime : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string camera1Field;
+        
+        private string camera2Field;
+        
+        private System.DateTime timeStampField;
+        
+        private uint travelTimeField;
+        
+        private bool isSuspectField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string camera1 {
+            get {
+                return this.camera1Field;
+            }
+            set {
+                this.camera1Field = value;
+                this.RaisePropertyChanged("camera1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string camera2 {
+            get {
+                return this.camera2Field;
+            }
+            set {
+                this.camera2Field = value;
+                this.RaisePropertyChanged("camera2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public System.DateTime timeStamp {
+            get {
+                return this.timeStampField;
+            }
+            set {
+                this.timeStampField = value;
+                this.RaisePropertyChanged("timeStamp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public uint travelTime {
+            get {
+                return this.travelTimeField;
+            }
+            set {
+                this.travelTimeField = value;
+                this.RaisePropertyChanged("travelTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public bool isSuspect {
+            get {
+                return this.isSuspectField;
+            }
+            set {
+                this.isSuspectField = value;
+                this.RaisePropertyChanged("isSuspect");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
     public partial class FusedDataTMC : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1227,94 +1315,6 @@ namespace TestClient.SubscriberServiceReference {
             set {
                 this.latencySecField = value;
                 this.RaisePropertyChanged("latencySec");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0")]
-    public partial class JourneyTime : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string camera1Field;
-        
-        private string camera2Field;
-        
-        private System.DateTime timeStampField;
-        
-        private uint travelTimeField;
-        
-        private bool isSuspectField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string camera1 {
-            get {
-                return this.camera1Field;
-            }
-            set {
-                this.camera1Field = value;
-                this.RaisePropertyChanged("camera1");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string camera2 {
-            get {
-                return this.camera2Field;
-            }
-            set {
-                this.camera2Field = value;
-                this.RaisePropertyChanged("camera2");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public System.DateTime timeStamp {
-            get {
-                return this.timeStampField;
-            }
-            set {
-                this.timeStampField = value;
-                this.RaisePropertyChanged("timeStamp");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public uint travelTime {
-            get {
-                return this.travelTimeField;
-            }
-            set {
-                this.travelTimeField = value;
-                this.RaisePropertyChanged("travelTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public bool isSuspect {
-            get {
-                return this.isSuspectField;
-            }
-            set {
-                this.isSuspectField = value;
-                this.RaisePropertyChanged("isSuspect");
             }
         }
         
@@ -25213,8 +25213,8 @@ namespace TestClient.SubscriberServiceReference {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FusedDataPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(JourneyTimePublication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FusedDataPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficViewPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PredefinedLocationsPublication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasurementSiteTablePublication))]
@@ -25330,29 +25330,6 @@ namespace TestClient.SubscriberServiceReference {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
-    public partial class FusedDataPublication : PayloadPublication {
-        
-        private FusedData[] fusedDataField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("fusedData", Order=0)]
-        public FusedData[] fusedData {
-            get {
-                return this.fusedDataField;
-            }
-            set {
-                this.fusedDataField = value;
-                this.RaisePropertyChanged("fusedData");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0")]
     public partial class JourneyTimePublication : PayloadPublication {
         
@@ -25368,6 +25345,29 @@ namespace TestClient.SubscriberServiceReference {
             set {
                 this.journeyTimesField = value;
                 this.RaisePropertyChanged("journeyTimes");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1")]
+    public partial class FusedDataPublication : PayloadPublication {
+        
+        private FusedData[] fusedDataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("fusedData", Order=0)]
+        public FusedData[] fusedData {
+            get {
+                return this.fusedDataField;
+            }
+            set {
+                this.fusedDataField = value;
+                this.RaisePropertyChanged("fusedData");
             }
         }
     }
