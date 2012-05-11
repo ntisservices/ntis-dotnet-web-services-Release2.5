@@ -9,7 +9,8 @@
         </xs:annotation>
         <xs:complexContent mixed="false">
             <xs:extension base="D2LogicalModel:PayloadPublication">
-                <xs:sequence minOccurs="1">
+                <xs:sequence>
+                	<xs:element name="headerInformation" type="D2LogicalModel:HeaderInformation" />
                     <xs:element name="fusedData" type="FusedData" minOccurs="1" maxOccurs="unbounded" />
                 </xs:sequence>
             </xs:extension>
