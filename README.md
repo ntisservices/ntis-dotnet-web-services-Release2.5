@@ -1,68 +1,98 @@
-NTIS Subscriber Service - README
-================================
+NTIS Subscriber Service example - README
+========================================
 
-This project is an example implementation of the NTIS Subscriber Service that uses the .NET 3.5 framework and the C# language.
-You can import the project into Visual Studio 2008 (which is what it was created in), and tailor it to suit your needs. The solution can also be imported into Visual Studio 2010, during which you will be prompted with instructions to convert it to use the .NET 4.0 framework.
+This project is an example implementation of the NTIS Subscriber Service.
+It has been created in, and tested with, Visual Studio 2012 and the .NET framework version 4
 
-The SubscriberWebService web site in the solution, is of the type "ASP.NET Web Service".
+For the instructions below, it is assumed that
 
+- the user is familiar with Visual Studio
+- the user is familiar with IIS (If not, IIS can be run by typing IIS from the windows command prompt)
+- the user is familiar with the SOAPUI testing and SOAPUI has been installed on the development machine. See http://www.soapui.org/Downloads/latest-release.html
 
-Building and testing the website 
-----------------------------------------------------------------
+Building the web service
+------------------------
 
-### Building
+- Open a Windows explorer and navigate to SubscriberWebService.sln solution
+- In the solution explorer, select the solution, then select 'Build Solution' from the Build Menu
+- The web service is configured to received 512MB compressed data. To change this, change the web.config file
 
-The ASP.NET Web Service Application has been developed and build in Visual Studio 2008. On running the application, you should be able to navigate to http://localhost:<portNumber>/SubscriberService.asmx, where <portNumber> can be an auto-generated port number, or hard coded.
+Note:
 
-After IIS has been installed, the following can be done:
+- There is an auto generated file, supplierPush.cs, built using the customer provided wsdl and xsd files. These files are held in sub folders in the folder subscriberservice.net\SubscriberService\SubscriberWebService\Contract
+- The command used to build supplierPush.cs can be found by selecting the SubscriberWebService properties from the solution explorer, then navigating to the Build Events Tab
+- The implementation contains the wsdl and xsd used to generate the WCF service proxy, if regenerating the proxy from these files svcutil will set ReplyAction = "*" which causes the operation not to appear on the wsdl generated dynamically by IIS. This will cause new applications referencing the service to not find the push operation, it should not however affect existing applications
 
-1) After testing that the project works successully in Visual Project, within Visual Studio, right click on the web service website in Solution Explorer, and select "Publish".
-2) In the "Publish Web" dialogue box that appears, enter a Target location. (e.g: C:\SubscriberWebSite), leave the default settings of "Replace matching files with local copies", "Only files needed to run this application", and leave "Include files from the App_Data folder" checked.
+Initial testing of the web service
+----------------------------------
 
-### Deploying the webservice on IIS 5
+For initial testing, you may wish to use the development server that visual studio is equipped with:
 
-Instructions are as follows:
+- Build the solution using the instructions in 'Building the web service'
+- Comment out the command used to build the supplierPush.cs file (See above)
+- Edit the supplierPush.cs file and in the public interface 'supplierPushInterface', change the ReplyAction from "*" to "http://datex2.eu/wsdl/supplierPush/2_0/putDatex2Data"
+- Build the solution using the instructions in 'Building the web service'
+- Open the 'DEBUG' dropdown menu, and click 'Start Debugging'
 
-1) Start up "Internet Information Services", by going to the "Control Panel", double clicking on "Administrative Tools", and double clicking on "Internet Information Services".
-2) Expand "<machine name>local computer".
-3) Expand "Web Sites".
-4) Right click on "Default Web Site", and select "New", "Virtual Directory".
-5) On the "Virtual Directory Creation Wizard" dialogue that appears, click "Next".
-6) Enter an "Alias" (e.g. "SubscriberWebService" and click "Next".
-7) Enter or browse to the directory containing the published content (e.g. C:\SubscriberWebSite) and click "Next".
-8) Leave the default settings checked for "Read" and "Run scripts (such as ASP)", and click "Next".
-9) Click "Finish".
-10) Open a browser window, and enter "http://localhost/SubscriberWebservice/Contract/subscriber.wsdl" as the URL. Note that the Microsoft generated WSDL has been disabled in this project in favour of the real one.
-11) The "Subscriber Service" web page should appear.
-12) Click on the "service description" link to see the .NET generated WSDL page.
-14) Click on the browser back button, and click on any of the operations to see the formats and data types of the request and response over different protocols.
+Note: Visual Studio may fail to launch the Development Server if IIS is installed and running with the same port number configured. To correct this, either
 
+- In IIS, stop the site which has the same port number
+- In Visual Studio, open the SubscriberWebService properties from the solution explorer, navigate to the Web tab and change the port number
 
-### Deploying on Windows 7 using IIS 7
+Deploying the web service
+-------------------------
 
-Deploying the website for use by IIS 7 on a Windows 7 machine depends on the type of Windows 7 installation that you have. Microsoft may have certain configuration files locked down. If you have a home edition of Windows 7, IIS 7 may not have been installed by default. In this case, you need to go to the Control Panel, click on "Programs and Features", then "Turn Windows features on or off", and install it via the check boxes under "Internet Information Services".
+To deploy the web service
 
-With IIS 7 running, the web site should then be added as an application with the Application Pool set as "DefaultAppPool". Depending on your Windows 7 setup, you may have to set path credentials for a specific user.
+- Select the SubscriberWebService from the solution explorer and select Publish Selection from the Build Menu
+- Select Publish when the Publish Web window appears
 
+The above instructions will publish to the C:\inetpub\wwwroot\Datex2 folder
 
-### Example Requests
+- Open IIS from the windows command prompt
+- Navigate to Sites/Default Web Site
+- Select Datex2, right click and select "Convert To Application", using the defaults provided when prompted
 
-Found in the "exampleRequests" folder. These can be used to form requests for testing your own client that you build.
+Note: If deploying locally, you may need to run visual studio as administrator to publish, or else change security permissions for the webroot.
 
+You should now be able to navigate to the location in your browser (e.g 'http://localhost/Datex2/WebServiceSubscriber.svc').
+
+Note: If this fails, check:
+
+- The Default Web Site is running
+- The port number of the Default Web Site (found under the bindings option) is set to 80. If not, change the URL to http://localhost:<Port Number>/Datex2/WebServiceSubscriber.svc or reset the port number to 80, restart the Default Web Site and refresh the web page
+
+Note: You may need to register .NET 4 with IIS, this can be done using the ASP.NET IIS Registration Tool ('Aspnet_regiis.exe'). To register .NET 4 with IIS, run "Aspnet_regiis.exe -i" from the Visual Studio Developer Console.
+	
+Note: If you receive a server error related to 'targetFramework' check that the correct .NET version is set in your application pool. Application pools can be viewed in the IIS Manager, which can be found in control panel, under administrative tools.
+
+This example implementation should be compatible with any .NET 4 version (e.g 4.0 or 4.5).
+
+Testing the website 
+-------------------
+
+All examples are held in the exampleRequests folder
+
+There is also a SOAPUI project which holds these examples and this is held in the SoapUI Tests folder. Both sets of examples conform to the 2.5 standard
 
 ### Testing Using SoapUI
 
-SoapUI is an open source cross-platform tool which can be used for testing SOAP requests and responses. The version used for testing this example was V4.0.1. Because of its simple interface, it was used as a client for testing this Subscriber web service.
+SoapUI is an open source cross-platform tool which can be used for testing SOAP requests and responses.
+The version used for testing this example was V4.5.2 Because of its simple interface, it was used as a client for testing this Subscriber web service.
+When testing using SOAPUI, ensure the compression option in Preferences is set to the compression type in the web.config file
 
-1) Make sure that the Subscriber web service is running.
-2) Start soapUI.
-3) From the main menu select File -> New soapUI Project.
-4) Enter a Project Name, browse to the WSDL or manually enter the location. e.g. http://SubscriberWebSite/SubscriberService.asmx?wsdl, then press "OK".
-5) The service and methods will then be exposed.
-6) Modify any of the requests and enter suitable values, or copy any of the example messages provided in the "exampleRequests" folder, which match the message to be tested, and paste over the contents of the "Request 1" sample generated.
-7) Press the green play arrow at the top of the request and check that a success response is sent.
-8) The message requests and responses will be logged in "C:\temp\logs\SOAP". Additionally, if a DeliverANPRTrafficData request was sent, it will be processed by a sample implementation of the AnprTrafficDataService class, and logged in "C:\temp\subscriberservice.log".
+To send a request:
+- Make sure that the Subscriber web service is running (either through IIS or the Development Server)
+- Start soapUI.
+- From the main menu select File -> New soapUI Project.
+- Enter a Project Name, browse to the WSDL or manually enter the location. (e.g. 'http://localhost/Datex2/WebServiceSubscriber.svc')
+- Click "OK".
+- The service and its operations will then be exposed.
+- Modify any of the requests and enter suitable values, or copy any of the example messages provided in the "exampleRequests" folder, which match the message to be tested, and paste over the contents of the "Request 1" sample generated.
+- Click the green play arrow at the top of the request and check that a success response is sent.
+The message requests and responses will be logged in 'C:\temp\'.
+	
+To use the included SoapUI tests.
+- Import the file '\SoapUI Tests\SubscriberService-soapui-project.xml' into SoapUI. The URL will need to be changed if running remotely
+You should now see a series of tests which can be executed in the left hand navigation pane.
 
-Note, that soapUI can also be used to test gzip compressed messages and responses, by selecting "Preferences" from the File menu and selecting "gzip" from the "Request compression" option, and checking/unchecking the "Disable Response Decompression" option.
-
-Note that the "deflate" compression option is not catered for in this implementation.

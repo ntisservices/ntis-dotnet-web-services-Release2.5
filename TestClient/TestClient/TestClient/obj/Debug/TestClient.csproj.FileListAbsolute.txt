@@ -1,6 +1,0 @@
-C:\NTIS\TestClient\TestClient\TestClient\bin\Debug\TestClient.exe.config
-C:\NTIS\TestClient\TestClient\TestClient\bin\Debug\TestClient.exe
-C:\NTIS\TestClient\TestClient\TestClient\bin\Debug\TestClient.pdb
-C:\NTIS\TestClient\TestClient\TestClient\obj\Debug\ResolveAssemblyReference.cache
-C:\NTIS\TestClient\TestClient\TestClient\obj\Debug\TestClient.exe
-C:\NTIS\TestClient\TestClient\TestClient\obj\Debug\TestClient.pdb
